@@ -1,22 +1,16 @@
 import { Controller, Delete, Get, Post, Put } from '@nestjs/common';
-import { ConnectionService } from './config/conection.service'
-import FornecedorSchema from './models/FornecedorSchema';
+import { FornecedorService } from './schemas/fornecedor/fornecedorService';
 
 @Controller()
 export class AppController {
   constructor(
-    private readonly connService: ConnectionService
-    ) {
-      this.connService.connection.then(teste => {
-        console.log('count', FornecedorSchema.find({ 'name': 'João' }, count => {
-          console.log('meu count', count)
-        }))
-      });
-    }
+    private _fornecedorService: FornecedorService
+  ) { }
 
   @Get()
   index() {
-    throw new Error("Implementar index...");
+    const res = this._fornecedorService.findAll();
+    console.log('retorno find all', res);
   }
 
   @Post()
