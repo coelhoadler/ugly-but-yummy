@@ -1,4 +1,5 @@
-import { Controller, Delete, Get, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Res } from '@nestjs/common';
+import { FornecedorDto } from './fornecedor/fornecedor.dto';
 import { FornecedorService } from './fornecedor/fornecedorService';
 
 @Controller()
@@ -8,38 +9,33 @@ export class AppController {
   ) { }
 
   @Get()
-  index() {
+  index(@Res() res) {
     const fornecedoresFindAll = this._fornecedorService.findAll();
+
     fornecedoresFindAll.then(results => {
-      console.log('🚛 retorno find all', results);
-      console.log('🚛 count', results.length);
-      return results;
-    });
-    return 'buscando fornecedores...'
+      return res.status(HttpStatus.OK).json(results);
+    })
+    .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));
   }
 
-  @Get('/create')
-  create() {
+  @Post()
+  create(@Body() fornecedor: FornecedorDto) {
+    const fornecedorCreate = this._fornecedorService.create(fornecedor);
 
-    const fornecedoreCreate = this._fornecedorService.create({
-      name: 'Beatriz',
-      sobrenome: 'Bafini'
-    });
-
-    fornecedoreCreate.then(fornecedor => {
+    fornecedorCreate.then(fornecedor => {
       console.log('👨‍🏭 fornecedor criado', fornecedor)
     })
 
     return 'Adicionando fornecedor...';
   }
 
-  @Put()
-  update() {
+  @Put(':id')
+  update(@Param('id') idFornecedor) {
     throw new Error("Implementar update...");
   }
 
   @Delete('/:id')
-  delete(idFornecedor) {
+  delete(@Param('id') idFornecedor) {
     this._fornecedorService.delete(idFornecedor).then(result => {
       console.log('deletado', result)
     })

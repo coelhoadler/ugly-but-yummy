@@ -7,19 +7,19 @@ import { FornecedorDto } from './fornecedor.dto';
 @Injectable()
 export class FornecedorService {
     constructor(
-        @InjectModel(Fornecedor.name) private _fornecedorModel: Model<FornecedorDocument>
+        @InjectModel(Fornecedor.name) private fornecedorSchema: Model<FornecedorDocument>
     ) { }
 
     async create(fornecedorDto: FornecedorDto): Promise<Fornecedor> {
-        const newFornecedor = new this._fornecedorModel(fornecedorDto);
-        return newFornecedor.save();
+        const schema = new this.fornecedorSchema(fornecedorDto);
+        return schema.save();
     }
 
     async findAll(): Promise<Fornecedor[]> {
-        return this._fornecedorModel.find().exec();
+        return this.fornecedorSchema.find().exec();
     }
 
     async delete(fornecedorId: IDBDatabase): Promise<any> {
-        return this._fornecedorModel.deleteOne(fornecedorId)
+        return this.fornecedorSchema.deleteOne({_id: fornecedorId})
     }
 }
