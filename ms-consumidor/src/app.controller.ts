@@ -1,27 +1,36 @@
-import { Controller, Delete, Get, Post, Put } from '@nestjs/common';
-import { ConnectionService } from './config/conection.service'
-import FornecedorSchema from './models/FornecedorSchema';
+import { Controller, Delete, Get, Post, Put, Body } from '@nestjs/common';
+import { AppService } from './app.service';
+import { IConsumidor } from './models/consumidor.model';
+import { ConsumidorService } from './services/consumidor.service'
 
 @Controller()
 export class AppController {
   constructor(
-    private readonly connService: ConnectionService
-    ) {
-      this.connService.connection.then(teste => {
-        console.log('count', FornecedorSchema.find({ 'name': 'João' }, count => {
-          console.log('meu count', count)
-        }))
-      });
-    }
+    private appService: AppService,
+    private consumidorService: ConsumidorService
+  ) {
 
-  @Get()
-  index() {
-    throw new Error("Implementar index...");
   }
 
-  @Post()
-  create() {
-    throw new Error("Implementar create...");
+  // @Get("/consumidor/:id")
+  // index(id: String) {
+  //   return this.consumidorService.Buscar(id);
+  // }
+
+  @Get("/consumidor")
+  index() {
+    return this.consumidorService.Buscar(null);
+  }
+
+  @Get("/consumidor/:id")
+  indexById(id: string) {
+    return this.consumidorService.Buscar(id);
+  }
+
+  @Post('/consumidor')
+  async create(@Body() consumidor: IConsumidor) {
+    console.log(consumidor);
+    return await this.consumidorService.Criar(consumidor);
   }
 
   @Put()
@@ -31,7 +40,9 @@ export class AppController {
 
   @Delete()
   delete() {
-    throw new Error("Implementar delete...");
+    
   }
-
+  getHello() {
+    return this.appService.getHello();
+  }
 }

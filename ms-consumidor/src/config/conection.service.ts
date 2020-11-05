@@ -12,9 +12,4 @@ export class ConnectionService {
             useNewUrlParser: true
         });
     }
-
-    get connection(): Promise<any> {
-        return this.conn;
-    }
-
 }
