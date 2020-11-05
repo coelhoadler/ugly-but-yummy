@@ -1,5 +1,5 @@
 import { Controller, Delete, Get, Post, Put } from '@nestjs/common';
-import { FornecedorService } from './schemas/fornecedor/fornecedorService';
+import { FornecedorService } from './fornecedor/fornecedorService';
 
 @Controller()
 export class AppController {
@@ -9,13 +9,28 @@ export class AppController {
 
   @Get()
   index() {
-    const res = this._fornecedorService.findAll();
-    console.log('retorno find all', res);
+    const fornecedoresFindAll = this._fornecedorService.findAll();
+    fornecedoresFindAll.then(results => {
+      console.log('🚛 retorno find all', results);
+      console.log('🚛 count', results.length);
+      return results;
+    });
+    return 'buscando fornecedores...'
   }
 
-  @Post()
+  @Get('/create')
   create() {
-    throw new Error("Implementar create...");
+
+    const fornecedoreCreate = this._fornecedorService.create({
+      name: 'Beatriz',
+      sobrenome: 'Bafini'
+    });
+
+    fornecedoreCreate.then(fornecedor => {
+      console.log('👨‍🏭 fornecedor criado', fornecedor)
+    })
+
+    return 'Adicionando fornecedor...';
   }
 
   @Put()
@@ -23,9 +38,12 @@ export class AppController {
     throw new Error("Implementar update...");
   }
 
-  @Delete()
-  delete() {
-    throw new Error("Implementar delete...");
+  @Delete('/:id')
+  delete(idFornecedor) {
+    this._fornecedorService.delete(idFornecedor).then(result => {
+      console.log('deletado', result)
+    })
+    return 'Deletando fornecedor...';
   }
 
 }

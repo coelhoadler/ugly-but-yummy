@@ -1,4 +1,4 @@
-export class CreateFornecedorDto {
+export class FornecedorDto {
     name: string;
     sobrenome: string;
 }
