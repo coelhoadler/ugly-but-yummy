@@ -2,7 +2,8 @@ import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { FornecedorService } from './fornecedorService';
 import { Fornecedor, FornecedorSchema } from './fornecedorSchema';
-import { AppController } from 'src/app.controller';
+import { AppController } from '../app.controller';
+
 
 @Module({
   imports: [

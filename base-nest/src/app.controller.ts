@@ -20,13 +20,14 @@ export class AppController {
 
   @Post()
   create(@Body() fornecedor: FornecedorDto) {
+
+    console.log(fornecedor);
+
     const fornecedorCreate = this._fornecedorService.create(fornecedor);
 
-    fornecedorCreate.then(fornecedor => {
-      console.log('👨‍🏭 fornecedor criado', fornecedor)
+    return fornecedorCreate.then(fornecedor => {
+      return fornecedor;
     })
-
-    return 'Adicionando fornecedor...';
   }
 
   @Put(':id')
