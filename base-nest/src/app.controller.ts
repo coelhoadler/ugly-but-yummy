@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Res } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Query, Res } from '@nestjs/common';
 import { FornecedorDto } from './fornecedor/fornecedor.dto';
 import { FornecedorService } from './fornecedor/fornecedor.service';
 
@@ -7,6 +7,14 @@ export class AppController {
   constructor(
     private _fornecedorService: FornecedorService
   ) { }
+
+  @Get('findByFilter')
+  async findByFilter(@Res() res, @Query() query) {
+    this._fornecedorService.findOne({name: query.nome}).then(result => {
+      return res.status(HttpStatus.OK).json(result);
+    })
+    .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));
+  }
 
   @Get()
   index(@Res() res) {
@@ -20,11 +28,7 @@ export class AppController {
 
   @Post()
   create(@Body() fornecedor: FornecedorDto) {
-
-    console.log(fornecedor);
-
     const fornecedorCreate = this._fornecedorService.create(fornecedor);
-
     return fornecedorCreate.then(fornecedor => {
       return fornecedor;
     })

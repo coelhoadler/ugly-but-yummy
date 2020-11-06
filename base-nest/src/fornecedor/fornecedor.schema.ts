@@ -7,7 +7,7 @@ import { Document } from 'mongoose';
 })
 export class Fornecedor {
   @Prop()
-  name: string;
+  nome: string;
 
   @Prop()
   sobrenome: string;

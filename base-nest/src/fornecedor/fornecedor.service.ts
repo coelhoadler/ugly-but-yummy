@@ -19,6 +19,10 @@ export class FornecedorService {
         return this.fornecedorSchema.find().exec();
     }
 
+    async findOne(filters): Promise<Fornecedor> {
+        return this.fornecedorSchema.findOne(filters).exec();
+    }    
+
     async delete(fornecedorId: IDBDatabase): Promise<any> {
         return this.fornecedorSchema.deleteOne({_id: fornecedorId})
     }

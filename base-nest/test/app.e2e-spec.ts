@@ -5,9 +5,8 @@ import { AppModule } from './../src/app.module';
 
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
-import { FornecedorService } from '../src/fornecedor/fornecedor.service';
 import { FornecedorDto } from '../src/fornecedor/fornecedor.dto';
-import { FornecedorModule } from '../src/fornecedor/fornecedorModule';
+import { FornecedorModule } from '../src/fornecedor/fornecedor.module';
 
 const feature = loadFeature('./features/fornecedor.feature');
 
@@ -27,27 +26,27 @@ describe('AppController (e2e)', () => {
 
 defineFeature(feature, test => {
   let app: INestApplication;
+  let fornecedor = new FornecedorDto();
 
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule, FornecedorModule],
     }).compile();
 
+    fornecedor.sobrenome = "CREATED_BY_TESTS"
+
     app = moduleFixture.createNestApplication();
     await app.init();
   });
 
-  let fornecedor = new FornecedorDto();
-  fornecedor.sobrenome = "CREATED_BY_TESTS"
-
   // CREATE
   test('Criar um novo fornecedor', ({ given, when, then }) => {
-    given('que eu esteja conectado ao micro-serviço', () => {
-
+    given('que eu esteja conectado ao micro-serviço', async () => {
+      expect(app).toBeTruthy();
     });
 
-    when(/^eu entrar com o (.*) de um fornecedor$/, (nome) => {
-      fornecedor.name = nome;
+    when(/^eu entrar com o (.*) de um fornecedor$/, (nomeFornecedor) => {
+      fornecedor.name = nomeFornecedor;
     });
 
     then('quero que o sistema crie um novo fornecedor', () => {
@@ -58,24 +57,27 @@ defineFeature(feature, test => {
   });
 
   // SELECT
-  test('Criar um novo fornecedor', ({ given, when, then }) => {
-    fornecedor = new FornecedorDto();
-    
-    given('que eu esteja conectado ao micro-serviço', () => {
-
+  test('Seleciona um fornecedor cadastrado', ({ given, when, then }) => {
+    given('que eu esteja conectado ao micro-serviço', async () => {
+      expect(app).toBeTruthy();
     });
 
-    when(/^eu entrar com o (.*) de um fornecedor$/, (arg0) => {
-      fornecedor.name = arg0;
+    when(/^eu digite o (.*) de um fornecedor existente$/, (nomeFornecedor) => {
+      fornecedor.name = nomeFornecedor;
     });
 
-    then('quero que o sistema crie um novo fornecedor', () => {
+    then('quero fornecedor exista', () => {
       return request(app.getHttpServer())
-        .get('/').query(fornecedor.name)
-        .expect(201);
+        .get('/findByFilter').query({
+          nome: fornecedor.name
+        }).expect(201);
     });
-  });
 
+    // UPDATE
+
+    // DELETE
+
+  });
 
 });
 
