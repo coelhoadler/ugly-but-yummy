@@ -8,19 +8,18 @@ export class AppController {
     private _fornecedorService: FornecedorService
   ) { }
 
-  @Get('findByFilter')
-  async findByFilter(@Res() res, @Query() query) {
-    this._fornecedorService.findOne({name: query.nome}).then(result => {
-      return res.status(HttpStatus.OK).json(result);
-    })
-    .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));
-  }
-
   @Get()
-  index(@Res() res) {
-    const fornecedoresFindAll = this._fornecedorService.findAll();
+  index(@Res() res, @Query() query) {
+    let fornecedoresResult;
 
-    fornecedoresFindAll.then(results => {
+    if (query && query.nome) {
+      const { nome } = query;
+      fornecedoresResult = this._fornecedorService.findOne({ nome })
+    } else {
+      fornecedoresResult = this._fornecedorService.findAll();
+    }
+
+    fornecedoresResult.then(results => {
       return res.status(HttpStatus.OK).json(results);
     })
     .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));

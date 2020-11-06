@@ -23,7 +23,6 @@ describe('AppController (e2e)', () => {
   });
 });
 
-
 defineFeature(feature, test => {
   let app: INestApplication;
   let fornecedor = new FornecedorDto();
@@ -46,7 +45,7 @@ defineFeature(feature, test => {
     });
 
     when(/^eu entrar com o (.*) de um fornecedor$/, (nomeFornecedor) => {
-      fornecedor.name = nomeFornecedor;
+      fornecedor.nome = nomeFornecedor;
     });
 
     then('quero que o sistema crie um novo fornecedor', () => {
@@ -63,14 +62,14 @@ defineFeature(feature, test => {
     });
 
     when(/^eu digite o (.*) de um fornecedor existente$/, (nomeFornecedor) => {
-      fornecedor.name = nomeFornecedor;
+      fornecedor.nome = nomeFornecedor;
     });
 
     then('quero fornecedor exista', () => {
       return request(app.getHttpServer())
-        .get('/findByFilter').query({
-          nome: fornecedor.name
-        }).expect(201);
+        .get('/').query({
+          nome: fornecedor.nome
+        }).expect(200);
     });
 
     // UPDATE

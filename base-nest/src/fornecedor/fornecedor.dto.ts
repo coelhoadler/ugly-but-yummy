@@ -1,4 +1,4 @@
 export class FornecedorDto {
-    name: string;
+    nome: string;
     sobrenome: string;
 }
