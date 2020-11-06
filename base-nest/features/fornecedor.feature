@@ -1,16 +1,20 @@
 Feature: CRUD Fornecedor
 
-Scenario Outline: Criar um novo Fornecedor
+Scenario Outline: Criar um novo fornecedor
 Given que eu esteja conectado ao micro-serviço
-When eu entrar com o <nome> de um Fornecedor
-Then quero que o sistema crie um novo Fornecedor
+When eu entrar com o <nome> de um fornecedor
+Then quero que o sistema crie um novo fornecedor
 
 Examples:
     | nome      |
     | _by_test  |
-    | _by_test1 |
-    | _by_test2 |
-    | _by_test3 |
 
 
+Scenario Outline: Seleciona um fornecedor cadastrado
+Given que eu esteja conectado ao micro-serviço
+When eu digite o <nome> de um fornecedor existente
+Then quero fornecedor exista
 
+Examples:
+    | nome      |
+    | _by_test  |

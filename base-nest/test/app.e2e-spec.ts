@@ -5,7 +5,7 @@ import { AppModule } from './../src/app.module';
 
 import { defineFeature, loadFeature } from 'jest-cucumber';
 
-import { FornecedorService } from '../src/fornecedor/fornecedorService';
+import { FornecedorService } from '../src/fornecedor/fornecedor.service';
 import { FornecedorDto } from '../src/fornecedor/fornecedor.dto';
 import { FornecedorModule } from '../src/fornecedor/fornecedorModule';
 
@@ -22,18 +22,10 @@ describe('AppController (e2e)', () => {
     app = moduleFixture.createNestApplication();
     await app.init();
   });
-
-  // it('/ (GET)', () => {
-  //   return request(app.getHttpServer())
-  //     .get('/')
-  //     .expect(200)
-  //     .expect('Hello World!');
-  // });
 });
 
 
 defineFeature(feature, test => {
-
   let app: INestApplication;
 
   beforeEach(async () => {
@@ -48,19 +40,42 @@ defineFeature(feature, test => {
   let fornecedor = new FornecedorDto();
   fornecedor.sobrenome = "CREATED_BY_TESTS"
 
-  test('Criar um novo Fornecedor', ({ given, when, then }) => {
+  // CREATE
+  test('Criar um novo fornecedor', ({ given, when, then }) => {
     given('que eu esteja conectado ao micro-serviço', () => {
 
     });
 
-    when(/^eu entrar com o (.*) de um Fornecedor$/, (nome) => {
+    when(/^eu entrar com o (.*) de um fornecedor$/, (nome) => {
       fornecedor.name = nome;
     });
 
-    then('quero que o sistema crie um novo Fornecedor', () => {
+    then('quero que o sistema crie um novo fornecedor', () => {
       return request(app.getHttpServer())
         .post('/').send(fornecedor)
         .expect(201);
     });
   });
+
+  // SELECT
+  test('Criar um novo fornecedor', ({ given, when, then }) => {
+    fornecedor = new FornecedorDto();
+    
+    given('que eu esteja conectado ao micro-serviço', () => {
+
+    });
+
+    when(/^eu entrar com o (.*) de um fornecedor$/, (arg0) => {
+      fornecedor.name = arg0;
+    });
+
+    then('quero que o sistema crie um novo fornecedor', () => {
+      return request(app.getHttpServer())
+        .get('/').query(fornecedor.name)
+        .expect(201);
+    });
+  });
+
+
 });
+

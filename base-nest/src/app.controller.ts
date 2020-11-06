@@ -1,6 +1,6 @@
 import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Res } from '@nestjs/common';
 import { FornecedorDto } from './fornecedor/fornecedor.dto';
-import { FornecedorService } from './fornecedor/fornecedorService';
+import { FornecedorService } from './fornecedor/fornecedor.service';
 
 @Controller()
 export class AppController {
