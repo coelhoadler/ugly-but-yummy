@@ -25,6 +25,8 @@
     "@nestjs/core": "^7.0.0",
     "@nestjs/mongoose": "^7.0.2",
     "@nestjs/platform-express": "^7.0.0",
+    "@slack/web-api": "^5.13.0",
+    "dotenv": "^8.2.0",
     "jest-cucumber": "^3.0.0",
     "mongoose": "^5.10.11",
     "reflect-metadata": "^0.1.13",
