@@ -39,7 +39,7 @@ defineFeature(feature, test => {
   });
 
   // CREATE
-  test('Criar um novo fornecedor', ({ given, when, then }) => {
+  test('Criar um novo fornecedor', async ({ given, when, then }) => {
     given('que eu esteja conectado ao micro-serviço', async () => {
       expect(app).toBeTruthy();
     });
@@ -48,7 +48,7 @@ defineFeature(feature, test => {
       fornecedor.nome = nomeFornecedor;
     });
 
-    then('quero que o sistema crie um novo fornecedor', () => {
+    then('quero que o sistema crie um novo fornecedor', async () => {
       return request(app.getHttpServer())
         .post('/').send(fornecedor)
         .expect(201);
@@ -56,7 +56,7 @@ defineFeature(feature, test => {
   });
 
   // SELECT
-  test('Seleciona um fornecedor cadastrado', ({ given, when, then }) => {
+  test('Seleciona um fornecedor que foi cadastrado', async ({ given, when, then }) => {
     given('que eu esteja conectado ao micro-serviço', async () => {
       expect(app).toBeTruthy();
     });
@@ -73,9 +73,54 @@ defineFeature(feature, test => {
     });
 
     // UPDATE
+    test('Edita um fornecedor que foi cadastrado', async ({ given, when, and, then }) => {
+      let fornecedorId;
+
+      given('que eu esteja conectado ao micro-serviço', async () => {
+        expect(app).toBeTruthy();
+      });
+
+      when(/^eu digite o (.*) para buscar o fornecedor cadastrado$/, async (nomeFornecedor) => {
+        const umFornecedor = await request(app.getHttpServer())
+          .get('/').query({
+            nome: fornecedor.nome
+          });
+
+        fornecedorId = JSON.parse(umFornecedor.text)['_id'];
+      });
+
+      and(/^ao encontrar, altere o nome para (.*)$/, (fornecedorNovoNome) => {
+        fornecedor.nome = fornecedorNovoNome;
+      });
+
+      then('tenha sucesso na alteração', () => {
+        return request(app.getHttpServer())
+          .put(`/${fornecedorId}`).send(fornecedor).expect(200);
+      });
+    });
 
     // DELETE
+    test('Deleta um fornecedor que foi cadastrado', async ({ given, when, then }) => {
+      given('que eu esteja conectado ao micro-serviço', async () => {
+        expect(app).toBeTruthy();
+      });
 
+      when(/^eu digite o (.*) de um fornecedor existente$/, (nomeFornecedor) => {
+        fornecedor.nome = `${nomeFornecedor}_edited`;
+      });
+
+      then('quero deletar o fornecedor', async () => {
+        const umFornecedor = await request(app.getHttpServer())
+          .get('/').query({
+            nome: fornecedor.nome
+          });
+
+        const fornecedorID = JSON.parse(umFornecedor.text)['_id'];
+
+        return request(app.getHttpServer())
+          .delete(`/${fornecedorID}`).expect(200);
+      });
+    });
   });
 
 });

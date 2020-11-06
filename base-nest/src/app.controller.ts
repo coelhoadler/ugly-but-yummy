@@ -26,24 +26,28 @@ export class AppController {
   }
 
   @Post()
-  create(@Body() fornecedor: FornecedorDto) {
+  create(@Res() res, @Body() fornecedor: FornecedorDto) {
     const fornecedorCreate = this._fornecedorService.create(fornecedor);
-    return fornecedorCreate.then(fornecedor => {
-      return fornecedor;
+    return fornecedorCreate.then(result => {
+      return res.status(HttpStatus.CREATED).json(result);
     })
+    .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));
   }
 
   @Put(':id')
-  update(@Param('id') idFornecedor) {
-    throw new Error("Implementar update...");
+  update(@Param('id') fornecedorId, @Body() fornecedor: FornecedorDto, @Res() res) {
+    this._fornecedorService.update(fornecedor, fornecedorId).then(result => {
+      return res.status(HttpStatus.OK).json(result);
+    })
+    .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));
   }
 
   @Delete('/:id')
-  delete(@Param('id') idFornecedor) {
-    this._fornecedorService.delete(idFornecedor).then(result => {
-      console.log('deletado', result)
+  delete(@Param('id') fornecedorId, @Res() res) {
+    this._fornecedorService.delete(fornecedorId).then(_ => {
+      return res.status(HttpStatus.OK).json([]);
     })
-    return 'Deletando fornecedor...';
+    .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));
   }
 
 }

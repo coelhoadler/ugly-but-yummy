@@ -15,15 +15,20 @@ export class FornecedorService {
         return schema.save();
     }
 
+    async findOne(filters): Promise<Fornecedor> {
+        return this.fornecedorSchema.findOne(filters).exec();
+    }
+
     async findAll(): Promise<Fornecedor[]> {
         return this.fornecedorSchema.find().exec();
     }
 
-    async findOne(filters): Promise<Fornecedor> {
-        return this.fornecedorSchema.findOne(filters).exec();
-    }    
+    async update(fornecedorDto: FornecedorDto, fornecedorId): Promise<Fornecedor> {
+        return this.fornecedorSchema.updateOne({'_id': fornecedorId } , fornecedorDto).exec();
+    }
 
     async delete(fornecedorId: IDBDatabase): Promise<any> {
         return this.fornecedorSchema.deleteOne({_id: fornecedorId})
     }
+
 }
