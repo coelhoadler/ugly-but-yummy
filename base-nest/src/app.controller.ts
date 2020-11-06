@@ -1,6 +1,6 @@
-import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Res } from '@nestjs/common';
+import { Body, Controller, Delete, Get, HttpStatus, Param, Post, Put, Query, Res } from '@nestjs/common';
 import { FornecedorDto } from './fornecedor/fornecedor.dto';
-import { FornecedorService } from './fornecedor/fornecedorService';
+import { FornecedorService } from './fornecedor/fornecedor.service';
 
 @Controller()
 export class AppController {
@@ -9,38 +9,45 @@ export class AppController {
   ) { }
 
   @Get()
-  index(@Res() res) {
-    const fornecedoresFindAll = this._fornecedorService.findAll();
+  index(@Res() res, @Query() query) {
+    let fornecedoresResult;
 
-    fornecedoresFindAll.then(results => {
+    if (query && query.nome) {
+      const { nome } = query;
+      fornecedoresResult = this._fornecedorService.findOne({ nome })
+    } else {
+      fornecedoresResult = this._fornecedorService.findAll();
+    }
+
+    fornecedoresResult.then(results => {
       return res.status(HttpStatus.OK).json(results);
     })
     .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));
   }
 
   @Post()
-  create(@Body() fornecedor: FornecedorDto) {
-
-    console.log(fornecedor);
-
+  create(@Res() res, @Body() fornecedor: FornecedorDto) {
     const fornecedorCreate = this._fornecedorService.create(fornecedor);
-
-    return fornecedorCreate.then(fornecedor => {
-      return fornecedor;
+    return fornecedorCreate.then(result => {
+      return res.status(HttpStatus.CREATED).json(result);
     })
+    .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));
   }
 
   @Put(':id')
-  update(@Param('id') idFornecedor) {
-    throw new Error("Implementar update...");
+  update(@Param('id') fornecedorId, @Body() fornecedor: FornecedorDto, @Res() res) {
+    this._fornecedorService.update(fornecedor, fornecedorId).then(result => {
+      return res.status(HttpStatus.OK).json(result);
+    })
+    .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));
   }
 
   @Delete('/:id')
-  delete(@Param('id') idFornecedor) {
-    this._fornecedorService.delete(idFornecedor).then(result => {
-      console.log('deletado', result)
+  delete(@Param('id') fornecedorId, @Res() res) {
+    this._fornecedorService.delete(fornecedorId).then(_ => {
+      return res.status(HttpStatus.OK).json([]);
     })
-    return 'Deletando fornecedor...';
+    .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));
   }
 
 }
