@@ -1,15 +1,52 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
+
 {
-  "extends": "./tsconfig.json",
+  "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./out-tsc/app",
-    "types": []
+    "baseUrl": "./src",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "rootDir": "./src",
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@app*": [ "app/*" ],
+      "@components/*": [ "app/components/*" ],
+      "@consts/*": [ "app/consts/*" ],
+      "@container/*": [ "app/container/*" ],
+      "@enums/*": [ "app/enums/*" ],
+      "@guards/*": [ "app/guards/*" ],
+      "@interceptors/*": [ "app/interceptors/*" ],
+      "@interfaces/*": [ "app/interfaces/*" ],
+      "@i18n": [ "app/_translate/i18n" ],
+      "@models/*": [ "app/models/*" ],
+      "@pages/*": [ "app/pages/*" ],
+      "@pipes/*": [ "app/pipes/*" ],
+      "@services/*": [ "app/services/*" ],
+      "@utils/*": [ "app/utils/*" ],
+      "@assets/*": [ "assets/*" ],
+      "@env/*": [ "environments/*" ]
+    }
   },
   "files": [
-    "src/main.ts",
-    "src/polyfills.ts"
+    "./src/main.ts",
+    "./src/polyfills.ts"
   ],
   "include": [
-    "src/**/*.d.ts"
-  ]
+    "src/**/*.d.ts",
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "src/**/*.spec.ts",
+    "src/test.ts",
+  ],
 }
