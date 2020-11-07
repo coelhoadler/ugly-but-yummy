@@ -2,10 +2,12 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 
 import { Document } from 'mongoose';
 
-@Schema()
+@Schema({
+  collection: 'fornecedor',
+})
 export class Fornecedor {
   @Prop()
-  name: string;
+  nome: string;
 
   @Prop()
   sobrenome: string;
@@ -15,5 +17,4 @@ export class Fornecedor {
 }
 
 export type FornecedorDocument = Fornecedor & Document;
-
 export const FornecedorSchema = SchemaFactory.createForClass(Fornecedor);
