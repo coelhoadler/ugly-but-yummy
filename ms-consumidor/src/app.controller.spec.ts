@@ -12,7 +12,7 @@ const feature = loadFeature('./features/consumidor.feature');
 const prepareBefore = async () => {
   const app: TestingModule = await Test.createTestingModule({
     imports: [
-      MongooseModule.forRoot("mongodb+srv://w1gA77GNyv0gBlum:uglybutyummy123@cluster0.sdiq5.mongodb.net/uglybutyummy?retryWrites=true&w=majority", {
+      MongooseModule.forRoot("mongodb+srv://w1gA77GNyv0gBlum:uglybutyummy123@cluster0.sdiq5.mongodb.net/uglybutyummy-dbtest?retryWrites=true&w=majority", {
         connectionName: 'consumidor',
         useNewUrlParser: true,
         useUnifiedTopology: true

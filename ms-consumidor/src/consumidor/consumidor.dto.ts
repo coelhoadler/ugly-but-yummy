@@ -1,11 +1,4 @@
-export class EnderecoDto {
-    cep: string;
-    rua: string;
-    numero: string;
-    complemento: string;
-    cidade: string;
-    uf: string;
-}
+import { EnderecoDto } from "../endereco/endereco.dto";
 
 export class ConsumidorDto {
     _id: String;
