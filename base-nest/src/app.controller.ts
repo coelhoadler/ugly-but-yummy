@@ -32,7 +32,7 @@ export class AppController {
       return res.status(HttpStatus.CREATED).json(result);
     })
     .catch(error => res.status(HttpStatus.INTERNAL_SERVER_ERROR).json(error));
-  }
+  } 
 
   @Put(':id')
   update(@Param('id') fornecedorId, @Body() fornecedor: FornecedorDto, @Res() res) {
