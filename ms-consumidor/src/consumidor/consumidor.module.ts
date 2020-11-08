@@ -3,6 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConsumidorService } from './consumidor.service';
 import { Consumidor, ConsumidorSchema } from './consumidor.schema';
 import { AppController } from '../app.controller';
+import UniqueGenerator from 'src/utils/unique.generator';
 
 
 @Module({
@@ -15,6 +16,6 @@ import { AppController } from '../app.controller';
     MongooseModule.forFeature([{ name: Consumidor.name, schema: ConsumidorSchema }], 'consumidor'),
   ],
   controllers: [AppController],
-  providers: [ConsumidorService]
+  providers: [ConsumidorService, UniqueGenerator]
 })
 export class ConsumidorModule { }

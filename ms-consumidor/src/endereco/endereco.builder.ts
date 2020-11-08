@@ -3,7 +3,7 @@ import { EnderecoDto } from "../endereco/endereco.dto";
 export class EnderecoBuilder {
     private _endereco: EnderecoDto;
 
-    public build(): EnderecoBuilder {
+    constructor() {
         this._endereco = new EnderecoDto();
         return this;
     }
@@ -36,5 +36,9 @@ export class EnderecoBuilder {
     public setUf(email: string): EnderecoBuilder {
         this._endereco.uf = email;
         return this;
+    }
+
+    public build(): EnderecoDto {
+        return this._endereco;
     }
 }

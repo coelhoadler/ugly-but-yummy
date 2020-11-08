@@ -1,11 +1,15 @@
 import { ConsumidorDto } from "./consumidor.dto";
 import { EnderecoDto } from "../endereco/endereco.dto";
+import { ObjectID } from "mongodb";
+import { DadosBancariosDto } from "src/DadosBancarios/DadosBancarios.dto";
 
 export class ConsumidorBuilder {
     private _consumidor: ConsumidorDto;
 
-    public build(): ConsumidorBuilder {
+    constructor() {
         this._consumidor = new ConsumidorDto();
+        this._consumidor._id = new ObjectID().toHexString();
+        this._consumidor.createdAt = new Date();
         return this;
     }
 
@@ -29,6 +33,10 @@ export class ConsumidorBuilder {
         return this;
     }
 
+    public setDadosBancarios(dadosBancarios: DadosBancariosDto): ConsumidorBuilder {
+        this._consumidor.dadosBancarios = dadosBancarios;
+        return this;
+    }
     public setTelefone(telefone: string): ConsumidorBuilder {
         this._consumidor.telefone = telefone;
         return this;
@@ -37,5 +45,9 @@ export class ConsumidorBuilder {
     public setEmail(email: string): ConsumidorBuilder {
         this._consumidor.email = email;
         return this;
+    }
+
+    public build(): ConsumidorDto {
+        return this._consumidor;
     }
 }

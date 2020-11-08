@@ -1,3 +1,4 @@
+import { DadosBancariosDto } from "src/DadosBancarios/DadosBancarios.dto";
 import { EnderecoDto } from "../endereco/endereco.dto";
 
 export class ConsumidorDto {
@@ -6,6 +7,7 @@ export class ConsumidorDto {
     nome: String;
     doc: String;
     endereco: EnderecoDto
+    dadosBancarios: DadosBancariosDto
     telefone: String;
     email: String;
     createdAt: Date;
