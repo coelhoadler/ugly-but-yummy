@@ -1,8 +1,37 @@
-version: "3.5"
-
+version: '3'
 services:
-  adminer:
-    image: adminer
-    restart: always
+  kafka:
+    image: spotify/kafka
+    container_name: kafka
+    network_mode: "host"
     ports:
-      - 8080:8080
+      - 9092:9092
+      - 2181:2181
+    environment:
+      - "ADVERTISED_HOST=0.0.0.0"
+      - "ADVERTISED_PORT=9092"
+
+  producer:
+    image: acoeelho/kafka_producer:latest
+    container_name: producer
+    network_mode: "host"
+    ports:
+      - 5001:5001
+    restart: on-failure
+    environment:
+      - "HOST=0.0.0.0"
+      - "PORTA=9092"
+      - "TOPICO=ugly-but-yummy"
+
+  consumer:
+    image: acoeelho/kafka_consumer:latest
+    container_name: consumer
+    network_mode: "host"
+    environment:
+      - "HOST=0.0.0.0"
+      - "PORTA=9092"
+      - "TOPICO=ugly-but-yummy"
+    restart: on-failure
+    depends_on:
+      - kafka
+      - producer
