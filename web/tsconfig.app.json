@@ -32,6 +32,7 @@
       "@pages/*": [ "app/pages/*" ],
       "@pipes/*": [ "app/pipes/*" ],
       "@services/*": [ "app/services/*" ],
+      "@cTypes/*": [ "app/types/*" ],
       "@utils/*": [ "app/utils/*" ],
       "@assets/*": [ "assets/*" ],
       "@env/*": [ "environments/*" ]

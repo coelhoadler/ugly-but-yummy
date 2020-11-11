@@ -1,0 +1,52 @@
+<h2>{{title}}</h2>
+
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <div class="row">
+    <div *ngFor="let item of data" [class]="'col-md-' + setBSColumn(item.columSize)">
+
+      <ng-container *ngIf="isTypeForMatFormField(item.type)">
+        <mat-form-field class="cadastro__form-field">
+
+          <mat-label>{{ item.label }}</mat-label>
+
+          <ng-container *ngIf="isTypeForInput(item.type)">
+            <input matInput [type]="item.type" [formControlName]="item.key" [placeholder]="setItemPlaceholder(item.type)">
+          </ng-container>
+
+          <ng-container *ngIf="isTypeForTextarea(item.type)">
+            <textarea matInput [type]="item.type" [formControlName]="item.key" [placeholder]="setItemPlaceholder(item.type)"></textarea>
+          </ng-container>
+
+          <ng-container *ngIf="isTypeForSelect(item.type)">
+            <mat-select [formControlName]="item.key">
+              <mat-option *ngFor="let option of item.options" [value]="option.value">
+                {{option.viewValue}}
+              </mat-option>
+            </mat-select>
+          </ng-container>
+
+        </mat-form-field>
+      </ng-container>
+
+      <ng-container *ngIf="isTypeForCheckbox(item.type)">
+        <mat-checkbox [formControlName]="item.key">{{item.label}}</mat-checkbox>
+      </ng-container>
+
+      <ng-container *ngIf="isTypeForRadio(item.type)">
+        <label>{{item.label}}:</label>
+        <mat-radio-group [formControlName]="item.key">
+          <mat-radio-button *ngFor="let option of item.options" [value]="option.value">{{option.viewValue}}</mat-radio-button>
+        </mat-radio-group>
+      </ng-container>
+
+    </div>
+  </div>
+  <div class="options">
+    <button type="button" *ngIf="showEditButton()">Editar</button>
+    <button type="button" *ngIf="showDeleteButton()" (click)="deleteData()">Excluir</button>
+    <button type="submit" *ngIf="showSaveButton()">Salvar</button>
+  </div>
+</form>
+
+
+{{form.value | json}}
