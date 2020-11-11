@@ -15,9 +15,7 @@ const prepareBefore = async () => {
   const app: TestingModule = await Test.createTestingModule({
     imports: [
       MongooseModule.forRoot("mongodb+srv://w1gA77GNyv0gBlum:uglybutyummy123@cluster0.sdiq5.mongodb.net/uglybutyummy-dbtest?retryWrites=true&w=majority", {
-        connectionName: 'consumidor',
-        useNewUrlParser: true,
-        useUnifiedTopology: true
+        connectionName: 'consumidor', useNewUrlParser: true, useUnifiedTopology: true 
       }),
       MongooseModule.forFeature([{ name: Consumidor.name, schema: ConsumidorSchema }], 'consumidor'),
     ],
@@ -69,7 +67,7 @@ describe('Micro Serviço - Consumidor', () => {
 
     consumidorBuilder
       .setUid(UniqueGenerator.generateUniqueId())
-      .setDoc('000.000.001.91')
+      .setDoc('000.000.001-91')
       .setTelefone('99999-9999')
       .setEmail('mail@mail.com')
       .setEndereco(enderecoBuilder.build())
