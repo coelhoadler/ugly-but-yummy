@@ -1,37 +1,49 @@
 version: '3'
 services:
-  kafka:
-    image: spotify/kafka
-    container_name: kafka
-    network_mode: "host"
-    ports:
-      - 9092:9092
-      - 2181:2181
-    environment:
-      - "ADVERTISED_HOST=0.0.0.0"
-      - "ADVERTISED_PORT=9092"
+  # kafka:
+  #   image: spotify/kafka
+  #   container_name: kafka
+  #   network_mode: "host"
+  #   ports:
+  #     - 9092:9092
+  #     - 2181:2181
+  #   environment:
+  #     - "ADVERTISED_HOST=0.0.0.0"
+  #     - "ADVERTISED_PORT=9092"
 
-  producer:
-    image: acoeelho/kafka_producer:latest
-    container_name: producer
-    network_mode: "host"
-    ports:
-      - 5001:5001
-    restart: on-failure
-    environment:
-      - "HOST=0.0.0.0"
-      - "PORTA=9092"
-      - "TOPICO=ugly-but-yummy"
+  # producer:
+  #   image: acoeelho/kafka_producer:latest
+  #   container_name: producer
+  #   network_mode: "host"
+  #   ports:
+  #     - 5001:5001
+  #   restart: on-failure
+  #   environment:
+  #     - "HOST=0.0.0.0"
+  #     - "PORTA=9092"
+  #     - "TOPICO=ugly-but-yummy"
 
-  consumer:
-    image: acoeelho/kafka_consumer:latest
-    container_name: consumer
-    network_mode: "host"
+  # consumer:
+  #   image: acoeelho/kafka_consumer:latest
+  #   container_name: consumer
+  #   network_mode: "host"
+  #   environment:
+  #     - "HOST=0.0.0.0"
+  #     - "PORTA=9092"
+  #     - "TOPICO=ugly-but-yummy"
+  #   restart: on-failure
+  #   depends_on:
+  #     - kafka
+  #     - producer
+
+  consumidor:
+    build: ./ms-consumidor
+    container_name: ms-consumidor
+    # depends_on:
+    #   - kafka
     environment:
-      - "HOST=0.0.0.0"
-      - "PORTA=9092"
-      - "TOPICO=ugly-but-yummy"
-    restart: on-failure
-    depends_on:
-      - kafka
-      - producer
+      NODE_PORT: 3000
+    ports: 
+      - 3000:3000
+    volumes:
+      - ./ms-consumidor:/usr/ms-consumidor
