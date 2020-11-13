@@ -42,11 +42,8 @@
     </div>
   </div>
   <div class="options">
-    <button type="button" *ngIf="showEditButton()">Editar</button>
-    <button type="button" *ngIf="showDeleteButton()" (click)="deleteData()">Excluir</button>
+    <button type="button" *ngIf="showEditButton()" (click)="emitEditData()">Editar</button>
+    <button type="button" *ngIf="showDeleteButton()" (click)="emitDeleteData()">Excluir</button>
     <button type="submit" *ngIf="showSaveButton()">Salvar</button>
   </div>
 </form>
-
-
-{{form.value | json}}

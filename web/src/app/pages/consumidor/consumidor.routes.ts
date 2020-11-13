@@ -3,7 +3,12 @@ import { Route, RouterModule, Routes } from '@angular/router';
 import { RoutesEnum } from '@enums/routes.enum';
 import { ConsumidorComponent } from './consumidor.component';
 
-const routes: Routes = [{ component: ConsumidorComponent, path: '' }];
+const routes: Routes = [
+    { component: ConsumidorComponent, path: RoutesEnum.CADASTRAR },
+    { component: ConsumidorComponent, path: RoutesEnum.ID_PARAM},
+    { component: ConsumidorComponent, path: `${RoutesEnum.ID_PARAM}/${RoutesEnum.EDITAR}` },
+    { component: ConsumidorComponent, path: RoutesEnum.ROOT, pathMatch: 'full' }
+];
 
 export const mainRoute: Route = {
     // canActivate: [AuthGuard],

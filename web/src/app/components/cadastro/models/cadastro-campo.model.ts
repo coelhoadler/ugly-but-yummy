@@ -77,22 +77,21 @@ export class CadastroCampoModel {
     };
 
     const messageForOptionsField = () => {
-      return `O campo "${key}" precisa ter uma lista de valores na propriedade options por ser do tipo "type: ${type}".`;
+      return `O campo "${key}" precisa ter uma lista de valores na propriedade options com pelo menos duas opções, por ser do tipo "type: ${type}".`;
     };
 
-    if (type === 'checkbox' && typeof (value) !== 'boolean') {
-      throw new Error(messageForDefaultFields('boolean'));
-    }
-    if ((type === 'radio' || type === 'select') && !options.length) {
+    if ((type === 'radio' || type === 'select') && options.length < 2) {
       throw new Error(messageForOptionsField());
     }
-    else if ((type === 'email' || type === 'tel' || type === 'text' ||
-      type === 'textarea' || type === 'color' || type === 'date') && typeof (value) !== 'string') {
-      throw new Error(messageForDefaultFields('string'));
+    else if (type === 'checkbox' && typeof (value) !== 'boolean') {
+      throw new Error(messageForDefaultFields('boolean'));
     }
     else if (type === 'number' && typeof (value) !== 'number') {
       throw new Error(messageForDefaultFields('number'));
-    }
+    } else if ((type === 'email' || type === 'tel' || type === 'text' || type === 'password' ||
+    type === 'textarea' || type === 'color' || type === 'date') && typeof (value) !== 'string') {
+    throw new Error(messageForDefaultFields('string'));
+  }
   }
 
 }
