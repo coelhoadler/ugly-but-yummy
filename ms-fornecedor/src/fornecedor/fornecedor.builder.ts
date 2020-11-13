@@ -1,7 +1,7 @@
 import { FornecedorDto } from "./fornecedor.dto";
 import { EnderecoDto } from "../endereco/endereco.dto";
 import { ObjectID } from "mongodb";
-import { DadosBancariosDto } from "src/DadosBancarios/DadosBancarios.dto";
+import { DadosBancariosDto } from "../dadosBancarios/dadosBancarios.dto";
 
 export class FornecedorBuilder {
     private _fornecedor: FornecedorDto;

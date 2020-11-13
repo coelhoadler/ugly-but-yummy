@@ -1,4 +1,4 @@
-import { DadosBancariosDto } from "../dadosBancarios/DadosBancarios.dto";
+import { DadosBancariosDto } from "./dadosBancarios.dto";
 
 export class DadosBancariosBuilder {
     private _dadosBancarios: DadosBancariosDto;
