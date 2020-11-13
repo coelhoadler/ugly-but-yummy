@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FieldType } from '@cTypes/field.type';
 import { CadastroCampoModel } from './models/cadastro-campo.model';
+import { CadastroInputType } from './types/cadastro-input.type';
 
 @Component({
   selector: 'app-cadastro',
@@ -12,8 +13,10 @@ export class CadastroComponent implements OnInit {
 
   @Input() public data: CadastroCampoModel[];
   @Input() public title: string;
-  @Input() public action: 'create' | 'read' | 'update';
-  @Output() public onDelete = new EventEmitter();
+  @Input() public action: CadastroInputType;
+  @Output() public onSave: EventEmitter<Object> = new EventEmitter();
+  @Output() public onDelete: EventEmitter<void> = new EventEmitter();
+  @Output() public onEdit: EventEmitter<void> = new EventEmitter();
 
   public form: FormGroup;
 
@@ -38,8 +41,16 @@ export class CadastroComponent implements OnInit {
     this.form = new FormGroup(controls);
   }
 
-  public deleteData(): void {
+  public emitSaveData(data: Object): void {
+    this.onSave.emit(data);
+  }
+
+  public emitDeleteData(): void {
     this.onDelete.emit();
+  }
+
+  public emitEditData(): void {
+    this.onEdit.emit();
   }
 
   public showEditButton(): boolean {
@@ -59,7 +70,8 @@ export class CadastroComponent implements OnInit {
   }
 
   public isTypeForInput(type: FieldType): boolean {
-    return type === 'color' || type === 'date' || type === 'email' || type ==='number' || type === 'tel' || type ==='text';
+    return type === 'color' || type === 'date' || type === 'email' ||
+      type === 'number' || type === 'tel' || type === 'text' || type === 'password';
   }
 
   public isTypeForCheckbox(type: FieldType): boolean {
@@ -82,7 +94,7 @@ export class CadastroComponent implements OnInit {
     return this.isTypeForInput(type) || this.isTypeForSelect(type) || this.isTypeForTextarea(type);
   }
 
-  public setItemPlaceholder(type: FieldType) {
+  public setItemPlaceholder(type: FieldType): string {
     if (type === 'date') {
       return 'dd/mm/aaaa';
     } else if (type === 'tel') {
@@ -95,7 +107,12 @@ export class CadastroComponent implements OnInit {
   }
 
   public submitForm(): void {
-    console.log(this.form.value);
+
+    if (this.form.invalid) {
+      return;
+    }
+
+    this.emitSaveData(this.form.value);
   }
 
 }
