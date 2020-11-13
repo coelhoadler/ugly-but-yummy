@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { CadastroCampoModel } from '@appcomponents/cadastro/models/cadastro-campo.model';
+import { ActivatedRoute } from '@angular/router';
+import { CadastroCampoModel } from '@components/cadastro/models/cadastro-campo.model';
+import { CadastroInputType } from '@components/cadastro/types/cadastro-input.type';
+import { RoutesEnum } from '@enums/routes.enum';
 
 @Component({
   selector: 'app-consumidor',
@@ -7,6 +10,8 @@ import { CadastroCampoModel } from '@appcomponents/cadastro/models/cadastro-camp
   styleUrls: ['./consumidor.component.scss']
 })
 export class ConsumidorComponent implements OnInit {
+
+  public action: CadastroInputType;
 
   // Dados para teste
   public dataConsumidor: CadastroCampoModel[] = [
@@ -88,9 +93,29 @@ export class ConsumidorComponent implements OnInit {
     })
   ];
 
-  constructor() { }
+  constructor(
+    private readonly activatedRoute: ActivatedRoute
+  ) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
+    this.identifyActionByRoute();
+  }
+
+  public identifyActionByRoute(): void {
+    this.activatedRoute.params.subscribe(params => {
+      const url = this.activatedRoute.snapshot.url;
+      if (params.id) {
+        if (url[1] && url[1].path === RoutesEnum.EDITAR) {
+          this.action = 'update';
+        } else {
+          this.action = 'read';
+        }
+      } else if (url[0] && url[0].path === RoutesEnum.CADASTRAR) {
+        this.action = 'create';
+      } else {
+        this.action = null;
+      }
+    });
   }
 
 }

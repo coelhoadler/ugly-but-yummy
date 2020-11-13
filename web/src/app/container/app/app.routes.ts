@@ -5,7 +5,7 @@ import { mainRoute as consumidorRoute } from '@pages/consumidor/consumidor.route
 
 const routes: Routes = [
   consumidorRoute,
-  { path: '', pathMatch: 'full', redirectTo: RoutesEnum.HOME }
+  { path: RoutesEnum.ROOT, pathMatch: 'full', redirectTo: RoutesEnum.HOME }
 ];
 
 @NgModule({
