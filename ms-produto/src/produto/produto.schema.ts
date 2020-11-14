@@ -9,7 +9,7 @@ export class Produto implements IProduto {
   _id: String;
 
   @Prop({ type: String, required: true })
-  uid: String;
+  sku: String;
 
   @Prop({ type: String, required: true })
   nome: String;

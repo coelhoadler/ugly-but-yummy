@@ -17,8 +17,8 @@ export class ProdutoBuilder implements IProdutoBuilder{
         return this;
     }
 
-    public setUid(uid: string): ProdutoBuilder {
-        this._produto.uid = uid;
+    public setSku(sku: string): ProdutoBuilder {
+        this._produto.sku = sku;
         return this;
     }
 

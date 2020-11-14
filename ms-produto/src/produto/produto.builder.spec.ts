@@ -27,10 +27,10 @@ describe('ProdutoBuilder', () => {
         expect(produtoBuilder.build().nome).toEqual(data);
     });
 
-    it('Deve definir o uid de um produto', () => {
+    it('Deve definir o sku de um produto', () => {
         const data = UniqueGenerator.generateUniqueId();
-        produtoBuilder.setUid(data);
-        expect(produtoBuilder.build().uid).toEqual(data);
+        produtoBuilder.setSku(data);
+        expect(produtoBuilder.build().sku).toEqual(data);
     });
 
     it('Deve definir o preço de um produto', () => {

@@ -51,7 +51,7 @@ describe('Micro Serviço - Produto', () => {
     produtoBuilder
       .setDescricao('any product')
       .setPreco(9.99)
-      .setUid(UniqueGenerator.generateUniqueId());
+      .setSku(UniqueGenerator.generateUniqueId());
 
     test('Criar um novo Produto', ({ given, when, then }) => {
       given('que eu esteja conectado ao micro-serviço', async () => {
@@ -64,7 +64,7 @@ describe('Micro Serviço - Produto', () => {
 
       then('quero que o sistema crie um novo Produto', async () => {
         const produto = await appController.create(produtoBuilder.build());
-        expect(produto.uid).toBeDefined();
+        expect(produto._id).toBeDefined();
       });
     });
 

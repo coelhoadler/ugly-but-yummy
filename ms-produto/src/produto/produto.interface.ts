@@ -1,6 +1,6 @@
 export interface IProduto {
     _id: String;
-    uid: String;
+    sku: String;
     nome: String;
     descricao: String;
     preco: Number;
@@ -8,7 +8,7 @@ export interface IProduto {
 }
 
 export interface IProdutoBuilder {
-    setUid(uid: string): IProdutoBuilder;
+    setSku(sku: string): IProdutoBuilder;
     setNome(nome: string): IProdutoBuilder;
     setDescricao(descricao: string): IProdutoBuilder;
     setPreco(preco: number): IProdutoBuilder;

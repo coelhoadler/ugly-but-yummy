@@ -1,9 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ProdutoModule } from './produto/produto.module';
+import { CommandModule } from 'nestjs-command';
+
 @Module({
   imports: [
-    ProdutoModule
+    ProdutoModule,
+    CommandModule
   ],
   providers: [
     AppService,
