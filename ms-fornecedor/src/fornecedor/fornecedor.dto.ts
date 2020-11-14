@@ -1,4 +1,4 @@
-import { DadosBancariosDto } from "src/DadosBancarios/DadosBancarios.dto";
+import { DadosBancariosDto } from "../dadosBancarios/dadosBancarios.dto";
 import { EnderecoDto } from "../endereco/endereco.dto";
 
 export class FornecedorDto {
