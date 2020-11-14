@@ -12,7 +12,7 @@ const feature = loadFeature('./features/produto.feature');
 const prepareBefore = async () => {
   const app: TestingModule = await Test.createTestingModule({
     imports: [
-      MongooseModule.forRoot("mongodb+srv://w1gA77GNyv0gBlum:uglybutyummy123@cluster0.sdiq5.mongodb.net/uglybutyummy-dbtest?retryWrites=true&w=majority", {
+      MongooseModule.forRoot("mongodb+srv://startupabkm:3XU1tYrdyTH0dwvh@project01db.med08.mongodb.net/uglybutyummy.teste?retryWrites=true&w=majority", {
         connectionName: 'produto', useNewUrlParser: true, useUnifiedTopology: true 
       }),
       MongooseModule.forFeature([{ name: Produto.name, schema: ProdutoSchema }], 'produto'),

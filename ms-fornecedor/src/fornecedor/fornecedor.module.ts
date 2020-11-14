@@ -8,7 +8,7 @@ import UniqueGenerator from '../utils/unique.generator';
 
 @Module({
   imports: [
-    MongooseModule.forRoot("mongodb+srv://w1gA77GNyv0gBlum:uglybutyummy123@cluster0.sdiq5.mongodb.net/uglybutyummy?retryWrites=true&w=majority", {
+    MongooseModule.forRoot("mongodb+srv://startupabkm:3XU1tYrdyTH0dwvh@project01db.med08.mongodb.net/uglybutyummy?retryWrites=true&w=majority", {
       connectionName: 'fornecedor',
       useNewUrlParser: true,
       useUnifiedTopology: true
