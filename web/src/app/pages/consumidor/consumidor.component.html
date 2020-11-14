@@ -1,7 +1,7 @@
 <h1>Consumidor</h1>
 
 <ng-container *ngIf="action; else listTemplate">
-  <app-cadastro title="Cadastrar consumidor" [data]="dataConsumidor" [action]="action"></app-cadastro>
+  <app-cadastro *ngIf="dataConsumidor" title="Cadastrar consumidor" [data]="dataConsumidor" [action]="action"></app-cadastro>
 </ng-container>
 
 <ng-template #listTemplate>
