@@ -35,7 +35,7 @@ export class AppController {
     return await this.produtoService.update(id, produto);
   }
 
-  @Delete()
+  @Delete('/produto/:id')
   async delete(id: any) {
     return await this.produtoService.delete(id);
   }
