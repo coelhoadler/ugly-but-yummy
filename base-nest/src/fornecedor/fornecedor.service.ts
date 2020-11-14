@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Fornecedor, FornecedorDocument } from './fornecedor.schema';
 import { FornecedorDto } from './fornecedor.dto';
-import { SlackService } from 'src/shared/services/slack.service';
+import { SlackService } from '../shared/services/slack.service';
 
 @Injectable()
 export class FornecedorService {

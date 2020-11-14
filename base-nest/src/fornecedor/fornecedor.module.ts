@@ -3,7 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { FornecedorService } from './fornecedor.service';
 import { Fornecedor, FornecedorSchema } from './fornecedor.schema';
 import { AppController } from '../app.controller';
-import { SlackService } from 'src/shared/services/slack.service';
+import { SlackService } from '../shared/services/slack.service';
 
 @Module({
   imports: [

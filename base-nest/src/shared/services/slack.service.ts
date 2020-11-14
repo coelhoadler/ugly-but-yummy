@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { WebClient } from "@slack/web-api";
 import * as dotenv from  'dotenv';
-import { FornecedorDto } from 'src/fornecedor/fornecedor.dto';
+import { FornecedorDto } from '../../fornecedor/fornecedor.dto';
 
 @Injectable()
 export class SlackService {

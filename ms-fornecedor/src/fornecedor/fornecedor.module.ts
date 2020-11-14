@@ -3,7 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { FornecedorService } from './fornecedor.service';
 import { Fornecedor, FornecedorSchema } from './fornecedor.schema';
 import { AppController } from '../app.controller';
-import UniqueGenerator from 'src/utils/unique.generator';
+import UniqueGenerator from '../utils/unique.generator';
 
 
 @Module({

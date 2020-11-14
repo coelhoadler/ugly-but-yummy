@@ -3,7 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ConsumidorService } from './consumidor.service';
 import { Consumidor, ConsumidorSchema } from './consumidor.schema';
 import { AppController } from '../app.controller';
-import UniqueGenerator from 'src/utils/unique.generator';
+import UniqueGenerator from '../utils/unique.generator';
 
 
 @Module({

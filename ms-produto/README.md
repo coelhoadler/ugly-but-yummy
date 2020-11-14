@@ -1,5 +1,5 @@
 # ms-produto
-Micro serviço desponsável pelo dominio de produtos
+Micro serviço responsável pelo dominio de produtos
 [x] MongoDB
 [x] Testes com cucumber
 [x] Testes unitários
