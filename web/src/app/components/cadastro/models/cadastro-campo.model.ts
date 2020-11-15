@@ -1,8 +1,8 @@
 
 import { FieldType } from '@cTypes/field.type';
+import { Mask } from '../types/input-mask.type';
 
 type ColumSize = 1 | 2 | 3 | 4;
-
 type Options = {value: any, viewValue: string}[];
 
 export class CadastroCampoModel {
@@ -10,6 +10,8 @@ export class CadastroCampoModel {
   private _value: any;
   private _label: string;
   private _type: FieldType;
+  private _mask: Mask;
+  private _viewValue: string;
   private _options: Options;
   private _required: boolean;
   private _columSize: ColumSize;
@@ -20,6 +22,8 @@ export class CadastroCampoModel {
     value: any,
     label: string,
     type: FieldType,
+    mask?: Mask
+    viewValue?: string;
     options?: Options,
     required?: boolean,
     columSize?: ColumSize,
@@ -40,6 +44,8 @@ export class CadastroCampoModel {
     this._value = preparedData.value;
     this._label = preparedData.label;
     this._type = preparedData.type;
+    this._mask = preparedData.mask;
+    this._viewValue = preparedData.viewValue || preparedData.value.toString();
     this._options = preparedData.options || [];
     this._required = preparedData.required;
     this._columSize = preparedData.columSize;
@@ -56,6 +62,12 @@ export class CadastroCampoModel {
 
   get type(): FieldType { return this._type; }
   set type(value: FieldType) { this._type = value; }
+
+  get mask(): Mask { return this._mask; }
+  set mask(value: Mask) { this._mask = value; }
+
+  get viewValue(): string { return this._viewValue; }
+  set viewValue(value: string) { this._viewValue = value; }
 
   get options(): Options { return this._options; }
   set options(value: Options) { this._options = value; }

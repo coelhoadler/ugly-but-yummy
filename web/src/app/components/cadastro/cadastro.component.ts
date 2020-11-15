@@ -1,8 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FieldType } from '@cTypes/field.type';
+import { cadastroMasks } from './consts/cadastro-masks.const';
 import { CadastroCampoModel } from './models/cadastro-campo.model';
+import { CadastroOptionsModel } from './models/cadastro-options.model';
 import { CadastroInputType } from './types/cadastro-input.type';
+import { Mask } from './types/input-mask.type';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,6 +17,7 @@ export class CadastroComponent implements OnInit {
   @Input() public data: CadastroCampoModel[];
   @Input() public title: string;
   @Input() public action: CadastroInputType;
+  @Input() public options: CadastroOptionsModel;
   @Output() public onSave: EventEmitter<Object> = new EventEmitter();
   @Output() public onDelete: EventEmitter<void> = new EventEmitter();
   @Output() public onEdit: EventEmitter<void> = new EventEmitter();
@@ -21,24 +25,35 @@ export class CadastroComponent implements OnInit {
   public form: FormGroup;
 
   public ngOnInit(): void {
+    this.initOptions();
     this.constructForm();
+  }
+
+  public initOptions(): void {
+    this.options = this.options ? new CadastroOptionsModel(this.options) : new CadastroOptionsModel();
   }
 
   public constructForm(): void {
     const controls = {};
 
-    this.data.forEach(item => {
-      const control = new FormControl(item.value);
-      if (item.required) {
-        control.setValidators(Validators.required);
-        if (item.type === 'email') {
-          control.setValidators(Validators.email);
+    if (!this.isReadOnlyData()) {
+      this.data.forEach(item => {
+        const control = new FormControl(item.value);
+        if (item.required) {
+          control.setValidators(Validators.required);
+          if (item.type === 'email') {
+            control.setValidators(Validators.email);
+          }
         }
-      }
-      controls[item.key] = control;
-    });
+        controls[item.key] = control;
+      });
+    }
 
     this.form = new FormGroup(controls);
+  }
+
+  public isReadOnlyData(): boolean {
+    return this.action === 'read';
   }
 
   public emitSaveData(data: Object): void {
@@ -104,6 +119,10 @@ export class CadastroComponent implements OnInit {
     }
 
     return '';
+  }
+
+  public getMask(mask: Mask): string {
+    return cadastroMasks[mask] || null;
   }
 
   public submitForm(): void {

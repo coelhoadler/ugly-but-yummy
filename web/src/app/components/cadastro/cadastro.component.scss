@@ -1,3 +1,6 @@
 .cadastro {
   &__form-field {width: 100%;}
+  &__read-field { display: flex; flex-direction: column; padding-bottom: 1.25em;
+    &_label {font-size: 75%; opacity: .6;}
+  }
 }
