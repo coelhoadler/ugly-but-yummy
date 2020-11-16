@@ -1,40 +1,19 @@
 version: '3'
 services:
-  kafka:
-    image: spotify/kafka
-    container_name: kafka
-    network_mode: "host"
-    ports:
-      - 9092:9092
-      - 2181:2181
+  produto:
+    build: ./ms-produto
+    container_name: ms-produto
     environment:
-      - "ADVERTISED_HOST=0.0.0.0"
-      - "ADVERTISED_PORT=9092"
-
-  fornecedor:
-    build: ./ms-fornecedor
-    container_name: ms-fornecedor
-    depends_on:
-      - kafka
-    environment:
-      - "NODE_PORT=3001"
-      - "PORTA_KAFKA=9092"
-    ports: 
-      - 3001:3001
-    restart: on-failure
-    volumes:
-      - ./ms-fornecedor:/usr/ms-fornecedor
-
-  consumidor:
-    build: ./ms-consumidor
-    container_name: ms-consumidor
-    depends_on:
-      - kafka
-    environment:
-      - "NODE_PORT=3000"
+      - "NODE_PORT=3002"
       - "PORTA_KAFKA=9092"      
     ports: 
-      - 3000:3000
+      - 3002:3002
     restart: on-failure
     volumes:
-      - ./ms-consumidor:/usr/ms-consumidor
+      - ./ms-produto:/usr/ms-produto
+  web:
+    build: ./ms-web
+    container_name: ms-web
+    ports: 
+      - 3003:80
+    restart: on-failure
