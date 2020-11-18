@@ -3,23 +3,18 @@ import { AppController } from './app.controller';
 import { defineFeature, loadFeature } from 'jest-cucumber';
 import { FornecedorService } from './fornecedor/fornecedor.service';
 import { FornecedorDto } from './fornecedor/fornecedor.dto';
-import { MongooseModule } from '@nestjs/mongoose';
-import { Fornecedor, FornecedorSchema } from './fornecedor/fornecedor.schema';
 import { FornecedorBuilder } from './fornecedor/fornecedor.builder';
 import { EnderecoBuilder } from './endereco/endereco.builder';
 import { DadosBancariosBuilder } from './dadosBancarios/dadosBancarios.builder';
 import UniqueGenerator from './utils/unique.generator';
+import { ConnectionService } from './config/conection.service';
 
 const feature = loadFeature('./features/fornecedor.feature');
 const prepareBefore = async () => {
   const app: TestingModule = await Test.createTestingModule({
     imports: [
-      MongooseModule.forRoot("mongodb+srv://startupabkm:3XU1tYrdyTH0dwvh@project01db.med08.mongodb.net/uglybutyummy-teste?retryWrites=true&w=majority", {
-        connectionName: 'fornecedor',
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-      }),
-      MongooseModule.forFeature([{ name: Fornecedor.name, schema: FornecedorSchema }], 'fornecedor'),
+      ConnectionService.Tests.forRoot(),
+      ConnectionService.Tests.forFeature(),
     ],
     controllers: [AppController],
     providers: [FornecedorService],

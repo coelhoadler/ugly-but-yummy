@@ -3,19 +3,16 @@ import { AppController } from './app.controller';
 import { defineFeature, loadFeature } from 'jest-cucumber';
 import { ProdutoService } from './produto/produto.service';
 import { ProdutoDto } from './produto/produto.dto';
-import { MongooseModule } from '@nestjs/mongoose';
-import { Produto, ProdutoSchema } from './produto/produto.schema';
 import { ProdutoBuilder } from './produto/produto.builder';
+import { ConnectionService } from './config/conection.service';
 import UniqueGenerator from './utils/unique.generator';
 
 const feature = loadFeature('./features/produto.feature');
 const prepareBefore = async () => {
   const app: TestingModule = await Test.createTestingModule({
     imports: [
-      MongooseModule.forRoot("mongodb+srv://startupabkm:3XU1tYrdyTH0dwvh@project01db.med08.mongodb.net/uglybutyummy-teste?retryWrites=true&w=majority", {
-        connectionName: 'produto', useNewUrlParser: true, useUnifiedTopology: true 
-      }),
-      MongooseModule.forFeature([{ name: Produto.name, schema: ProdutoSchema }], 'produto'),
+      ConnectionService.Tests.forRoot(),
+      ConnectionService.Tests.forFeature(),
     ],
     controllers: [AppController],
     providers: [ProdutoService],
