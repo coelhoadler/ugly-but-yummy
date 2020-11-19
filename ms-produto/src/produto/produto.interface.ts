@@ -13,4 +13,4 @@ export interface IProdutoBuilder {
     setDescricao(descricao: string): IProdutoBuilder;
     setPreco(preco: number): IProdutoBuilder;
     build(): IProduto
-}   
+}
