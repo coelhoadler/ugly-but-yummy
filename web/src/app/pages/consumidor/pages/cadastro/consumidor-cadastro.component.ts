@@ -5,11 +5,11 @@ import { CadastroInputType } from '@components/cadastro/types/cadastro-input.typ
 import { RoutesEnum } from '@enums/routes.enum';
 
 @Component({
-  selector: 'app-consumidor',
-  templateUrl: './consumidor.component.html',
-  styleUrls: ['./consumidor.component.scss']
+  selector: 'app-consumidor-cadastro',
+  templateUrl: './consumidor-cadastro.component.html',
+  styleUrls: ['./consumidor-cadastro.component.scss']
 })
-export class ConsumidorComponent implements OnInit {
+export class ConsumidorCadastroComponent implements OnInit {
 
   public action: CadastroInputType;
 
@@ -64,20 +64,18 @@ export class ConsumidorComponent implements OnInit {
       if (params.id) {
         if (url[1] && url[1].path === RoutesEnum.EDITAR) {
           this.action = 'update';
-          this.bindData(this.mockData);
+          this.bindDataToForm(this.mockData);
         } else {
           this.action = 'read';
-          this.bindData(this.mockData, {setViewValues: true});
+          this.bindDataToForm(this.mockData, {setViewValues: true});
         }
       } else if (url[0] && url[0].path === RoutesEnum.CADASTRAR) {
         this.action = 'create';
-      } else {
-        this.action = null;
       }
     });
   }
 
-  public bindData(data, options?: {setViewValues: boolean}): void {
+  public bindDataToForm(data, options?: {setViewValues: boolean}): void {
     this.dataConsumidor = this.fields.map(field => {
       field.value = data[field.key] || field.value;
       console.log(field.key, data[field.key]);

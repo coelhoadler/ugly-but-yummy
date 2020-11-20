@@ -15,7 +15,6 @@ import { Mask } from './types/input-mask.type';
 export class CadastroComponent implements OnInit {
 
   @Input() public data: CadastroCampoModel[];
-  @Input() public title: string;
   @Input() public action: CadastroInputType;
   @Input() public options: CadastroOptionsModel;
   @Output() public onSave: EventEmitter<Object> = new EventEmitter();

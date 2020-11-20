@@ -1,16 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { CadastroModule } from '@appcomponents/cadastro/cadastro.module';
-import { ConsumidorComponent } from './consumidor.component';
+import { CadastroModule } from '@components/cadastro/cadastro.module';
+import { TabelaModule } from '@components/tabela/tabela.module';
 import { ConsumidorRoutingModule } from './consumidor.routes';
+import { ConsumidorCadastroComponent } from './pages/cadastro/consumidor-cadastro.component';
+import { ConsumidorListaComponent } from './pages/lista/consumidor-lista.component';
 
 @NgModule({
-  declarations: [ConsumidorComponent],
-  exports: [ConsumidorComponent],
+  declarations: [ConsumidorCadastroComponent, ConsumidorListaComponent],
+  exports: [ConsumidorCadastroComponent, ConsumidorListaComponent],
   imports: [
     CommonModule,
     ConsumidorRoutingModule,
-    CadastroModule
+    CadastroModule,
+    TabelaModule
   ]
 })
 export class ConsumidorModule { }
