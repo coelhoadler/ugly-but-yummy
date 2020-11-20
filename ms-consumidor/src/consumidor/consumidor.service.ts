@@ -3,6 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Consumidor, ConsumidorDocument } from './consumidor.schema';
 import { ConsumidorDto } from './consumidor.dto';
+import { ObjectId } from 'mongodb';
 
 @Injectable()
 export class ConsumidorService {
@@ -29,8 +30,8 @@ export class ConsumidorService {
         return this._consumidorSchema.find().exec();
     }
 
-    async delete(consumidorId: string): Promise<any> {
-        return (await this._consumidorSchema.deleteOne({ _id: consumidorId })).deletedCount;
+    async delete(consumidorId): Promise<any> {
+        return (await this._consumidorSchema.deleteOne({ "_id" : new ObjectId(consumidorId) })).deletedCount;
     }
 
     async update(id: string, consumidorDto: ConsumidorDto): Promise<Consumidor> {

@@ -1,8 +1,8 @@
 # Case Ugly But Yummy
 ---
---Suponha que você seja contratado para desenvolver algunas funcionalidades do e-commerce da
+~~Suponha que você seja contratado para desenvolver algunas funcionalidades do e-commerce da
 Amazon, alguns desejos dos usuários são descritos abaixo e você deve desenhar e implementar uma
-solução baseada em Microserviços.--
+solução baseada em Microserviços.~~
 
 ## Integrantes
 - Adler Coelho
@@ -31,6 +31,8 @@ solução baseada em Microserviços.--
 - NestJs
 - MongoDB
 - Kafka Node
+- Angular
+- Angular Material
 - Swagger UI
 
 ## Documentação da API
