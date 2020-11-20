@@ -1,0 +1,9 @@
+<h1>Consumidor</h1>
+
+<ng-container *ngIf="action; else listTemplate">
+  <app-cadastro *ngIf="dataConsumidor" title="Cadastrar consumidor" [data]="dataConsumidor" [action]="action"></app-cadastro>
+</ng-container>
+
+<ng-template #listTemplate>
+  <p>Lista de Consumidores</p>
+</ng-template>

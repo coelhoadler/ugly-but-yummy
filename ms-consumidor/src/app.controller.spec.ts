@@ -3,21 +3,18 @@ import { AppController } from './app.controller';
 import { defineFeature, loadFeature } from 'jest-cucumber';
 import { ConsumidorService } from './consumidor/consumidor.service';
 import { ConsumidorDto } from './consumidor/consumidor.dto';
-import { MongooseModule } from '@nestjs/mongoose';
-import { Consumidor, ConsumidorSchema } from './consumidor/consumidor.schema';
 import { ConsumidorBuilder } from './consumidor/consumidor.builder';
 import { EnderecoBuilder } from './endereco/endereco.builder';
 import { DadosBancariosBuilder } from './dadosBancarios/dadosBancarios.builder';
+import { ConnectionService } from './config/conection.service';
 import UniqueGenerator from './utils/unique.generator';
 
 const feature = loadFeature('./features/consumidor.feature');
 const prepareBefore = async () => {
   const app: TestingModule = await Test.createTestingModule({
     imports: [
-      MongooseModule.forRoot("mongodb+srv://w1gA77GNyv0gBlum:uglybutyummy123@cluster0.sdiq5.mongodb.net/uglybutyummy-dbtest?retryWrites=true&w=majority", {
-        connectionName: 'consumidor', useNewUrlParser: true, useUnifiedTopology: true 
-      }),
-      MongooseModule.forFeature([{ name: Consumidor.name, schema: ConsumidorSchema }], 'consumidor'),
+      ConnectionService.Tests.forRoot(),
+      ConnectionService.Tests.forFeature(),
     ],
     controllers: [AppController],
     providers: [ConsumidorService],

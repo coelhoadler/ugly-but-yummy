@@ -11,6 +11,20 @@ services:
       - "ADVERTISED_HOST=0.0.0.0"
       - "ADVERTISED_PORT=9092"
 
+  consumidor:
+    build: ./ms-consumidor
+    container_name: ms-consumidor
+    depends_on:
+      - kafka
+    environment:
+      - "NODE_PORT=3000"
+      - "PORTA_KAFKA=9092"      
+    ports: 
+      - 3000:3000
+    restart: on-failure
+    volumes:
+      - ./ms-consumidor:/usr/ms-consumidor
+
   fornecedor:
     build: ./ms-fornecedor
     container_name: ms-fornecedor
@@ -25,16 +39,23 @@ services:
     volumes:
       - ./ms-fornecedor:/usr/ms-fornecedor
 
-  consumidor:
-    build: ./ms-consumidor
-    container_name: ms-consumidor
+  produto:
+    build: ./ms-produto
+    container_name: ms-produto
     depends_on:
       - kafka
     environment:
-      - "NODE_PORT=3000"
-      - "PORTA_KAFKA=9092"      
+      - "NODE_PORT=3002"
+      - "PORTA_KAFKA=9092"
     ports: 
-      - 3000:3000
+      - 3002:3002
     restart: on-failure
     volumes:
-      - ./ms-consumidor:/usr/ms-consumidor
+      - ./ms-produto:/usr/ms-produto
+
+  web:
+    build: ./ms-web
+    container_name: ms-web
+    ports: 
+      - 3003:80
+    restart: on-failure
