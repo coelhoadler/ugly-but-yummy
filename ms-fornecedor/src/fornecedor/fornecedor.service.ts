@@ -9,11 +9,11 @@ import { SlackService } from './../shared/services/slack.service'
 export class FornecedorService {
     constructor(
         @InjectModel(Fornecedor.name) private _fornecedorSchema: Model<FornecedorDocument>,
-        private slackService: SlackService
+        private _slackService: SlackService
     ) { }
 
     async create(fornecedorDto: FornecedorDto): Promise<Fornecedor> {
-        this.slackService.postMessage(fornecedorDto);
+        this._slackService.postMessage(fornecedorDto);
         const schema = new this._fornecedorSchema(fornecedorDto);
         return schema.save();
     }

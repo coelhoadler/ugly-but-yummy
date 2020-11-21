@@ -22,8 +22,8 @@ export class SlackService {
    
             const result = await web.chat.postMessage({
                 text: `
-💥  Um fornecedor foi cadastrado com as seguintes informações: \n\n
-🚛  Nome Completo: ${consumidor.nome} \n
+💥  Um consumidor foi cadastrado com as seguintes informações: \n\n
+👨  Nome Completo: ${consumidor.nome} \n
 ⏰  Data de criação: ${new Date().toLocaleDateString()} às ${new Date().toLocaleTimeString()}
                 `,
                 channel: this.CHANNEL_ID,
