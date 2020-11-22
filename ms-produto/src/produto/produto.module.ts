@@ -5,6 +5,7 @@ import { AppController } from '../app.controller';
 import { ProdutoSeed } from '../seed/produto.seed';
 import { ConnectionService } from 'src/config/conection.service';
 import UniqueGenerator from '../utils/unique.generator';
+import { SlackService } from './../shared/services/slack.service';
 
 @Module({
   imports: [
@@ -13,7 +14,7 @@ import UniqueGenerator from '../utils/unique.generator';
     ConnectionService.Development.forFeature(),
   ],
   controllers: [AppController],
-  providers: [ProdutoService, UniqueGenerator, ProdutoSeed],
+  providers: [ProdutoService, UniqueGenerator, ProdutoSeed, SlackService],
   exports: [ProdutoSeed]
 })
 export class ProdutoModule { }

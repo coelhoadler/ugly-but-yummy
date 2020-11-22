@@ -3,6 +3,7 @@ import { FornecedorService } from './fornecedor.service';
 import { AppController } from '../app.controller';
 import { ConnectionService } from 'src/config/conection.service';
 import UniqueGenerator from '../utils/unique.generator';
+import { SlackService } from './../shared/services/slack.service'
 
 @Module({
   imports: [
@@ -10,6 +11,6 @@ import UniqueGenerator from '../utils/unique.generator';
     ConnectionService.Development.forFeature(),
   ],
   controllers: [AppController],
-  providers: [FornecedorService, UniqueGenerator]
+  providers: [FornecedorService, UniqueGenerator, SlackService]
 })
 export class FornecedorModule { }
