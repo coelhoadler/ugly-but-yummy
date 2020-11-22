@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Post, Put, Body } from '@nestjs/common';
+import { Controller, Delete, Get, Post, Put, Body, Param } from '@nestjs/common';
 import { ConsumidorDto } from './consumidor/consumidor.dto';
 import { ConsumidorService } from './consumidor/consumidor.service'
 
@@ -6,9 +6,7 @@ import { ConsumidorService } from './consumidor/consumidor.service'
 export class AppController {
   constructor(
     private consumidorService: ConsumidorService
-  ) {
-
-  }
+  ) { }
 
   @Get("/consumidor")
   async index() {
@@ -35,8 +33,8 @@ export class AppController {
     return await this.consumidorService.update(id, consumidor);
   }
 
-  @Delete()
-  async delete(id: any) {
+  @Delete('/consumidor/:id')
+  async delete(@Param('id') id) {
     return await this.consumidorService.delete(id);
   }
 }

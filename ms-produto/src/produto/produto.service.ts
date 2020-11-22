@@ -3,14 +3,17 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Produto, ProdutoDocument } from './produto.schema';
 import { ProdutoDto } from './produto.dto';
+import { SlackService } from './../shared/services/slack.service';
 
 @Injectable()
 export class ProdutoService {
     constructor(
-        @InjectModel(Produto.name) private _produtoSchema: Model<ProdutoDocument>
+        @InjectModel(Produto.name) private _produtoSchema: Model<ProdutoDocument>,
+        private _slackService: SlackService 
     ) { }
 
     async create(produtoDto: ProdutoDto): Promise<Produto> {
+        this._slackService.postMessage(produtoDto);
         const schema = new this._produtoSchema(produtoDto);
         return schema.save();
     }

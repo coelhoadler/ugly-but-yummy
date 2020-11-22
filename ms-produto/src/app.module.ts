@@ -9,7 +9,7 @@ import { CommandModule } from 'nestjs-command';
     CommandModule
   ],
   providers: [
-    AppService,
+    AppService
   ],
 })
 export class AppModule {}
