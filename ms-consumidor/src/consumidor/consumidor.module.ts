@@ -4,7 +4,7 @@ import { ConsumidorService } from './consumidor.service';
 import { Consumidor, ConsumidorSchema } from './consumidor.schema';
 import { AppController } from '../app.controller';
 import UniqueGenerator from '../utils/unique.generator';
-import { ConnectionService } from 'src/config/conection.service';
+import { ConnectionService } from '../config/conection.service';
 import { SlackService } from '../shared/services/slack.service';
 
 @Module({
