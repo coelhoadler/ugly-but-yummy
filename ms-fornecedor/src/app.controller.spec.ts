@@ -8,6 +8,7 @@ import { EnderecoBuilder } from './endereco/endereco.builder';
 import { DadosBancariosBuilder } from './dadosBancarios/dadosBancarios.builder';
 import UniqueGenerator from './utils/unique.generator';
 import { ConnectionService } from './config/conection.service';
+import { SlackService } from './shared/services/slack.service';
 
 const feature = loadFeature('./features/fornecedor.feature');
 const prepareBefore = async () => {
@@ -17,7 +18,7 @@ const prepareBefore = async () => {
       ConnectionService.Tests.forFeature(),
     ],
     controllers: [AppController],
-    providers: [FornecedorService],
+    providers: [FornecedorService, SlackService],
   }).compile();
 
   return await app.get<AppController>(AppController);
