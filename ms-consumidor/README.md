@@ -5,11 +5,13 @@ Micro serviço responsável pelo dominio de consumidor
 [x] Testes com cucumber
 [x] Testes unitários
 [x] CRUD
+[x] Swagger
 
 ## CRUD Routes
-| http   | route                    |
-|--------|--------------------------|
+| http   | route                       |
+|--------|-----------------------------|
 | POST   | /consumidor                 |
+| GET    | /                           |
 | GET    | /consumidor                 |
 | GET    | /consumidor/:id             |
 | GET    | /consumidor/by/:prop/:value |
