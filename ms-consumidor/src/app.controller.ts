@@ -19,7 +19,7 @@ export class AppController {
   }
 
   @Get("/consumidor/by/:prop/:propValue")
-  async indexBy(prop: string, propValue: string) : Promise<ConsumidorDto[]> {
+  async indexBy(@Param('prop') prop: string, @Param('propValue') propValue: string) : Promise<ConsumidorDto[]> {
     return await this.consumidorService.findBy(prop, propValue);
   }
 

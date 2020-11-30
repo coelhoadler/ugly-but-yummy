@@ -96,7 +96,27 @@ paths:
         200:
           description: OK
         400:
-          description: Bad Request          
+          description: Bad Request
+          
+  '/consumidor/by/{prop}/{propValue}':
+    get:
+      summary: Busca um consumidor por uma propriedade específica.
+      description: Retorna as informações do consumidor de acordo com o campo/valor que passado.
+      operationId: consultaConsumidorPorPropriedade
+      parameters:
+        - in: path
+          name: prop
+          required: true
+          type: string  
+        - in: path
+          name: propValue
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Consumidor'
 
 definitions:
   Consumidor:
