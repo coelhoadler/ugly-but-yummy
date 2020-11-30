@@ -17,9 +17,14 @@ consumes:
 produces:
   - application/json
   
+tags: 
+  - name: Consumidor
+  
 paths:
   '/consumidor':
     get:
+      tags:
+        - Consumidor
       summary: Busca consumidores.
       description: Retorna todos os consumidores cadastrados.
       operationId: consultaConsumidor
@@ -29,6 +34,8 @@ paths:
         400:
           description: Bad Request
     post:
+      tags:
+        - Consumidor
       summary: Cadastra consumidor.
       description: Cadastra um novo consumidor.
       operationId: cadsatraConsumidor
@@ -50,6 +57,8 @@ paths:
 
   '/consumidor/{consumidorId}':
     get:
+      tags:
+        - Consumidor
       summary: Busca um consumidor específico por Id.
       description: Retorna as informações do consumidor pesquisado.
       operationId: consultaConsumidorPorId
@@ -67,7 +76,9 @@ paths:
           description: Bad Request
             
     put:
-      summary: Atualiza dados de um consumidor específico por Id.
+      tags:
+        - Consumidor    
+      summary: Atualiza os dados de um consumidor específico por Id.
       description: Retorna as informações do consumidor pesquisado.
       operationId: atualizaConsumidorPorId
       parameters:
@@ -84,6 +95,8 @@ paths:
           description: Bad Request
   
     delete:
+      tags:
+        - Consumidor
       summary: Deleta consumidor específico por Id.
       description: Deleta o cadastro do consumidor através do ID passado.
       operationId: deletaConsumidor
@@ -100,6 +113,8 @@ paths:
           
   '/consumidor/by/{prop}/{propValue}':
     get:
+      tags:
+        - Consumidor
       summary: Busca um consumidor por uma propriedade específica.
       description: Retorna as informações do consumidor de acordo com o campo/valor que passado.
       operationId: consultaConsumidorPorPropriedade
