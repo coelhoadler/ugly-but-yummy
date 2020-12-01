@@ -20,9 +20,9 @@ solução baseada em Microserviços.~~
   |-------------------------|--------------|------------------|
   | zookeeper               | 2181         | Service Discovery.                          |
   | kafka                   | 9092         | Plataforma distribuída.                     |
-  | consumidor              | 3000         | MS de consumidor. Na raíz do endereço está o Swagger. (NodeJs)                 |
-  | fornecedor              | 3001         | MS de fornecedor. Na raíz do endereço está o Swagger. (NodeJs)                  |
-  | produto                 | 3002         | MS de produto. Na raíz do endereço está o Swagger. (NodeJs)                     |
+  | consumidor              | 3000         | MS de consumidor. __Na raíz do endereço está o Swagger.__ (NodeJs)                 |
+  | fornecedor              | 3001         | MS de fornecedor. __Na raíz do endereço está o Swagger.__(NodeJs)                  |
+  | produto                 | 3002         | MS de produto. __Na raíz do endereço está o Swagger.__ (NodeJs)                     |
   | web                     | 3003         | MS web. (Angular)                           |
  
 ## Tecnologias usadas

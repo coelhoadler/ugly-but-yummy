@@ -1,0 +1,189 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Swagger Ugly But Yummy
+  description: Administra informações do microsserviço de fornecedoro.
+  termsOfService: 'http://swagger.io/terms/'
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: localhost:3000
+basePath: /
+schemes:
+  - http
+  
+consumes:
+  - application/json
+produces:
+  - application/json
+  
+tags: 
+  - name: Consumidor
+  
+paths:
+  '/fornecedor':
+    get:
+      tags:
+        - Consumidor
+      summary: Busca consumidores.
+      description: Retorna todos os consumidores cadastrados.
+      operationId: consultaConsumidor
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+    post:
+      tags:
+        - Consumidor
+      summary: Cadastra fornecedor.
+      description: Cadastra um novo fornecedor.
+      operationId: cadsatraConsumidor
+      parameters:
+        - in: body
+          name: object
+          schema:
+            $ref: '#/definitions/Consumidor'
+      responses:
+        201:
+          description: Cadastro efetuado com sucesso.
+          schema:
+            $ref: '#/definitions/Consumidor'          
+        400:
+          description: Bad Request.
+        500:
+          description: Internal Server Error.
+          
+
+  '/fornecedor/{consumidorId}':
+    get:
+      tags:
+        - Consumidor
+      summary: Busca um fornecedor específico por Id.
+      description: Retorna as informações do fornecedor pesquisado.
+      operationId: consultaConsumidorPorId
+      parameters:
+        - in: path
+          name: consumidorId
+          required: true
+          type: string      
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Consumidor'
+        400:
+          description: Bad Request
+            
+    put:
+      tags:
+        - Consumidor    
+      summary: Atualiza os dados de um fornecedor específico por Id.
+      description: Retorna as informações do fornecedor pesquisado.
+      operationId: atualizaConsumidorPorId
+      parameters:
+        - in: path
+          name: consumidorId
+          required: true
+          type: string      
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Consumidor'
+        400:
+          description: Bad Request
+  
+    delete:
+      tags:
+        - Consumidor
+      summary: Deleta fornecedor específico por Id.
+      description: Deleta o cadastro do fornecedor através do ID passado.
+      operationId: deletaConsumidor
+      parameters:
+        - in: path
+          name: consumidorId
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+          
+  '/fornecedor/by/{prop}/{propValue}':
+    get:
+      tags:
+        - Consumidor
+      summary: Busca um fornecedor por uma propriedade específica.
+      description: Retorna as informações do fornecedor de acordo com o campo/valor que passado.
+      operationId: consultaConsumidorPorPropriedade
+      parameters:
+        - in: path
+          name: prop
+          required: true
+          type: string  
+        - in: path
+          name: propValue
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Consumidor'
+
+definitions:
+  Consumidor:
+    type: object
+    properties:
+      _id: 
+        type: string
+        example: '1'
+      uid: 
+        type: string
+        example: '001'
+      nome: 
+        type: string
+        example: Malaquias
+      doc: 
+        type: string
+        example: '42223001874'
+      telefone: 
+        type: string
+        example: '13996275325'
+      email:
+        type: string
+        example: malaquias@fiap.com
+      endereco:
+        properties:
+          cep: 
+            type: string
+            example: '11095110'
+          rua:
+            type: string
+            example: 'Rua dos camelos'
+          numero: 
+            type: string
+            example: 'hum mil'
+          complemento:
+            type: string
+            example: 'altos'
+          cidade: 
+            type: string
+            example: 'logo ali'
+          uf: 
+            type: string
+            example: 'sp'
+      dadosBancarios:
+        properties:
+          ag:
+            type: string
+            example: '0268'
+          cc: 
+            type: string
+            example: '30951-5'
+          nomeBanco: 
+            type: string
+            example: 'Itaú'
+

@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Post, Put, Body } from '@nestjs/common';
+import { Controller, Delete, Get, Post, Put, Body, Param } from '@nestjs/common';
 import { FornecedorDto } from './fornecedor/fornecedor.dto';
 import { FornecedorService } from './fornecedor/fornecedor.service'
 
@@ -6,9 +6,7 @@ import { FornecedorService } from './fornecedor/fornecedor.service'
 export class AppController {
   constructor(
     private fornecedorService: FornecedorService
-  ) {
-
-  }
+  ) { }
 
   @Get("/fornecedor")
   async index() {
@@ -16,12 +14,12 @@ export class AppController {
   }
 
   @Get("/fornecedor/:id")
-  async indexById(id: any) {
+  async indexById(@Param('id') id) {
     return await this.fornecedorService.findById(id);
   }
 
   @Get("/fornecedor/by/:prop/:propValue")
-  async indexBy(prop: string, propValue: string) : Promise<FornecedorDto[]> {
+  async indexBy(@Param('prop') prop: string, @Param('propValue') propValue: string) : Promise<FornecedorDto[]> {
     return await this.fornecedorService.findBy(prop, propValue);
   }
 
@@ -31,12 +29,12 @@ export class AppController {
   }
 
   @Put('/fornecedor/:id')
-  async update(id: any, @Body() fornecedor: FornecedorDto) {
+  async update(@Param('id') id, @Body() fornecedor: FornecedorDto) {
     return await this.fornecedorService.update(id, fornecedor);
   }
 
-  @Delete()
-  async delete(id: any) {
+  @Delete('/consumidor/:id')
+  async delete(@Param('id') id) {
     return await this.fornecedorService.delete(id);
   }
 }
