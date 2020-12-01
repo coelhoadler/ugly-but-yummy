@@ -111,6 +111,8 @@ export class ConsumidorCadastroComponent implements OnInit {
   public submitData() {
     if (this.formConsumidor.invalid) {
       return;
+    } else {
+      this.consumidorService.postConsumidor(this.formConsumidor.value);
     }
 
     this.consumidorService.postConsumidor(this.formConsumidor.value).subscribe(_ => {

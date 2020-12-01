@@ -1,4 +1,4 @@
-import { Controller, Delete, Get, Post, Put, Body } from '@nestjs/common';
+import { Controller, Delete, Get, Post, Put, Body, Param } from '@nestjs/common';
 import { FornecedorDto } from './fornecedor/fornecedor.dto';
 import { FornecedorService } from './fornecedor/fornecedor.service'
 
@@ -31,12 +31,12 @@ export class AppController {
   }
 
   @Put('/fornecedor/:id')
-  async update(id: any, @Body() fornecedor: FornecedorDto) {
+  async update(@Param('id') id, @Body() fornecedor: FornecedorDto) {
     return await this.fornecedorService.update(id, fornecedor);
   }
 
-  @Delete()
-  async delete(id: any) {
+  @Delete('/fornecedor/:id')
+  async delete(@Param('id') id) {
     return await this.fornecedorService.delete(id);
   }
 }

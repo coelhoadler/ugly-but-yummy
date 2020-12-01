@@ -5,8 +5,8 @@
 export const environment = {
   production: false,
   consumidor: 'http://localhost:3000/consumidor/',
-  fornecedor: 'http://localhost:3000/fornecedor/',
-  produto: 'http://localhost:3000/produto/'
+  fornecedor: 'http://localhost:3001/fornecedor/',
+  produto: 'http://localhost:3002/produto/'
 };
 
 /*
