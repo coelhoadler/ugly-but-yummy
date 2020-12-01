@@ -1,0 +1,520 @@
+{
+  "id": "22f2d5f3-3484-4538-b143-0ac693133b21",
+  "version": "2.0",
+  "name": "CRM André",
+  "url": "http://localhost:3003",
+  "tests": [{
+    "id": "02eed372-3afb-41d8-b3d0-80615beea91c",
+    "name": "Cadastrar consumidor 1",
+    "commands": [{
+      "id": "bfe8c678-03eb-4aff-b085-b95d13f9b086",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3003",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0061e2a5-b33a-40cf-b57a-b16abd948488",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//header//nav//li/a[contains(.,'Consumidores')]",
+      "targets": [
+        ["css=li:nth-child(1)", "css:finder"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'Consumidores')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "00ba2085-ccdd-4ef7-9203-95b58be3d48d",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Novo Cadastro')]",
+      "targets": [
+        ["css=.mat-raised-button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,' Novo Cadastro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "41574d18-7125-4735-8337-f5006b3d86db",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//h1[contains(.,'Cadastro de consumidor – Novo cadastro')]",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Cadastro de consumidor – Novo cadastro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "374e3d45-67f5-40b0-957e-1ac02f851909",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='nome']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Consumidor teste 1"
+    }, {
+      "id": "ca3e8487-e68f-4f35-9956-a2e43092674d",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='email']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "consumidor1@email.com"
+    }, {
+      "id": "7d3eb27a-b23d-4b47-af79-b5772f1f3c0f",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='doc']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "45878455775"
+    }, {
+      "id": "113f1a4c-7f5f-4feb-971d-9a3a54d30fe3",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='telefone']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "11954521134"
+    }, {
+      "id": "85e10450-1cb8-42b2-9686-83158f551f1c",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='rua']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Rua Teste de Algum Lugar"
+    }, {
+      "id": "fb0774ca-3de1-4cd2-9e53-234e01b81b5d",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='numero']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "ee50123c-d306-4dc2-b7ce-72b84480011f",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='complemento']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Casa 2"
+    }, {
+      "id": "b75582de-97b2-40db-9bd1-fe3072546a33",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='cep']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "06455302"
+    }, {
+      "id": "f6f04c3a-d6e3-4a1b-abc6-c9413618b0f9",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='cidade']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Santo André"
+    }, {
+      "id": "25b9dd2a-d662-4a35-980e-cb37e58a6fbb",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='uf']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "SP"
+    }, {
+      "id": "140a3edc-b9a7-466a-b5ce-1eb7ee2bf0f4",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='ag']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "0001"
+    }, {
+      "id": "ee95e413-dbc4-4f66-a4a2-dc6fcb3302d8",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='cc']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "4587874"
+    }, {
+      "id": "dd90eace-978d-40ff-94b2-18167dfb221d",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='nomeBanco']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Nu Pagamentos S.A"
+    }, {
+      "id": "d9d9b0a4-2fa0-439a-b1db-a9bc431e7054",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//form//button[@type='submit']",
+      "targets": [
+        ["css=.mat-primary > .mat-button-wrapper", "css:finder"],
+        ["xpath=//div[2]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,' Salvar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "752b5357-7e88-4cff-a939-1c48db0015f5",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Voltar para a listagem')]",
+      "targets": [
+        ["css=.cdk-focused", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,' Voltar para a listagem')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6176e534-3c85-4d1f-bd55-f4b8bc28ff98",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Consumidor teste 1')]",
+      "targets": [
+        ["css=.mat-row:nth-child(3) > .cdk-column-nome", "css:finder"],
+        ["xpath=//tr[3]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Consumidor teste 1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "8be34946-1949-450e-b04d-db54f60193b4",
+    "name": "Cadastrar consumidor 2",
+    "commands": [{
+      "id": "db67e8da-1c71-4d80-9123-c8caf77c8290",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3003",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2ba9ca7f-13b0-4a3b-b686-955e03352827",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//header//nav//li/a[contains(.,'Consumidores')]",
+      "targets": [
+        ["css=li:nth-child(1)", "css:finder"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'Consumidores')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "06269fce-97f0-4420-8656-926c0c15a852",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Novo Cadastro')]",
+      "targets": [
+        ["css=.mat-raised-button", "css:finder"],
+        ["xpath=//button[@type='button']", "xpath:attributes"],
+        ["xpath=//div/button", "xpath:position"],
+        ["xpath=//button[contains(.,' Novo Cadastro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "778535bf-0991-495f-9e8e-b76f3b7a1c73",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//h1[contains(.,'Cadastro de consumidor – Novo cadastro')]",
+      "targets": [
+        ["css=h1", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Cadastro de consumidor – Novo cadastro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "27d2df99-74bf-434a-b51a-567a9628282f",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='nome']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Consumidor teste 2"
+    }, {
+      "id": "db5e8b8f-1879-4748-97b7-50db64ba7139",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='email']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "consumidor2@email.com"
+    }, {
+      "id": "8f6d7869-2a44-43db-a61a-1f59cab6024b",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='doc']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "45878455000198"
+    }, {
+      "id": "3cae25d9-e3d9-44dd-8ff3-abb6174ccc70",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='telefone']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1154521134"
+    }, {
+      "id": "d5211eb9-0da2-4242-bac8-7814b53f6dac",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='rua']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Rua Teste de Qualquer Lugar"
+    }, {
+      "id": "82bc1872-51bb-4b94-8c28-4b0ab87a419c",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='numero']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "9a002bb9-8e4f-4932-9397-fea7166df92b",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='complemento']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Casa 1"
+    }, {
+      "id": "3d07561d-9d0f-4edd-b4d4-70d692a951dd",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='cep']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "06455305"
+    }, {
+      "id": "0f55a476-4af3-4266-b4db-ddc9c7014b15",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='cidade']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Santo André"
+    }, {
+      "id": "0b6746cb-a598-4566-87c1-4c557c3b2b29",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='uf']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "SP"
+    }, {
+      "id": "16c4ccb0-d8c6-4160-96b6-33fae69e09f2",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='ag']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "0001"
+    }, {
+      "id": "91683ad9-2614-4afd-86c9-3f7d0326854f",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='cc']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "4587874"
+    }, {
+      "id": "316f7688-00d0-4b70-a8ac-44a1c0bdb662",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='nomeBanco']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Nu Pagamentos S.A"
+    }, {
+      "id": "2be69dc0-3342-4ddb-b4bf-01b5e193aef2",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//form//button[@type='submit']",
+      "targets": [
+        ["css=.mat-primary > .mat-button-wrapper", "css:finder"],
+        ["xpath=//div[2]/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,' Salvar')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b55764e9-e892-4638-8b1b-8b1d6f594ea4",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "xpath=//td[contains(.,'Consumidor teste 1')]",
+      "targets": [
+        ["css=.mat-row:nth-child(3) > .cdk-column-nome", "css:finder"],
+        ["xpath=//tr[3]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Consumidor teste 1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "69529d6a-55ed-4cbe-b84a-4276356fc760",
+    "name": "Deletar consumidor 1",
+    "commands": [{
+      "id": "59925a14-2c4e-464f-8332-eb8d7cbf0cc3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3003",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d8f2f301-79b8-46fe-9110-b50fcd876dd0",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//header//nav//li/a[contains(.,'Consumidores')]",
+      "targets": [
+        ["css=li:nth-child(1)", "css:finder"],
+        ["xpath=//li", "xpath:position"],
+        ["xpath=//li[contains(.,'Consumidores')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "20204e04-7c20-423f-ad71-da59240848e0",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//td[contains(.,'Consumidor teste 1')]",
+      "targets": [
+        ["css=.mat-row:nth-child(3) > .cdk-column-nome", "css:finder"],
+        ["xpath=//tr[3]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'Consumidor teste 1')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f82e70d-5b4f-43ec-9933-cab62690ac6f",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Excluir')]",
+      "targets": [
+        ["css=.mat-warn", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,' Excluir')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ccbcb78a-87d7-4b85-9a28-852288c1fd97",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["02eed372-3afb-41d8-b3d0-80615beea91c"]
+  }],
+  "urls": ["localhost:3003", "http://localhost:3003/"],
+  "plugins": []
+}

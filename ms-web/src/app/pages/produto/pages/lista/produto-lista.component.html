@@ -1,0 +1,9 @@
+<h1>Produtos</h1>
+
+<app-tabela *ngIf="!loadingData" [data]="tableData" (onClickItem)="goToProdutoData($event)" (onDeleteItem)="deleteData($event.id, $event.nome)" (onEditItem)="editData($event.id)"></app-tabela>
+
+<br>
+
+<div class="action-buttons">
+  <button mat-raised-button color="primary" type="button" (click)="goToNewProduto()"><fa-icon [icon]="faPlus"></fa-icon> Novo Cadastro</button>
+</div>

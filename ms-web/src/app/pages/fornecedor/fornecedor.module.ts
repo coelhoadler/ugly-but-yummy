@@ -4,20 +4,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { TabelaModule } from '@components/tabela/tabela.module';
+import { TabelaModule } from '@appcomponents/tabela/tabela.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxMaskModule } from 'ngx-mask';
-import { ConsumidorRoutingModule } from './consumidor.routes';
-import { ConsumidorService } from './consumidor.service';
-import { ConsumidorCadastroComponent } from './pages/cadastro/consumidor-cadastro.component';
-import { ConsumidorListaComponent } from './pages/lista/consumidor-lista.component';
+import { FornecedorRoutingModule } from './fornecedor.routes';
+import { FornecedorService } from './fornecedor.service';
+import { FornecedorCadastroComponent } from './pages/cadastro/fornecedor-cadastro.component';
+import { FornecedorListaComponent } from './pages/lista/fornecedor-lista.component';
 
 @NgModule({
-  declarations: [ConsumidorCadastroComponent, ConsumidorListaComponent],
-  exports: [ConsumidorCadastroComponent, ConsumidorListaComponent],
+  declarations: [FornecedorCadastroComponent, FornecedorListaComponent],
+  exports: [FornecedorCadastroComponent, FornecedorListaComponent],
   imports: [
     CommonModule,
-    ConsumidorRoutingModule,
+    FornecedorRoutingModule,
     ReactiveFormsModule,
     MatButtonModule,
     MatInputModule,
@@ -26,6 +26,6 @@ import { ConsumidorListaComponent } from './pages/lista/consumidor-lista.compone
     NgxMaskModule.forRoot({ validation: true }),
     TabelaModule
   ],
-  providers: [ConsumidorService]
+  providers: [FornecedorService]
 })
-export class ConsumidorModule { }
+export class FornecedorModule { }

@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Route, RouterModule, Routes } from '@angular/router';
 import { RoutesEnum } from '@enums/routes.enum';
-import { ConsumidorComponent } from './consumidor.component';
+import { ConsumidorCadastroComponent } from './pages/cadastro/consumidor-cadastro.component';
+import { ConsumidorListaComponent } from './pages/lista/consumidor-lista.component';
 
 const routes: Routes = [
-    { component: ConsumidorComponent, path: RoutesEnum.CADASTRAR },
-    { component: ConsumidorComponent, path: RoutesEnum.ID_PARAM},
-    { component: ConsumidorComponent, path: `${RoutesEnum.ID_PARAM}/${RoutesEnum.EDITAR}` },
-    { component: ConsumidorComponent, path: RoutesEnum.ROOT, pathMatch: 'full' }
+    { component: ConsumidorCadastroComponent, path: RoutesEnum.CADASTRAR },
+    { component: ConsumidorCadastroComponent, path: RoutesEnum.ID_PARAM},
+    { component: ConsumidorCadastroComponent, path: `${RoutesEnum.ID_PARAM}/${RoutesEnum.EDITAR}` },
+    { component: ConsumidorListaComponent, path: RoutesEnum.ROOT, pathMatch: 'full' }
 ];
 
 export const mainRoute: Route = {
