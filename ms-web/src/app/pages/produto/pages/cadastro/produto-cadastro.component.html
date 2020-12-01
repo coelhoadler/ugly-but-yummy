@@ -1,0 +1,36 @@
+<h1>Cadastro de produto – {{actionText()}}</h1>
+
+<br>
+
+<form [formGroup]="formProduto" (ngSubmit)="submitData()">
+  <h2>Dados cadastrais</h2>
+  <div class="row">
+    <div class="col">
+      <mat-form-field class="cadastro__form-field">
+        <mat-label>Nome</mat-label>
+        <input matInput type="text" formControlName="nome" />
+      </mat-form-field>
+    </div>
+    <div class="col">
+      <mat-form-field class="cadastro__form-field">
+        <mat-label>Preço</mat-label>
+        <span matPrefix>R$ &nbsp;</span>
+        <input matInput type="number" formControlName="preco" placeholder="Centavos separados por vírgula" />
+      </mat-form-field>
+    </div>
+  </div>
+  <mat-form-field class="cadastro__form-field">
+    <mat-label>Descrição</mat-label>
+    <textarea matInput type="text" formControlName="descricao"></textarea>
+  </mat-form-field>
+  <div class="row">
+    <div class="col-auto">
+      <button mat-raised-button type="button" (click)="backToList()"><fa-icon [icon]="faArrowLeft"></fa-icon> Voltar para a listagem</button>
+    </div>
+    <div class="col action-buttons">
+      <button mat-raised-button color="primary" type="button" *ngIf="showEditButton()" (click)="editData()"><fa-icon [icon]="faEdit"></fa-icon> Editar</button> &nbsp;
+      <button mat-raised-button color="warn" type="button" *ngIf="showDeleteButton()" (click)="deleteData()"><fa-icon [icon]="faTrash"></fa-icon> Excluir</button> &nbsp;
+      <button mat-raised-button color="primary" type="submit" *ngIf="showSaveButton()"><fa-icon [icon]="faCheck"></fa-icon> Salvar</button>
+    </div>
+  </div>
+</form>

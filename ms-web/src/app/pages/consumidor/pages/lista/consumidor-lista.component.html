@@ -1,3 +1,9 @@
 <h1>Consumidores</h1>
 
-<app-tabela [data]="tableData"></app-tabela>
+<app-tabela *ngIf="!loadingData" [data]="tableData" (onClickItem)="goToConsumerData($event)" (onDeleteItem)="deleteData($event.id, $event.nome)" (onEditItem)="editData($event.id)"></app-tabela>
+
+<br>
+
+<div class="action-buttons">
+  <button mat-raised-button color="primary" type="button" (click)="goToNewConsumer()"><fa-icon [icon]="faPlus"></fa-icon> Novo Cadastro</button>
+</div>

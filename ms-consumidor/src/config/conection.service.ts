@@ -6,7 +6,7 @@ export class ConnectionService {
     private static collectionName = 'consumidores';
    
     private static forRoot(dbName: string, collectionName: string = ConnectionService.collectionName): DynamicModule {
-        return MongooseModule.forRoot(`mongodb+srv://startupabkm:3XU1tYrdyTH0dwvh@project01db.med08.mongodb.net/${dbName}?retryWrites=true&w=majority`,
+        return MongooseModule.forRoot(`mongodb+srv://abkmstartup:fiap@2020@cluster0.sgvlv.mongodb.net/${dbName}?retryWrites=true&w=majority`,
             { connectionName: collectionName, useNewUrlParser: true, useUnifiedTopology: true });
     };
     private static forFeature(name: any, schema: any, collectionName: string = ConnectionService.collectionName): DynamicModule {

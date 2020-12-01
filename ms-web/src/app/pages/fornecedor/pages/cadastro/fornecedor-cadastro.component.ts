@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Fornecedor } from '@apppages/fornecedor/interfaces/fornecedor.interface';
 import { CadastroInputType } from '@cTypes/cadastro-input.type';
 import { RoutesEnum } from '@enums/routes.enum';
 import { faArrowLeft, faCheck, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
-import { ConsumidorService } from '@pages/consumidor/consumidor.service';
-import { Consumidor } from '@pages/consumidor/interfaces/consumidor.interface';
+import { FornecedorService } from '@pages/fornecedor/fornecedor.service';
 
 @Component({
-  selector: 'app-consumidor-cadastro',
-  templateUrl: './consumidor-cadastro.component.html'
+  selector: 'app-fornecedor-cadastro',
+  templateUrl: './fornecedor-cadastro.component.html'
 })
-export class ConsumidorCadastroComponent implements OnInit {
+export class FornecedorCadastroComponent implements OnInit {
 
   public faTrash = faTrash;
   public faEdit = faEdit;
@@ -20,14 +20,14 @@ export class ConsumidorCadastroComponent implements OnInit {
 
   public action: CadastroInputType;
 
-  public consumidorId: string;
-  public dataConsumidor: Consumidor;
-  public formConsumidor: FormGroup;
+  public fornecedorId: string;
+  public dataFornecedor: Fornecedor;
+  public formFornecedor: FormGroup;
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly router: Router,
-    private readonly consumidorService: ConsumidorService,
+    private readonly fornecedorService: FornecedorService,
     private readonly formBuilder: FormBuilder
   ) { }
 
@@ -44,12 +44,12 @@ export class ConsumidorCadastroComponent implements OnInit {
           this.action = 'update';
         } else {
           this.action = 'read';
-          this.formConsumidor.disable();
+          this.formFornecedor.disable();
         }
-        this.consumidorId = params.id;
-        this.consumidorService.getConsumidor(params.id).subscribe(consumidor => {
-          this.dataConsumidor = consumidor;
-          this.formConsumidor.patchValue(consumidor);
+        this.fornecedorId = params.id;
+        this.fornecedorService.getFornecedor(params.id).subscribe(fornecedor => {
+          this.dataFornecedor = fornecedor;
+          this.formFornecedor.patchValue(fornecedor);
         });
       } else if (url[0] && url[0].path === RoutesEnum.CADASTRAR) {
         this.action = 'create';
@@ -58,7 +58,7 @@ export class ConsumidorCadastroComponent implements OnInit {
   }
 
   private _constructForm() {
-    this.formConsumidor = this.formBuilder.group({
+    this.formFornecedor = this.formBuilder.group({
       nome: ['', Validators.required],
       doc: ['', Validators.required],
       telefone: ['', Validators.required],
@@ -92,29 +92,29 @@ export class ConsumidorCadastroComponent implements OnInit {
   }
 
   public backToList(): void {
-    this.router.navigate([RoutesEnum.CONSUMIDOR]);
+    this.router.navigate([RoutesEnum.FORNECEDOR]);
   }
 
   public editData(): void {
-    this.router.navigate([RoutesEnum.CONSUMIDOR, this.consumidorId, RoutesEnum.EDITAR]);
+    this.router.navigate([RoutesEnum.FORNECEDOR, this.fornecedorId, RoutesEnum.EDITAR]);
   }
 
   public deleteData(): void {
-    if (confirm(`Deseja mesmo excluir o consumidor ${this.dataConsumidor.nome}?`)) {
-      this.consumidorService.deleteConsumidor(this.consumidorId).subscribe(_ => {
-        alert('Consumidor excluído com sucesso!');
+    if (confirm(`Deseja mesmo excluir o fornecedor ${this.dataFornecedor.nome}?`)) {
+      this.fornecedorService.deleteFornecedor(this.fornecedorId).subscribe(_ => {
+        alert('Fornecedor excluído com sucesso!');
         this.backToList();
       });
     }
   }
 
   public submitData() {
-    if (this.formConsumidor.invalid) {
+    if (this.formFornecedor.invalid) {
       return;
     }
 
-    this.consumidorService.postConsumidor(this.formConsumidor.value).subscribe(_ => {
-      alert(`Consumidor ${this.action === 'update' ? 'editado' : 'cadastrado'} com sucesso!`);
+    this.fornecedorService.postFornecedor(this.formFornecedor.value).subscribe(_ => {
+      alert(`Fornecedor ${this.action === 'update' ? 'editado' : 'cadastrado'} com sucesso!`);
       this.backToList();
     });
 
@@ -124,9 +124,9 @@ export class ConsumidorCadastroComponent implements OnInit {
     if (this.action === 'create') {
       return 'Novo cadastro';
     } else if (this.action === 'read') {
-      return `Ficha cadastral ${this.dataConsumidor.uid}`;
+      return `Ficha cadastral ${this.dataFornecedor.uid}`;
     } else {
-      return `Edição do cadastro ${this.dataConsumidor.uid}`;
+      return `Edição do cadastro ${this.dataFornecedor.uid}`;
     }
   }
 
