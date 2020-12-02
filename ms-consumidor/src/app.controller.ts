@@ -14,12 +14,12 @@ export class AppController {
   }
 
   @Get("/consumidor/:id")
-  async indexById(id: any) {
+  async indexById(@Param('id') id: any) {
     return await this.consumidorService.findById(id);
   }
 
   @Get("/consumidor/by/:prop/:propValue")
-  async indexBy(prop: string, propValue: string) : Promise<ConsumidorDto[]> {
+  async indexBy(@Param('prop') prop: string, @Param('propValue') propValue: string) : Promise<ConsumidorDto[]> {
     return await this.consumidorService.findBy(prop, propValue);
   }
 
@@ -29,7 +29,7 @@ export class AppController {
   }
 
   @Put('/consumidor/:id')
-  async update(id: any, @Body() consumidor: ConsumidorDto) {
+  async update(@Param('id') id: any, @Body() consumidor: ConsumidorDto) {
     return await this.consumidorService.update(id, consumidor);
   }
 
@@ -37,4 +37,5 @@ export class AppController {
   async delete(@Param('id') id) {
     return await this.consumidorService.delete(id);
   }
+  
 }

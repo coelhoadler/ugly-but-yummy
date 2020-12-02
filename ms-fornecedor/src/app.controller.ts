@@ -6,9 +6,7 @@ import { FornecedorService } from './fornecedor/fornecedor.service'
 export class AppController {
   constructor(
     private fornecedorService: FornecedorService
-  ) {
-
-  }
+  ) { }
 
   @Get("/fornecedor")
   async index() {
@@ -16,12 +14,12 @@ export class AppController {
   }
 
   @Get("/fornecedor/:id")
-  async indexById(id: any) {
+  async indexById(@Param('id') id) {
     return await this.fornecedorService.findById(id);
   }
 
   @Get("/fornecedor/by/:prop/:propValue")
-  async indexBy(prop: string, propValue: string) : Promise<FornecedorDto[]> {
+  async indexBy(@Param('prop') prop: string, @Param('propValue') propValue: string) : Promise<FornecedorDto[]> {
     return await this.fornecedorService.findBy(prop, propValue);
   }
 

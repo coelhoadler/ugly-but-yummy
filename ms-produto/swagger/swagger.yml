@@ -1,0 +1,157 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Swagger Ugly But Yummy
+  description: Administra informações do microsserviço de produto.
+  termsOfService: 'http://swagger.io/terms/'
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: localhost:3002
+basePath: /
+schemes:
+  - http
+  
+consumes:
+  - application/json
+produces:
+  - application/json
+  
+tags: 
+  - name: Produto
+  
+paths:
+  '/produto':
+    get:
+      tags:
+        - Produto
+      summary: Busca os produtos.
+      description: Retorna todos os produtos cadastrados.
+      operationId: Produto
+      responses:
+        200:
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Produto'          
+        400:
+          description: Bad Request
+    post:
+      tags:
+        - Produto
+      summary: Cadastra os produto.
+      description: Cadastra um novo produto.
+      operationId: cadastraProduto
+      parameters:
+        - in: body
+          name: object
+          schema:
+            $ref: '#/definitions/Produto'
+      responses:
+        201:
+          description: Cadastro efetuado com sucesso.
+          schema:
+            $ref: '#/definitions/Produto'          
+        400:
+          description: Bad Request.
+        500:
+          description: Internal Server Error.
+          
+
+  '/produto/{produtoId}':
+    get:
+      tags:
+        - Produto
+      summary: Busca um produto específico por Id.
+      description: Retorna as informações do produto pesquisado.
+      operationId: buscaProdutoPorId
+      parameters:
+        - in: path
+          name: produtoId
+          required: true
+          type: string      
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Produto'
+        400:
+          description: Bad Request
+            
+    put:
+      tags:
+        - Produto    
+      summary: Atualiza os dados de um produto específico por Id.
+      description: Retorna as informações do produto atualizado.
+      operationId: atualizaProdutoPorId
+      parameters:
+        - in: path
+          name: produtoId
+          required: true
+          type: string      
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Produto'
+        400:
+          description: Bad Request
+  
+    delete:
+      tags:
+        - Produto
+      summary: Deleta produto específico por Id.
+      description: Deleta o cadastro do produto através do Id passado.
+      operationId: deletaProduto
+      parameters:
+        - in: path
+          name: produtoId
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+        400:
+          description: Bad Request
+          
+  '/produto/by/{prop}/{propValue}':
+    get:
+      tags:
+        - Produto
+      summary: Busca um Produto por uma propriedade específica.
+      description: Retorna as informações do produto de acordo com o campo/valor que passado.
+      operationId: buscaProdutoPorPropriedade
+      parameters:
+        - in: path
+          name: prop
+          required: true
+          type: string  
+        - in: path
+          name: propValue
+          required: true
+          type: string
+      responses:
+        200:
+          description: OK
+          schema:
+            $ref: '#/definitions/Produto'
+
+definitions:
+  Produto:
+    type: object
+    properties:
+      sku: 
+        type: string
+        example: '000000000000000000000001'
+        maxLength: 24
+      nome: 
+        type: string
+        example: 'Xbox Series X'
+      descricao: 
+        type: string
+        example: 'Um vídeo game de última geração'
+      preco: 
+        type: number
+        example: 4699
+

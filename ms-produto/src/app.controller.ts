@@ -14,7 +14,7 @@ export class AppController {
   }
 
   @Get("/produto/:id")
-  async indexById(@Param('id') id: any) {
+  async indexById(@Param('id') id) {
     return await this.produtoService.findById(id);
   }
 
