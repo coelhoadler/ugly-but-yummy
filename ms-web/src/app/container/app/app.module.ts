@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { PromptModule } from '@appcomponents/prompt/prompt.module';
 import { HeaderModule } from '@components/header/header.module';
 import { AppContainer } from './app.container';
 import { AppRoutes } from './app.routes';
@@ -17,7 +18,8 @@ import { AppRoutes } from './app.routes';
     BrowserAnimationsModule,
     HeaderModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    PromptModule
   ],
   bootstrap: [AppContainer]
 })

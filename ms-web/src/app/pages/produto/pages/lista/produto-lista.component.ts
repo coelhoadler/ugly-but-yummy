@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PromptService } from '@appcomponents/prompt/prompt.service';
 import { RoutesEnum } from '@appenums/routes.enum';
 import { Produto } from '@apppages/produto/interfaces/produto.interface';
 import { ProdutoService } from '@apppages/produto/produto.service';
@@ -34,14 +35,15 @@ export class ProdutoListaComponent implements OnInit {
     private readonly produtoService: ProdutoService,
     private readonly router: Router,
     private readonly datePipe: DatePipe,
+    private readonly promptService: PromptService,
     private readonly floatToDecimalPipe: FloatToDecimalPipe
   ) { }
 
   public ngOnInit(): void {
-    this._getProdutoes();
+    this._getProdutos();
   }
 
-  private _getProdutoes() {
+  private _getProdutos() {
     this.loadingData = true;
     this.tableData.data = [];
     this.produtoService.getProdutoes()
@@ -75,12 +77,13 @@ export class ProdutoListaComponent implements OnInit {
   }
 
   public deleteData(produtoId: string, produtoNome: string): void {
-    if (confirm(`Deseja mesmo excluir o Produto ${produtoNome}?`)) {
-      this.produtoService.deleteProduto(produtoId).subscribe(_ => {
-        alert('Produto excluído com sucesso!');
-        this._getProdutoes();
-      });
-    }
+    this.promptService.confirm(`Deseja mesmo excluir o Produto ${produtoNome}?`).subscribe(res => {
+      if (res) {
+        this.produtoService.deleteProduto(produtoId).subscribe(_ => {
+          this.promptService.alert('Produto excluído com sucesso!').subscribe(_ => this._getProdutos());
+        });
+      }
+    });
   }
 
 }

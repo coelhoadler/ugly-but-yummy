@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PromptService } from '@appcomponents/prompt/prompt.service';
 import { Produto } from '@apppages/produto/interfaces/produto.interface';
 import { CadastroInputType } from '@cTypes/cadastro-input.type';
 import { RoutesEnum } from '@enums/routes.enum';
 import { faArrowLeft, faCheck, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ProdutoService } from '@pages/produto/produto.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-produto-cadastro',
@@ -28,6 +30,7 @@ export class ProdutoCadastroComponent implements OnInit {
     private readonly activatedRoute: ActivatedRoute,
     private readonly router: Router,
     private readonly produtoService: ProdutoService,
+    private readonly promptService: PromptService,
     private readonly formBuilder: FormBuilder
   ) { }
 
@@ -53,7 +56,6 @@ export class ProdutoCadastroComponent implements OnInit {
         });
       } else if (url[0] && url[0].path === RoutesEnum.CADASTRAR) {
         this.action = 'create';
-        this.formProduto.patchValue({createdAt: new Date()});
       }
     });
   }
@@ -63,7 +65,7 @@ export class ProdutoCadastroComponent implements OnInit {
       nome: ['', Validators.required],
       descricao: ['', Validators.required],
       preco: ['', Validators.required],
-      createdAt: ['', Validators.required]
+      createdAt: ''
     });
   }
 
@@ -88,36 +90,49 @@ export class ProdutoCadastroComponent implements OnInit {
   }
 
   public deleteData(): void {
-    if (confirm(`Deseja mesmo excluir o produto ${this.dataProduto.nome}?`)) {
-      this.produtoService.deleteProduto(this.produtoId).subscribe(_ => {
-        alert('Produto excluído com sucesso!');
-        this.backToList();
-      });
-    }
+    this.promptService.confirm(`Deseja mesmo excluir o produto ${this.dataProduto.nome}?`).subscribe(res => {
+      if (res) {
+        this.produtoService.deleteProduto(this.produtoId).subscribe(_ => {
+          this.promptService.alert('Produto excluído com sucesso!').subscribe(_ => this.backToList());
+        });
+      }
+    });
   }
 
   public submitData() {
+    console.log(this.formProduto.value);
     if (this.formProduto.invalid) {
       return;
     }
 
-    const value = {...this.formProduto.value, preco: Number(this.formProduto.value.preco)};
+    if (this.action === 'create') {
+      this.formProduto.patchValue({ createdAt: new Date() });
+    }
 
-    this.produtoService.postProduto(value).subscribe(_ => {
-      alert(`Produto ${this.action === 'update' ? 'editado' : 'cadastrado'} com sucesso!`);
-      this.backToList();
+    const getRightRequest = (data: any): Observable<Produto> => {
+      if (this.action === 'create') {
+        return this.produtoService.postProduto(data);
+      } else {
+        return this.produtoService.updateProduto(this.produtoId, data);
+      }
+    };
+
+    console.log(this.formProduto.value);
+
+    getRightRequest(this.formProduto.value).subscribe(_ => {
+      this.promptService.alert(`Produto ${this.action === 'update' ? 'editado' : 'cadastrado'} com sucesso!`)
+        .subscribe(_ => this.backToList());
     });
 
   }
 
   public actionText(): string {
-    if (!this.dataProduto) { return null; }
     if (this.action === 'create') {
       return 'Novo cadastro';
     } else if (this.action === 'read') {
-      return `Ficha cadastral ${this.dataProduto.sku}`;
+      return `Ficha cadastral ${this.dataProduto?.sku}`;
     } else {
-      return `Edição do cadastro ${this.dataProduto.sku}`;
+      return `Edição do cadastro ${this.dataProduto?.sku}`;
     }
   }
 

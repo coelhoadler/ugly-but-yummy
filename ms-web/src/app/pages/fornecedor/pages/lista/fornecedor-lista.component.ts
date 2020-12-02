@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { PromptService } from '@appcomponents/prompt/prompt.service';
 import { RoutesEnum } from '@appenums/routes.enum';
 import { FornecedorService } from '@apppages/fornecedor/fornecedor.service';
 import { Fornecedor } from '@apppages/fornecedor/interfaces/fornecedor.interface';
@@ -30,6 +31,7 @@ export class FornecedorListaComponent implements OnInit {
 
   constructor(
     private readonly fornecedorService: FornecedorService,
+    private readonly promptService: PromptService,
     private readonly router: Router
   ) { }
 
@@ -66,12 +68,13 @@ export class FornecedorListaComponent implements OnInit {
   }
 
   public deleteData(fornecedorId: string, fornecedorNome: string): void {
-    if (confirm(`Deseja mesmo excluir o Fornecedor ${fornecedorNome}?`)) {
-      this.fornecedorService.deleteFornecedor(fornecedorId).subscribe(_ => {
-        alert('Fornecedor excluído com sucesso!');
-        this._getFornecedores();
-      });
-    }
+    this.promptService.confirm(`Deseja mesmo excluir o Fornecedor ${fornecedorNome}?`).subscribe(res => {
+      if (res) {
+        this.fornecedorService.deleteFornecedor(fornecedorId).subscribe(_ => {
+          this.promptService.alert('Fornecedor excluído com sucesso!').subscribe(_ => this._getFornecedores());
+        });
+      }
+    });
   }
 
 }
