@@ -27,6 +27,10 @@ export class FornecedorService {
     return this.http.post<Fornecedor>(this._endpoint, data);
   }
 
+  public updateFornecedor(id: string, data: Fornecedor): Observable<Fornecedor> {
+    return this.http.patch<Fornecedor>(`${this._endpoint}${id}`, data);
+  }
+
   public deleteFornecedor(id: string): Observable<Fornecedor> {
     return this.http.delete<Fornecedor>(`${this._endpoint}${id}`);
   }

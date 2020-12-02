@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PromptService } from '@appcomponents/prompt/prompt.service';
 import { CadastroInputType } from '@cTypes/cadastro-input.type';
 import { RoutesEnum } from '@enums/routes.enum';
 import { faArrowLeft, faCheck, faEdit, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ConsumidorService } from '@pages/consumidor/consumidor.service';
 import { Consumidor } from '@pages/consumidor/interfaces/consumidor.interface';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-consumidor-cadastro',
@@ -27,6 +29,7 @@ export class ConsumidorCadastroComponent implements OnInit {
   constructor(
     private readonly activatedRoute: ActivatedRoute,
     private readonly router: Router,
+    private readonly promptService: PromptService,
     private readonly consumidorService: ConsumidorService,
     private readonly formBuilder: FormBuilder
   ) { }
@@ -100,12 +103,13 @@ export class ConsumidorCadastroComponent implements OnInit {
   }
 
   public deleteData(): void {
-    if (confirm(`Deseja mesmo excluir o consumidor ${this.dataConsumidor.nome}?`)) {
-      this.consumidorService.deleteConsumidor(this.consumidorId).subscribe(_ => {
-        alert('Consumidor excluído com sucesso!');
-        this.backToList();
-      });
-    }
+    this.promptService.confirm(`Deseja mesmo excluir o consumidor ${this.dataConsumidor.nome}?`).subscribe(res => {
+      if (res) {
+        this.consumidorService.deleteConsumidor(this.consumidorId).subscribe(_ => {
+          this.promptService.alert('Consumidor excluído com sucesso!').subscribe(_ => this.backToList());
+        });
+      }
+    });
   }
 
   public submitData() {
@@ -115,9 +119,17 @@ export class ConsumidorCadastroComponent implements OnInit {
       this.consumidorService.postConsumidor(this.formConsumidor.value);
     }
 
-    this.consumidorService.postConsumidor(this.formConsumidor.value).subscribe(_ => {
-      alert(`Consumidor ${this.action === 'update' ? 'editado' : 'cadastrado'} com sucesso!`);
-      this.backToList();
+    const getRightRequest = (data: any): Observable<Consumidor> => {
+      if (this.action === 'create') {
+        return this.consumidorService.postConsumidor(data);
+      } else {
+        return this.consumidorService.updateConsumidor(this.consumidorId, data);
+      }
+    };
+
+    getRightRequest(this.formConsumidor.value).subscribe(_ => {
+      this.promptService.alert(`Consumidor ${this.action === 'update' ? 'editado' : 'cadastrado'} com sucesso!`)
+        .subscribe(_ => this.backToList());
     });
 
   }

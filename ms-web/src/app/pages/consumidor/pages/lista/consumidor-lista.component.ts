@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RoutesEnum } from '@appenums/routes.enum';
+import { PromptService } from '@components/prompt/prompt.service';
 import { TabelaDataModel } from '@components/tabela/models/tabela-data.model';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { finalize } from 'rxjs/operators';
@@ -17,11 +18,11 @@ export class ConsumidorListaComponent implements OnInit {
 
   @Input() public tableData: TabelaDataModel = new TabelaDataModel({
     columns: [
-      {key: 'id', viewName: 'id', hidden: true},
-      {key: 'uid', viewName: 'Uuid'},
-      {key: 'nome', viewName: 'Nome'},
-      {key: 'email', viewName: 'E-mail'},
-      {key: 'uf', viewName: 'UF'}
+      { key: 'id', viewName: 'id', hidden: true },
+      { key: 'uid', viewName: 'Uuid' },
+      { key: 'nome', viewName: 'Nome' },
+      { key: 'email', viewName: 'E-mail' },
+      { key: 'uf', viewName: 'UF' }
     ],
     data: []
   });
@@ -30,6 +31,7 @@ export class ConsumidorListaComponent implements OnInit {
 
   constructor(
     private readonly consumidorService: ConsumidorService,
+    private readonly promptService: PromptService,
     private readonly router: Router
   ) { }
 
@@ -47,13 +49,13 @@ export class ConsumidorListaComponent implements OnInit {
       .subscribe(consumidores => consumidores.forEach(consumidor => this._constructTableItem(consumidor)));
   }
 
-  private _constructTableItem(consumidor: Consumidor){
+  private _constructTableItem(consumidor: Consumidor) {
     this.tableData.data.push(
-      {...consumidor, uf: consumidor.endereco.uf}
+      { ...consumidor, uf: consumidor.endereco.uf }
     );
   }
 
-  public goToConsumerData(consumerOnTable: {id: string}) {
+  public goToConsumerData(consumerOnTable: { id: string }) {
     this.router.navigate([RoutesEnum.CONSUMIDOR, consumerOnTable.id]);
   }
 
@@ -66,12 +68,13 @@ export class ConsumidorListaComponent implements OnInit {
   }
 
   public deleteData(consumidorId: string, consumidorNome: string): void {
-    if (confirm(`Deseja mesmo excluir o consumidor ${consumidorNome}?`)) {
-      this.consumidorService.deleteConsumidor(consumidorId).subscribe(_ => {
-        alert('Consumidor excluído com sucesso!');
-        this._getConsumidores();
-      });
-    }
+    this.promptService.confirm(`Deseja mesmo excluir o consumidor ${consumidorNome}?`).subscribe(res => {
+      if (res) {
+        this.consumidorService.deleteConsumidor(consumidorId).subscribe(_ => {
+          this.promptService.alert('Consumidor excluído com sucesso!').subscribe(_ => this._getConsumidores());
+        });
+      }
+    });
   }
 
 }

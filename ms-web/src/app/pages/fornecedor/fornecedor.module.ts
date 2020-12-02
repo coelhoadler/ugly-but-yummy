@@ -12,6 +12,7 @@ import { FornecedorService } from './fornecedor.service';
 import { FornecedorCadastroComponent } from './pages/cadastro/fornecedor-cadastro.component';
 import { FornecedorListaComponent } from './pages/lista/fornecedor-lista.component';
 
+console.log('oi');
 @NgModule({
   declarations: [FornecedorCadastroComponent, FornecedorListaComponent],
   exports: [FornecedorCadastroComponent, FornecedorListaComponent],

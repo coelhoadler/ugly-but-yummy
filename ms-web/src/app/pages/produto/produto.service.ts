@@ -27,6 +27,10 @@ export class ProdutoService {
     return this.http.post<Produto>(this._endpoint, data);
   }
 
+  public updateProduto(id: string, data: Produto): Observable<Produto> {
+    return this.http.patch<Produto>(`${this._endpoint}${id}`, data);
+  }
+
   public deleteProduto(id: string): Observable<Produto> {
     return this.http.delete<Produto>(`${this._endpoint}${id}`);
   }

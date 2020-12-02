@@ -27,6 +27,10 @@ export class ConsumidorService {
     return this.http.post<Consumidor>(this._endpoint, data);
   }
 
+  public updateConsumidor(id: string, data: Consumidor): Observable<Consumidor> {
+    return this.http.patch<Consumidor>(`${this._endpoint}${id}`, data);
+  }
+
   public deleteConsumidor(id: string): Observable<Consumidor> {
     return this.http.delete<Consumidor>(`${this._endpoint}${id}`);
   }
