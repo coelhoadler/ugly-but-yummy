@@ -1,0 +1,116 @@
+{
+  "consumidor": [
+    {
+      "id": "1",
+      "uid": "001",
+      "nome": "Malaquias",
+      "doc": "42223001874",
+      "telefone": "13996275325",
+      "email": "malaquias@fiap.com",
+      "endereco": {
+        "cep": "11095110",
+        "rua": "Rua dos camelos",
+        "numero": "hum mil",
+        "complemento": "altos",
+        "cidade": "logo ali",
+        "uf": "sp"
+      },
+      "dadosBancarios": {
+        "ag": "0268",
+        "cc": "309515",
+        "nomeBanco": "Itaú"
+      }
+    },
+    {
+      "id": "2",
+      "uid": "002",
+      "nome": "Davi",
+      "doc": "45578425357",
+      "telefone": "11974512438",
+      "email": "davi@fiap.com",
+      "endereco": {
+        "cep": "06422154",
+        "rua": "Rua dos bobos",
+        "numero": "458",
+        "complemento": "baixos",
+        "cidade": "São Paulo",
+        "uf": "sp"
+      },
+      "dadosBancarios": {
+        "ag": "4512",
+        "cc": "458745",
+        "nomeBanco": "Nubank"
+      }
+    }
+  ],
+  "fornecedor": [
+    {
+      "id": "1",
+      "uid": "001",
+      "nome": "Malaquias",
+      "doc": "42223001874",
+      "telefone": "13996275325",
+      "email": "malaquias@fiap.com",
+      "endereco": {
+        "cep": "11095110",
+        "rua": "Rua dos camelos",
+        "numero": "hum mil",
+        "complemento": "altos",
+        "cidade": "logo ali",
+        "uf": "sp"
+      },
+      "dadosBancarios": {
+        "ag": "0268",
+        "cc": "309515",
+        "nomeBanco": "Itaú"
+      }
+    },
+    {
+      "id": "2",
+      "uid": "002",
+      "nome": "Davi",
+      "doc": "45578425357",
+      "telefone": "11974512438",
+      "email": "davi@fiap.com",
+      "endereco": {
+        "cep": "06422154",
+        "rua": "Rua dos bobos",
+        "numero": "458",
+        "complemento": "baixos",
+        "cidade": "São Paulo",
+        "uf": "sp"
+      },
+      "dadosBancarios": {
+        "ag": "4512",
+        "cc": "458745",
+        "nomeBanco": "Nubank"
+      }
+    }
+  ],
+  "produto": [
+    {
+      "id": "0004",
+      "sku": "0001",
+      "nome": "Microsoft Xbox Series X",
+      "descricao": "Um vídeo game de última geração.",
+      "preco": 4699,
+      "createdAt": "2020-11-21"
+    },
+    {
+      "id": "0005",
+      "sku": "0002",
+      "nome": "Sony PlayStation 5 Digital",
+      "descricao": "Um vídeo game de última geração para mídias digitais.",
+      "preco": 4499,
+      "createdAt": "2020-11-29"
+    },
+    {
+      "id": "0006",
+      "sku": "0003",
+      "nome": "Computador Gamer RGB HyperX",
+      "descricao": "Computador gamer com Nvidia RTX 2080, SSD 500GB, 16GB, Intel Core i7 9th.",
+      "preco": 9899,
+      "createdAt": "2020-11-29"
+    }
+  ]
+}

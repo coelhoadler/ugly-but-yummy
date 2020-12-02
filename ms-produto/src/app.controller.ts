@@ -24,7 +24,7 @@ export class AppController {
   }
 
   @Post('/produto')
-  async create(@Body() produto: ProdutoDto) {
+  async create(@Body() produto: ProdutoDto) { 
     return await this.produtoService.create(produto);
   }
 

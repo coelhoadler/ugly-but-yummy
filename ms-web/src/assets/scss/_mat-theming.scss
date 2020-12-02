@@ -24,3 +24,8 @@ $dark-app-theme: mat-dark-theme( $app-dark-primary, $app-dark-accent, $app-warn 
         @include angular-material-theme($dark-app-theme)
     };
 }
+
+.mat-form-field-disabled {
+    * {color: black !important;}
+    .mat-form-field-underline { opacity: .5; } 
+}

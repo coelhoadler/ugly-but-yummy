@@ -33,7 +33,7 @@ export class AppController {
     return await this.fornecedorService.update(id, fornecedor);
   }
 
-  @Delete('/consumidor/:id')
+  @Delete('/fornecedor/:id')
   async delete(@Param('id') id) {
     return await this.fornecedorService.delete(id);
   }

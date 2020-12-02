@@ -1,0 +1,9 @@
+<h1>Fornecedores</h1>
+
+<app-tabela *ngIf="!loadingData" [data]="tableData" (onClickItem)="goToFornecedorData($event)" (onDeleteItem)="deleteData($event._id, $event.nome)" (onEditItem)="editData($event._id)"></app-tabela>
+
+<br>
+
+<div class="action-buttons">
+  <button mat-raised-button color="primary" type="button" (click)="goToNewFornecedor()"><fa-icon [icon]="faPlus"></fa-icon> Novo Cadastro</button>
+</div>

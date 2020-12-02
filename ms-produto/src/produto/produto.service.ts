@@ -4,6 +4,7 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Produto, ProdutoDocument } from './produto.schema';
 import { ProdutoDto } from './produto.dto';
 import { SlackService } from './../shared/services/slack.service';
+import { ObjectID } from 'mongodb';
 
 @Injectable()
 export class ProdutoService {
@@ -13,6 +14,10 @@ export class ProdutoService {
     ) { }
 
     async create(produtoDto: ProdutoDto): Promise<Produto> {
+        const _id = new ObjectID().toHexString();
+        produtoDto._id = _id;
+        produtoDto.sku = produtoDto.sku.padStart(24, '0');
+
         this._slackService.postMessage(produtoDto);
         const schema = new this._produtoSchema(produtoDto);
         return schema.save();

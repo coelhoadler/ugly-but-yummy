@@ -1,3 +1,18 @@
 <header>
-    header
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-auto">
+                <span class="title">CRM</span>
+            </div>
+            <div class="col">
+                <nav>
+                    <ul>
+                        <li><a [routerLink]='["/", routesEnum.CONSUMIDOR]'>Consumidores</a></li>
+                        <li><a [routerLink]='["/", routesEnum.FORNECEDOR]'>Fornecedores</a></li>
+                        <li><a [routerLink]='["/", routesEnum.PRODUTO]'>Produtos</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
 </header>

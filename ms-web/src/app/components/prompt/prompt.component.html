@@ -1,0 +1,9 @@
+<div class="prompt-overlay" *ngIf="!hidden">
+  <div class="prompt-box">
+    <p [innerHTML]="message"></p>
+    <div class="buttons">
+      <button (click)="response(true)" id="prompt-confirm">{{type === 'alert' ? 'OK' : 'Confirmar'}}</button>
+      <button (click)="response(false)" id="prompt-cancel" *ngIf="type === 'confirm'">Cancelar</button>
+    </div>
+  </div>
+</div>
