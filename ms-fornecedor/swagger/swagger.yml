@@ -2,12 +2,12 @@ swagger: '2.0'
 info:
   version: 1.0.0
   title: Swagger Ugly But Yummy
-  description: Administra informações do microsserviço de fornecedoro.
+  description: Administra informações do microsserviço de fornecedor.
   termsOfService: 'http://swagger.io/terms/'
   license:
     name: Apache 2.0
     url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
-host: localhost:3000
+host: localhost:3001
 basePath: /
 schemes:
   - http
@@ -18,16 +18,16 @@ produces:
   - application/json
   
 tags: 
-  - name: Consumidor
+  - name: Fornecedor
   
 paths:
   '/fornecedor':
     get:
       tags:
-        - Consumidor
-      summary: Busca consumidores.
-      description: Retorna todos os consumidores cadastrados.
-      operationId: consultaConsumidor
+        - Fornecedor
+      summary: Busca fornecedores.
+      description: Retorna todos os fornecedores cadastrados.
+      operationId: consultaFornecedor
       responses:
         200:
           description: OK
@@ -35,74 +35,74 @@ paths:
           description: Bad Request
     post:
       tags:
-        - Consumidor
+        - Fornecedor
       summary: Cadastra fornecedor.
       description: Cadastra um novo fornecedor.
-      operationId: cadsatraConsumidor
+      operationId: cadsatraFornecedor
       parameters:
         - in: body
           name: object
           schema:
-            $ref: '#/definitions/Consumidor'
+            $ref: '#/definitions/Fornecedor'
       responses:
         201:
           description: Cadastro efetuado com sucesso.
           schema:
-            $ref: '#/definitions/Consumidor'          
+            $ref: '#/definitions/Fornecedor'          
         400:
           description: Bad Request.
         500:
           description: Internal Server Error.
           
 
-  '/fornecedor/{consumidorId}':
+  '/fornecedor/{fornecedorId}':
     get:
       tags:
-        - Consumidor
+        - Fornecedor
       summary: Busca um fornecedor específico por Id.
       description: Retorna as informações do fornecedor pesquisado.
-      operationId: consultaConsumidorPorId
+      operationId: consultaFornecedorPorId
       parameters:
         - in: path
-          name: consumidorId
+          name: fornecedorId
           required: true
           type: string      
       responses:
         200:
           description: OK
           schema:
-            $ref: '#/definitions/Consumidor'
+            $ref: '#/definitions/Fornecedor'
         400:
           description: Bad Request
             
     put:
       tags:
-        - Consumidor    
+        - Fornecedor    
       summary: Atualiza os dados de um fornecedor específico por Id.
       description: Retorna as informações do fornecedor pesquisado.
-      operationId: atualizaConsumidorPorId
+      operationId: atualizaFornecedorPorId
       parameters:
         - in: path
-          name: consumidorId
+          name: fornecedorId
           required: true
           type: string      
       responses:
         200:
           description: OK
           schema:
-            $ref: '#/definitions/Consumidor'
+            $ref: '#/definitions/Fornecedor'
         400:
           description: Bad Request
   
     delete:
       tags:
-        - Consumidor
+        - Fornecedor
       summary: Deleta fornecedor específico por Id.
       description: Deleta o cadastro do fornecedor através do ID passado.
-      operationId: deletaConsumidor
+      operationId: deletaFornecedor
       parameters:
         - in: path
-          name: consumidorId
+          name: fornecedorId
           required: true
           type: string
       responses:
@@ -114,10 +114,10 @@ paths:
   '/fornecedor/by/{prop}/{propValue}':
     get:
       tags:
-        - Consumidor
+        - Fornecedor
       summary: Busca um fornecedor por uma propriedade específica.
       description: Retorna as informações do fornecedor de acordo com o campo/valor que passado.
-      operationId: consultaConsumidorPorPropriedade
+      operationId: consultaFornecedorPorPropriedade
       parameters:
         - in: path
           name: prop
@@ -131,10 +131,10 @@ paths:
         200:
           description: OK
           schema:
-            $ref: '#/definitions/Consumidor'
+            $ref: '#/definitions/Fornecedor'
 
 definitions:
-  Consumidor:
+  Fornecedor:
     type: object
     properties:
       _id: 

@@ -696,7 +696,7 @@ margin-bottom: 20px;
   <script>
     // Script section to load models into a JS Var
     var defs = {}
-        defs["Consumidor"] = {
+        defs["Fornecedor"] = {
   "type" : "object",
   "properties" : {
     "_id" : {
@@ -724,14 +724,14 @@ margin-bottom: 20px;
       "example" : "malaquias@fiap.com"
     },
     "endereco" : {
-      "$ref" : "#/definitions/Consumidor_endereco"
+      "$ref" : "#/definitions/Fornecedor_endereco"
     },
     "dadosBancarios" : {
-      "$ref" : "#/definitions/Consumidor_dadosBancarios"
+      "$ref" : "#/definitions/Fornecedor_dadosBancarios"
     }
   }
 };
-        defs["Consumidor_dadosBancarios"] = {
+        defs["Fornecedor_dadosBancarios"] = {
   "type" : "object",
   "properties" : {
     "ag" : {
@@ -748,7 +748,7 @@ margin-bottom: 20px;
     }
   }
 };
-        defs["Consumidor_endereco"] = {
+        defs["Fornecedor_endereco"] = {
   "type" : "object",
   "properties" : {
     "cep" : {
@@ -793,24 +793,24 @@ margin-bottom: 20px;
             -->
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
-                  <li class="nav-header" data-group="Consumidor"><a href="#api-Consumidor">API Methods - Consumidor</a></li>
-                    <li data-group="Consumidor" data-name="atualizaConsumidorPorId" class="">
-                      <a href="#api-Consumidor-atualizaConsumidorPorId">atualizaConsumidorPorId</a>
+                  <li class="nav-header" data-group="Fornecedor"><a href="#api-Fornecedor">API Methods - Fornecedor</a></li>
+                    <li data-group="Fornecedor" data-name="atualizaFornecedorPorId" class="">
+                      <a href="#api-Fornecedor-atualizaFornecedorPorId">atualizaFornecedorPorId</a>
                     </li>
-                    <li data-group="Consumidor" data-name="cadsatraConsumidor" class="">
-                      <a href="#api-Consumidor-cadsatraConsumidor">cadsatraConsumidor</a>
+                    <li data-group="Fornecedor" data-name="cadsatraFornecedor" class="">
+                      <a href="#api-Fornecedor-cadsatraFornecedor">cadsatraFornecedor</a>
                     </li>
-                    <li data-group="Consumidor" data-name="consultaConsumidor" class="">
-                      <a href="#api-Consumidor-consultaConsumidor">consultaConsumidor</a>
+                    <li data-group="Fornecedor" data-name="consultaFornecedor" class="">
+                      <a href="#api-Fornecedor-consultaFornecedor">consultaFornecedor</a>
                     </li>
-                    <li data-group="Consumidor" data-name="consultaConsumidorPorId" class="">
-                      <a href="#api-Consumidor-consultaConsumidorPorId">consultaConsumidorPorId</a>
+                    <li data-group="Fornecedor" data-name="consultaFornecedorPorId" class="">
+                      <a href="#api-Fornecedor-consultaFornecedorPorId">consultaFornecedorPorId</a>
                     </li>
-                    <li data-group="Consumidor" data-name="consultaConsumidorPorPropriedade" class="">
-                      <a href="#api-Consumidor-consultaConsumidorPorPropriedade">consultaConsumidorPorPropriedade</a>
+                    <li data-group="Fornecedor" data-name="consultaFornecedorPorPropriedade" class="">
+                      <a href="#api-Fornecedor-consultaFornecedorPorPropriedade">consultaFornecedorPorPropriedade</a>
                     </li>
-                    <li data-group="Consumidor" data-name="deletaConsumidor" class="">
-                      <a href="#api-Consumidor-deletaConsumidor">deletaConsumidor</a>
+                    <li data-group="Fornecedor" data-name="deletaFornecedor" class="">
+                      <a href="#api-Fornecedor-deletaFornecedor">deletaFornecedor</a>
                     </li>
           </ul>
         </nav>
@@ -827,102 +827,102 @@ margin-bottom: 20px;
             <h2 id="welcome-to-apidoc">API and SDK Documentation</h2>
               <div class="app-desc">Version: 1.0.0</div>
             <hr>
-            <div>Administra informações do microsserviço de consumidor.</div>
+            <div>Administra informações do microsserviço de fornecedor.</div>
           </div>
         </div>
         <div id="sections">
-                <section id="api-Consumidor">
-                  <h1>Consumidor</h1>
-                    <div id="api-Consumidor-atualizaConsumidorPorId">
-                      <article id="api-Consumidor-atualizaConsumidorPorId-0" data-group="User" data-name="atualizaConsumidorPorId" data-version="0">
+                <section id="api-Fornecedor">
+                  <h1>Fornecedor</h1>
+                    <div id="api-Fornecedor-atualizaFornecedorPorId">
+                      <article id="api-Fornecedor-atualizaFornecedorPorId-0" data-group="User" data-name="atualizaFornecedorPorId" data-version="0">
                         <div class="pull-left">
-                          <h1>atualizaConsumidorPorId</h1>
-                          <p>Atualiza os dados de um consumidor específico por Id.</p>
+                          <h1>atualizaFornecedorPorId</h1>
+                          <p>Atualiza os dados de um fornecedor específico por Id.</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Retorna as informações do consumidor pesquisado.</p>
+                        <p class="marked">Retorna as informações do fornecedor pesquisado.</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/consumidor/{consumidorId}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="put"><code><span class="pln">/fornecedor/{fornecedorId}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Consumidor-atualizaConsumidorPorId-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Consumidor-atualizaConsumidorPorId-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Consumidor-atualizaConsumidorPorId-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-atualizaConsumidorPorId-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-atualizaConsumidorPorId-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Consumidor-atualizaConsumidorPorId-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-atualizaConsumidorPorId-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-atualizaConsumidorPorId-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Consumidor-atualizaConsumidorPorId-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Consumidor-atualizaConsumidorPorId-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Consumidor-atualizaConsumidorPorId-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Fornecedor-atualizaFornecedorPorId-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-atualizaFornecedorPorId-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Fornecedor-atualizaFornecedorPorId-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-atualizaFornecedorPorId-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-atualizaFornecedorPorId-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Fornecedor-atualizaFornecedorPorId-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-atualizaFornecedorPorId-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-atualizaFornecedorPorId-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Fornecedor-atualizaFornecedorPorId-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Fornecedor-atualizaFornecedorPorId-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-atualizaFornecedorPorId-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Consumidor-atualizaConsumidorPorId-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X PUT "http://localhost:3000/consumidor/{consumidorId}"</code></pre>
+                          <div class="tab-pane active" id="examples-Fornecedor-atualizaFornecedorPorId-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X PUT "http://localhost:3001/fornecedor/{fornecedorId}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Consumidor-atualizaConsumidorPorId-0-java">
+                          <div class="tab-pane" id="examples-Fornecedor-atualizaFornecedorPorId-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import io.swagger.client.api.ConsumidorApi;
+import io.swagger.client.api.FornecedorApi;
 
 import java.io.File;
 import java.util.*;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
         
-        ConsumidorApi apiInstance = new ConsumidorApi();
-        String consumidorId = consumidorId_example; // String | 
+        FornecedorApi apiInstance = new FornecedorApi();
+        String fornecedorId = fornecedorId_example; // String | 
         try {
-            Consumidor result = apiInstance.atualizaConsumidorPorId(consumidorId);
+            Fornecedor result = apiInstance.atualizaFornecedorPorId(fornecedorId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#atualizaConsumidorPorId");
+            System.err.println("Exception when calling FornecedorApi#atualizaFornecedorPorId");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Consumidor-atualizaConsumidorPorId-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.ConsumidorApi;
+                          <div class="tab-pane" id="examples-Fornecedor-atualizaFornecedorPorId-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.FornecedorApi;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
-        ConsumidorApi apiInstance = new ConsumidorApi();
-        String consumidorId = consumidorId_example; // String | 
+        FornecedorApi apiInstance = new FornecedorApi();
+        String fornecedorId = fornecedorId_example; // String | 
         try {
-            Consumidor result = apiInstance.atualizaConsumidorPorId(consumidorId);
+            Fornecedor result = apiInstance.atualizaFornecedorPorId(fornecedorId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#atualizaConsumidorPorId");
+            System.err.println("Exception when calling FornecedorApi#atualizaFornecedorPorId");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Consumidor-atualizaConsumidorPorId-0-groovy">
+  <div class="tab-pane" id="examples-Fornecedor-atualizaFornecedorPorId-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Consumidor-atualizaConsumidorPorId-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *consumidorId = consumidorId_example; // 
+                            <div class="tab-pane" id="examples-Fornecedor-atualizaFornecedorPorId-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *fornecedorId = fornecedorId_example; // 
 
-ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
+FornecedorApi *apiInstance = [[FornecedorApi alloc] init];
 
-// Atualiza os dados de um consumidor específico por Id.
-[apiInstance atualizaConsumidorPorIdWith:consumidorId
-              completionHandler: ^(Consumidor output, NSError* error) {
+// Atualiza os dados de um fornecedor específico por Id.
+[apiInstance atualizaFornecedorPorIdWith:fornecedorId
+              completionHandler: ^(Fornecedor output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -933,12 +933,12 @@ ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-atualizaConsumidorPorId-0-javascript">
+                            <div class="tab-pane" id="examples-Fornecedor-atualizaFornecedorPorId-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var SwaggerUglyButYummy = require('swagger_ugly_but_yummy');
 
-var api = new SwaggerUglyButYummy.ConsumidorApi()
+var api = new SwaggerUglyButYummy.FornecedorApi()
 
-var consumidorId = consumidorId_example; // {String} 
+var fornecedorId = fornecedorId_example; // {String} 
 
 
 var callback = function(error, data, response) {
@@ -948,14 +948,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.atualizaConsumidorPorId(consumidorId, callback);
+api.atualizaFornecedorPorId(fornecedorId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Consumidor-atualizaConsumidorPorId-0-angular">
+                            <!--<div class="tab-pane" id="examples-Fornecedor-atualizaFornecedorPorId-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Consumidor-atualizaConsumidorPorId-0-csharp">
+                            <div class="tab-pane" id="examples-Fornecedor-atualizaFornecedorPorId-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -964,23 +964,23 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class atualizaConsumidorPorIdExample
+    public class atualizaFornecedorPorIdExample
     {
         public void main()
         {
             
-            var apiInstance = new ConsumidorApi();
-            var consumidorId = consumidorId_example;  // String | 
+            var apiInstance = new FornecedorApi();
+            var fornecedorId = fornecedorId_example;  // String | 
 
             try
             {
-                // Atualiza os dados de um consumidor específico por Id.
-                Consumidor result = apiInstance.atualizaConsumidorPorId(consumidorId);
+                // Atualiza os dados de um fornecedor específico por Id.
+                Fornecedor result = apiInstance.atualizaFornecedorPorId(fornecedorId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ConsumidorApi.atualizaConsumidorPorId: " + e.Message );
+                Debug.Print("Exception when calling FornecedorApi.atualizaFornecedorPorId: " + e.Message );
             }
         }
     }
@@ -988,40 +988,40 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-atualizaConsumidorPorId-0-php">
+                            <div class="tab-pane" id="examples-Fornecedor-atualizaFornecedorPorId-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ConsumidorApi();
-$consumidorId = consumidorId_example; // String | 
+$api_instance = new Swagger\Client\Api\FornecedorApi();
+$fornecedorId = fornecedorId_example; // String | 
 
 try {
-    $result = $api_instance->atualizaConsumidorPorId($consumidorId);
+    $result = $api_instance->atualizaFornecedorPorId($fornecedorId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConsumidorApi->atualizaConsumidorPorId: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FornecedorApi->atualizaFornecedorPorId: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-atualizaConsumidorPorId-0-perl">
+                            <div class="tab-pane" id="examples-Fornecedor-atualizaFornecedorPorId-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::ConsumidorApi;
+use WWW::SwaggerClient::FornecedorApi;
 
-my $api_instance = WWW::SwaggerClient::ConsumidorApi->new();
-my $consumidorId = consumidorId_example; # String | 
+my $api_instance = WWW::SwaggerClient::FornecedorApi->new();
+my $fornecedorId = fornecedorId_example; # String | 
 
 eval { 
-    my $result = $api_instance->atualizaConsumidorPorId(consumidorId => $consumidorId);
+    my $result = $api_instance->atualizaFornecedorPorId(fornecedorId => $fornecedorId);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ConsumidorApi->atualizaConsumidorPorId: $@\n";
+    warn "Exception when calling FornecedorApi->atualizaFornecedorPorId: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-atualizaConsumidorPorId-0-python">
+                            <div class="tab-pane" id="examples-Fornecedor-atualizaFornecedorPorId-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1029,15 +1029,15 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ConsumidorApi()
-consumidorId = consumidorId_example # String | 
+api_instance = swagger_client.FornecedorApi()
+fornecedorId = fornecedorId_example # String | 
 
 try: 
-    # Atualiza os dados de um consumidor específico por Id.
-    api_response = api_instance.atualiza_consumidor_por_id(consumidorId)
+    # Atualiza os dados de um fornecedor específico por Id.
+    api_response = api_instance.atualiza_fornecedor_por_id(fornecedorId)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConsumidorApi->atualizaConsumidorPorId: %s\n" % e)</code></pre>
+    print("Exception when calling FornecedorApi->atualizaFornecedorPorId: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1049,11 +1049,11 @@ except ApiException as e:
                                   <th width="150px">Name</th>
                                   <th>Description</th>
                                 </tr>
-                                  <tr><td style="width:150px;">consumidorId*</td>
+                                  <tr><td style="width:150px;">fornecedorId*</td>
 <td>
 
 
-    <div id="d2e199_atualizaConsumidorPorId_consumidorId">
+    <div id="d2e199_atualizaFornecedorPorId_fornecedorId">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -1080,20 +1080,20 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-atualizaConsumidorPorId-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-atualizaFornecedorPorId-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-atualizaConsumidorPorId-200-schema">
-                                  <div id='responses-atualizaConsumidorPorId-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-atualizaFornecedorPorId-200-schema">
+                                  <div id='responses-atualizaFornecedorPorId-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
   "description" : "OK",
   "schema" : {
-    "$ref" : "#/definitions/Consumidor"
+    "$ref" : "#/definitions/Fornecedor"
   }
 };
                                         var schema = schemaWrapper.schema;
@@ -1108,14 +1108,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-atualizaConsumidorPorId-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-atualizaConsumidorPorId-200-schema-200');
+                                        $('#responses-atualizaFornecedorPorId-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-atualizaFornecedorPorId-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-atualizaConsumidorPorId-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-atualizaFornecedorPorId-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -1130,96 +1130,96 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Consumidor-cadsatraConsumidor">
-                      <article id="api-Consumidor-cadsatraConsumidor-0" data-group="User" data-name="cadsatraConsumidor" data-version="0">
+                    <div id="api-Fornecedor-cadsatraFornecedor">
+                      <article id="api-Fornecedor-cadsatraFornecedor-0" data-group="User" data-name="cadsatraFornecedor" data-version="0">
                         <div class="pull-left">
-                          <h1>cadsatraConsumidor</h1>
-                          <p>Cadastra consumidor.</p>
+                          <h1>cadsatraFornecedor</h1>
+                          <p>Cadastra fornecedor.</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Cadastra um novo consumidor.</p>
+                        <p class="marked">Cadastra um novo fornecedor.</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/consumidor</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/fornecedor</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Consumidor-cadsatraConsumidor-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Consumidor-cadsatraConsumidor-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Consumidor-cadsatraConsumidor-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-cadsatraConsumidor-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-cadsatraConsumidor-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Consumidor-cadsatraConsumidor-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-cadsatraConsumidor-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-cadsatraConsumidor-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Consumidor-cadsatraConsumidor-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Consumidor-cadsatraConsumidor-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Consumidor-cadsatraConsumidor-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Fornecedor-cadsatraFornecedor-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-cadsatraFornecedor-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Fornecedor-cadsatraFornecedor-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-cadsatraFornecedor-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-cadsatraFornecedor-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Fornecedor-cadsatraFornecedor-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-cadsatraFornecedor-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-cadsatraFornecedor-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Fornecedor-cadsatraFornecedor-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Fornecedor-cadsatraFornecedor-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-cadsatraFornecedor-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Consumidor-cadsatraConsumidor-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:3000/consumidor"</code></pre>
+                          <div class="tab-pane active" id="examples-Fornecedor-cadsatraFornecedor-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "http://localhost:3001/fornecedor"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Consumidor-cadsatraConsumidor-0-java">
+                          <div class="tab-pane" id="examples-Fornecedor-cadsatraFornecedor-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import io.swagger.client.api.ConsumidorApi;
+import io.swagger.client.api.FornecedorApi;
 
 import java.io.File;
 import java.util.*;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
         
-        ConsumidorApi apiInstance = new ConsumidorApi();
-        Consumidor object = ; // Consumidor | 
+        FornecedorApi apiInstance = new FornecedorApi();
+        Fornecedor object = ; // Fornecedor | 
         try {
-            Consumidor result = apiInstance.cadsatraConsumidor(object);
+            Fornecedor result = apiInstance.cadsatraFornecedor(object);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#cadsatraConsumidor");
+            System.err.println("Exception when calling FornecedorApi#cadsatraFornecedor");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Consumidor-cadsatraConsumidor-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.ConsumidorApi;
+                          <div class="tab-pane" id="examples-Fornecedor-cadsatraFornecedor-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.FornecedorApi;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
-        ConsumidorApi apiInstance = new ConsumidorApi();
-        Consumidor object = ; // Consumidor | 
+        FornecedorApi apiInstance = new FornecedorApi();
+        Fornecedor object = ; // Fornecedor | 
         try {
-            Consumidor result = apiInstance.cadsatraConsumidor(object);
+            Fornecedor result = apiInstance.cadsatraFornecedor(object);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#cadsatraConsumidor");
+            System.err.println("Exception when calling FornecedorApi#cadsatraFornecedor");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Consumidor-cadsatraConsumidor-0-groovy">
+  <div class="tab-pane" id="examples-Fornecedor-cadsatraFornecedor-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Consumidor-cadsatraConsumidor-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">Consumidor *object = ; //  (optional)
+                            <div class="tab-pane" id="examples-Fornecedor-cadsatraFornecedor-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Fornecedor *object = ; //  (optional)
 
-ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
+FornecedorApi *apiInstance = [[FornecedorApi alloc] init];
 
-// Cadastra consumidor.
-[apiInstance cadsatraConsumidorWith:object
-              completionHandler: ^(Consumidor output, NSError* error) {
+// Cadastra fornecedor.
+[apiInstance cadsatraFornecedorWith:object
+              completionHandler: ^(Fornecedor output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -1230,13 +1230,13 @@ ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-cadsatraConsumidor-0-javascript">
+                            <div class="tab-pane" id="examples-Fornecedor-cadsatraFornecedor-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var SwaggerUglyButYummy = require('swagger_ugly_but_yummy');
 
-var api = new SwaggerUglyButYummy.ConsumidorApi()
+var api = new SwaggerUglyButYummy.FornecedorApi()
 
 var opts = { 
-  'object':  // {Consumidor} 
+  'object':  // {Fornecedor} 
 };
 
 var callback = function(error, data, response) {
@@ -1246,14 +1246,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.cadsatraConsumidor(opts, callback);
+api.cadsatraFornecedor(opts, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Consumidor-cadsatraConsumidor-0-angular">
+                            <!--<div class="tab-pane" id="examples-Fornecedor-cadsatraFornecedor-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Consumidor-cadsatraConsumidor-0-csharp">
+                            <div class="tab-pane" id="examples-Fornecedor-cadsatraFornecedor-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1262,23 +1262,23 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class cadsatraConsumidorExample
+    public class cadsatraFornecedorExample
     {
         public void main()
         {
             
-            var apiInstance = new ConsumidorApi();
-            var object = new Consumidor(); // Consumidor |  (optional) 
+            var apiInstance = new FornecedorApi();
+            var object = new Fornecedor(); // Fornecedor |  (optional) 
 
             try
             {
-                // Cadastra consumidor.
-                Consumidor result = apiInstance.cadsatraConsumidor(object);
+                // Cadastra fornecedor.
+                Fornecedor result = apiInstance.cadsatraFornecedor(object);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ConsumidorApi.cadsatraConsumidor: " + e.Message );
+                Debug.Print("Exception when calling FornecedorApi.cadsatraFornecedor: " + e.Message );
             }
         }
     }
@@ -1286,40 +1286,40 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-cadsatraConsumidor-0-php">
+                            <div class="tab-pane" id="examples-Fornecedor-cadsatraFornecedor-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ConsumidorApi();
-$object = ; // Consumidor | 
+$api_instance = new Swagger\Client\Api\FornecedorApi();
+$object = ; // Fornecedor | 
 
 try {
-    $result = $api_instance->cadsatraConsumidor($object);
+    $result = $api_instance->cadsatraFornecedor($object);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConsumidorApi->cadsatraConsumidor: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FornecedorApi->cadsatraFornecedor: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-cadsatraConsumidor-0-perl">
+                            <div class="tab-pane" id="examples-Fornecedor-cadsatraFornecedor-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::ConsumidorApi;
+use WWW::SwaggerClient::FornecedorApi;
 
-my $api_instance = WWW::SwaggerClient::ConsumidorApi->new();
-my $object = WWW::SwaggerClient::Object::Consumidor->new(); # Consumidor | 
+my $api_instance = WWW::SwaggerClient::FornecedorApi->new();
+my $object = WWW::SwaggerClient::Object::Fornecedor->new(); # Fornecedor | 
 
 eval { 
-    my $result = $api_instance->cadsatraConsumidor(object => $object);
+    my $result = $api_instance->cadsatraFornecedor(object => $object);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ConsumidorApi->cadsatraConsumidor: $@\n";
+    warn "Exception when calling FornecedorApi->cadsatraFornecedor: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-cadsatraConsumidor-0-python">
+                            <div class="tab-pane" id="examples-Fornecedor-cadsatraFornecedor-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1327,15 +1327,15 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ConsumidorApi()
-object =  # Consumidor |  (optional)
+api_instance = swagger_client.FornecedorApi()
+object =  # Fornecedor |  (optional)
 
 try: 
-    # Cadastra consumidor.
-    api_response = api_instance.cadsatra_consumidor(object=object)
+    # Cadastra fornecedor.
+    api_response = api_instance.cadsatra_fornecedor(object=object)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConsumidorApi->cadsatraConsumidor: %s\n" % e)</code></pre>
+    print("Exception when calling FornecedorApi->cadsatraFornecedor: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1360,7 +1360,7 @@ $(document).ready(function() {
   "name" : "object",
   "required" : false,
   "schema" : {
-    "$ref" : "#/definitions/Consumidor"
+    "$ref" : "#/definitions/Fornecedor"
   }
 };
   var schema = schemaWrapper.schema;
@@ -1374,12 +1374,12 @@ $(document).ready(function() {
   }
 
   var view = new JSONSchemaView(schema,2,{isBodyParam: true});
-  var result = $('#d2e199_cadsatraConsumidor_object');
+  var result = $('#d2e199_cadsatraFornecedor_object');
   result.empty();
   result.append(view.render());
 });
 </script>
-<div id="d2e199_cadsatraConsumidor_object"></div>
+<div id="d2e199_cadsatraFornecedor_object"></div>
 </td>
 </tr>
 
@@ -1392,20 +1392,20 @@ $(document).ready(function() {
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-cadsatraConsumidor-201-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-cadsatraFornecedor-201-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-cadsatraConsumidor-201-schema">
-                                  <div id='responses-cadsatraConsumidor-201-schema-201' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-cadsatraFornecedor-201-schema">
+                                  <div id='responses-cadsatraFornecedor-201-schema-201' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
   "description" : "Cadastro efetuado com sucesso.",
   "schema" : {
-    "$ref" : "#/definitions/Consumidor"
+    "$ref" : "#/definitions/Fornecedor"
   }
 };
                                         var schema = schemaWrapper.schema;
@@ -1420,14 +1420,14 @@ $(document).ready(function() {
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-cadsatraConsumidor-201-schema-data').val(stringify(schema));
-                                        var result = $('#responses-cadsatraConsumidor-201-schema-201');
+                                        $('#responses-cadsatraFornecedor-201-schema-data').val(stringify(schema));
+                                        var result = $('#responses-cadsatraFornecedor-201-schema-201');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-cadsatraConsumidor-201-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-cadsatraFornecedor-201-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -1450,90 +1450,90 @@ $(document).ready(function() {
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Consumidor-consultaConsumidor">
-                      <article id="api-Consumidor-consultaConsumidor-0" data-group="User" data-name="consultaConsumidor" data-version="0">
+                    <div id="api-Fornecedor-consultaFornecedor">
+                      <article id="api-Fornecedor-consultaFornecedor-0" data-group="User" data-name="consultaFornecedor" data-version="0">
                         <div class="pull-left">
-                          <h1>consultaConsumidor</h1>
-                          <p>Busca consumidores.</p>
+                          <h1>consultaFornecedor</h1>
+                          <p>Busca fornecedores.</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Retorna todos os consumidores cadastrados.</p>
+                        <p class="marked">Retorna todos os fornecedores cadastrados.</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/consumidor</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/fornecedor</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Consumidor-consultaConsumidor-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidor-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidor-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-consultaConsumidor-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidor-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidor-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-consultaConsumidor-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidor-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidor-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidor-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidor-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Fornecedor-consultaFornecedor-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedor-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedor-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-consultaFornecedor-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedor-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedor-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-consultaFornecedor-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedor-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedor-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedor-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedor-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Consumidor-consultaConsumidor-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:3000/consumidor"</code></pre>
+                          <div class="tab-pane active" id="examples-Fornecedor-consultaFornecedor-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:3001/fornecedor"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Consumidor-consultaConsumidor-0-java">
+                          <div class="tab-pane" id="examples-Fornecedor-consultaFornecedor-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import io.swagger.client.api.ConsumidorApi;
+import io.swagger.client.api.FornecedorApi;
 
 import java.io.File;
 import java.util.*;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
         
-        ConsumidorApi apiInstance = new ConsumidorApi();
+        FornecedorApi apiInstance = new FornecedorApi();
         try {
-            apiInstance.consultaConsumidor();
+            apiInstance.consultaFornecedor();
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#consultaConsumidor");
+            System.err.println("Exception when calling FornecedorApi#consultaFornecedor");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Consumidor-consultaConsumidor-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.ConsumidorApi;
+                          <div class="tab-pane" id="examples-Fornecedor-consultaFornecedor-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.FornecedorApi;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
-        ConsumidorApi apiInstance = new ConsumidorApi();
+        FornecedorApi apiInstance = new FornecedorApi();
         try {
-            apiInstance.consultaConsumidor();
+            apiInstance.consultaFornecedor();
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#consultaConsumidor");
+            System.err.println("Exception when calling FornecedorApi#consultaFornecedor");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Consumidor-consultaConsumidor-0-groovy">
+  <div class="tab-pane" id="examples-Fornecedor-consultaFornecedor-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidor-0-objc">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedor-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">
-ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
+FornecedorApi *apiInstance = [[FornecedorApi alloc] init];
 
-// Busca consumidores.
-[apiInstance consultaConsumidorWithCompletionHandler: 
+// Busca fornecedores.
+[apiInstance consultaFornecedorWithCompletionHandler: 
               ^(NSError* error) {
                             if (error) {
                                 NSLog(@"Error: %@", error);
@@ -1542,10 +1542,10 @@ ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidor-0-javascript">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedor-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var SwaggerUglyButYummy = require('swagger_ugly_but_yummy');
 
-var api = new SwaggerUglyButYummy.ConsumidorApi()
+var api = new SwaggerUglyButYummy.FornecedorApi()
 
 var callback = function(error, data, response) {
   if (error) {
@@ -1554,14 +1554,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.consultaConsumidor(callback);
+api.consultaFornecedor(callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Consumidor-consultaConsumidor-0-angular">
+                            <!--<div class="tab-pane" id="examples-Fornecedor-consultaFornecedor-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidor-0-csharp">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedor-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1570,21 +1570,21 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class consultaConsumidorExample
+    public class consultaFornecedorExample
     {
         public void main()
         {
             
-            var apiInstance = new ConsumidorApi();
+            var apiInstance = new FornecedorApi();
 
             try
             {
-                // Busca consumidores.
-                apiInstance.consultaConsumidor();
+                // Busca fornecedores.
+                apiInstance.consultaFornecedor();
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ConsumidorApi.consultaConsumidor: " + e.Message );
+                Debug.Print("Exception when calling FornecedorApi.consultaFornecedor: " + e.Message );
             }
         }
     }
@@ -1592,36 +1592,36 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidor-0-php">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedor-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ConsumidorApi();
+$api_instance = new Swagger\Client\Api\FornecedorApi();
 
 try {
-    $api_instance->consultaConsumidor();
+    $api_instance->consultaFornecedor();
 } catch (Exception $e) {
-    echo 'Exception when calling ConsumidorApi->consultaConsumidor: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FornecedorApi->consultaFornecedor: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidor-0-perl">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedor-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::ConsumidorApi;
+use WWW::SwaggerClient::FornecedorApi;
 
-my $api_instance = WWW::SwaggerClient::ConsumidorApi->new();
+my $api_instance = WWW::SwaggerClient::FornecedorApi->new();
 
 eval { 
-    $api_instance->consultaConsumidor();
+    $api_instance->consultaFornecedor();
 };
 if ($@) {
-    warn "Exception when calling ConsumidorApi->consultaConsumidor: $@\n";
+    warn "Exception when calling FornecedorApi->consultaFornecedor: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidor-0-python">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedor-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1629,13 +1629,13 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ConsumidorApi()
+api_instance = swagger_client.FornecedorApi()
 
 try: 
-    # Busca consumidores.
-    api_instance.consulta_consumidor()
+    # Busca fornecedores.
+    api_instance.consulta_fornecedor()
 except ApiException as e:
-    print("Exception when calling ConsumidorApi->consultaConsumidor: %s\n" % e)</code></pre>
+    print("Exception when calling FornecedorApi->consultaFornecedor: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1666,96 +1666,96 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Consumidor-consultaConsumidorPorId">
-                      <article id="api-Consumidor-consultaConsumidorPorId-0" data-group="User" data-name="consultaConsumidorPorId" data-version="0">
+                    <div id="api-Fornecedor-consultaFornecedorPorId">
+                      <article id="api-Fornecedor-consultaFornecedorPorId-0" data-group="User" data-name="consultaFornecedorPorId" data-version="0">
                         <div class="pull-left">
-                          <h1>consultaConsumidorPorId</h1>
-                          <p>Busca um consumidor específico por Id.</p>
+                          <h1>consultaFornecedorPorId</h1>
+                          <p>Busca um fornecedor específico por Id.</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Retorna as informações do consumidor pesquisado.</p>
+                        <p class="marked">Retorna as informações do fornecedor pesquisado.</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/consumidor/{consumidorId}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/fornecedor/{fornecedorId}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Consumidor-consultaConsumidorPorId-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorId-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorId-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-consultaConsumidorPorId-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorId-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorId-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-consultaConsumidorPorId-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorId-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorId-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorId-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorId-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Fornecedor-consultaFornecedorPorId-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorId-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorId-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-consultaFornecedorPorId-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorId-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorId-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-consultaFornecedorPorId-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorId-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorId-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorId-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorId-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Consumidor-consultaConsumidorPorId-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:3000/consumidor/{consumidorId}"</code></pre>
+                          <div class="tab-pane active" id="examples-Fornecedor-consultaFornecedorPorId-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:3001/fornecedor/{fornecedorId}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorId-0-java">
+                          <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorId-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import io.swagger.client.api.ConsumidorApi;
+import io.swagger.client.api.FornecedorApi;
 
 import java.io.File;
 import java.util.*;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
         
-        ConsumidorApi apiInstance = new ConsumidorApi();
-        String consumidorId = consumidorId_example; // String | 
+        FornecedorApi apiInstance = new FornecedorApi();
+        String fornecedorId = fornecedorId_example; // String | 
         try {
-            Consumidor result = apiInstance.consultaConsumidorPorId(consumidorId);
+            Fornecedor result = apiInstance.consultaFornecedorPorId(fornecedorId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#consultaConsumidorPorId");
+            System.err.println("Exception when calling FornecedorApi#consultaFornecedorPorId");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorId-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.ConsumidorApi;
+                          <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorId-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.FornecedorApi;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
-        ConsumidorApi apiInstance = new ConsumidorApi();
-        String consumidorId = consumidorId_example; // String | 
+        FornecedorApi apiInstance = new FornecedorApi();
+        String fornecedorId = fornecedorId_example; // String | 
         try {
-            Consumidor result = apiInstance.consultaConsumidorPorId(consumidorId);
+            Fornecedor result = apiInstance.consultaFornecedorPorId(fornecedorId);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#consultaConsumidorPorId");
+            System.err.println("Exception when calling FornecedorApi#consultaFornecedorPorId");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorId-0-groovy">
+  <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorId-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorId-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *consumidorId = consumidorId_example; // 
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorId-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *fornecedorId = fornecedorId_example; // 
 
-ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
+FornecedorApi *apiInstance = [[FornecedorApi alloc] init];
 
-// Busca um consumidor específico por Id.
-[apiInstance consultaConsumidorPorIdWith:consumidorId
-              completionHandler: ^(Consumidor output, NSError* error) {
+// Busca um fornecedor específico por Id.
+[apiInstance consultaFornecedorPorIdWith:fornecedorId
+              completionHandler: ^(Fornecedor output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -1766,12 +1766,12 @@ ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorId-0-javascript">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorId-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var SwaggerUglyButYummy = require('swagger_ugly_but_yummy');
 
-var api = new SwaggerUglyButYummy.ConsumidorApi()
+var api = new SwaggerUglyButYummy.FornecedorApi()
 
-var consumidorId = consumidorId_example; // {String} 
+var fornecedorId = fornecedorId_example; // {String} 
 
 
 var callback = function(error, data, response) {
@@ -1781,14 +1781,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.consultaConsumidorPorId(consumidorId, callback);
+api.consultaFornecedorPorId(fornecedorId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorId-0-angular">
+                            <!--<div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorId-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorId-0-csharp">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorId-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -1797,23 +1797,23 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class consultaConsumidorPorIdExample
+    public class consultaFornecedorPorIdExample
     {
         public void main()
         {
             
-            var apiInstance = new ConsumidorApi();
-            var consumidorId = consumidorId_example;  // String | 
+            var apiInstance = new FornecedorApi();
+            var fornecedorId = fornecedorId_example;  // String | 
 
             try
             {
-                // Busca um consumidor específico por Id.
-                Consumidor result = apiInstance.consultaConsumidorPorId(consumidorId);
+                // Busca um fornecedor específico por Id.
+                Fornecedor result = apiInstance.consultaFornecedorPorId(fornecedorId);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ConsumidorApi.consultaConsumidorPorId: " + e.Message );
+                Debug.Print("Exception when calling FornecedorApi.consultaFornecedorPorId: " + e.Message );
             }
         }
     }
@@ -1821,40 +1821,40 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorId-0-php">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorId-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ConsumidorApi();
-$consumidorId = consumidorId_example; // String | 
+$api_instance = new Swagger\Client\Api\FornecedorApi();
+$fornecedorId = fornecedorId_example; // String | 
 
 try {
-    $result = $api_instance->consultaConsumidorPorId($consumidorId);
+    $result = $api_instance->consultaFornecedorPorId($fornecedorId);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConsumidorApi->consultaConsumidorPorId: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FornecedorApi->consultaFornecedorPorId: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorId-0-perl">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorId-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::ConsumidorApi;
+use WWW::SwaggerClient::FornecedorApi;
 
-my $api_instance = WWW::SwaggerClient::ConsumidorApi->new();
-my $consumidorId = consumidorId_example; # String | 
+my $api_instance = WWW::SwaggerClient::FornecedorApi->new();
+my $fornecedorId = fornecedorId_example; # String | 
 
 eval { 
-    my $result = $api_instance->consultaConsumidorPorId(consumidorId => $consumidorId);
+    my $result = $api_instance->consultaFornecedorPorId(fornecedorId => $fornecedorId);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ConsumidorApi->consultaConsumidorPorId: $@\n";
+    warn "Exception when calling FornecedorApi->consultaFornecedorPorId: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorId-0-python">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorId-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -1862,15 +1862,15 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ConsumidorApi()
-consumidorId = consumidorId_example # String | 
+api_instance = swagger_client.FornecedorApi()
+fornecedorId = fornecedorId_example # String | 
 
 try: 
-    # Busca um consumidor específico por Id.
-    api_response = api_instance.consulta_consumidor_por_id(consumidorId)
+    # Busca um fornecedor específico por Id.
+    api_response = api_instance.consulta_fornecedor_por_id(fornecedorId)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConsumidorApi->consultaConsumidorPorId: %s\n" % e)</code></pre>
+    print("Exception when calling FornecedorApi->consultaFornecedorPorId: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -1882,11 +1882,11 @@ except ApiException as e:
                                   <th width="150px">Name</th>
                                   <th>Description</th>
                                 </tr>
-                                  <tr><td style="width:150px;">consumidorId*</td>
+                                  <tr><td style="width:150px;">fornecedorId*</td>
 <td>
 
 
-    <div id="d2e199_consultaConsumidorPorId_consumidorId">
+    <div id="d2e199_consultaFornecedorPorId_fornecedorId">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -1913,20 +1913,20 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-consultaConsumidorPorId-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-consultaFornecedorPorId-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-consultaConsumidorPorId-200-schema">
-                                  <div id='responses-consultaConsumidorPorId-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-consultaFornecedorPorId-200-schema">
+                                  <div id='responses-consultaFornecedorPorId-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
   "description" : "OK",
   "schema" : {
-    "$ref" : "#/definitions/Consumidor"
+    "$ref" : "#/definitions/Fornecedor"
   }
 };
                                         var schema = schemaWrapper.schema;
@@ -1941,14 +1941,14 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-consultaConsumidorPorId-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-consultaConsumidorPorId-200-schema-200');
+                                        $('#responses-consultaFornecedorPorId-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-consultaFornecedorPorId-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-consultaConsumidorPorId-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-consultaFornecedorPorId-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -1963,100 +1963,100 @@ except ApiException as e:
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Consumidor-consultaConsumidorPorPropriedade">
-                      <article id="api-Consumidor-consultaConsumidorPorPropriedade-0" data-group="User" data-name="consultaConsumidorPorPropriedade" data-version="0">
+                    <div id="api-Fornecedor-consultaFornecedorPorPropriedade">
+                      <article id="api-Fornecedor-consultaFornecedorPorPropriedade-0" data-group="User" data-name="consultaFornecedorPorPropriedade" data-version="0">
                         <div class="pull-left">
-                          <h1>consultaConsumidorPorPropriedade</h1>
-                          <p>Busca um consumidor por uma propriedade específica.</p>
+                          <h1>consultaFornecedorPorPropriedade</h1>
+                          <p>Busca um fornecedor por uma propriedade específica.</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Retorna as informações do consumidor de acordo com o campo/valor que passado.</p>
+                        <p class="marked">Retorna as informações do fornecedor de acordo com o campo/valor que passado.</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/consumidor/by/{prop}/{propValue}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/fornecedor/by/{prop}/{propValue}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Consumidor-consultaConsumidorPorPropriedade-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorPropriedade-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorPropriedade-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-consultaConsumidorPorPropriedade-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorPropriedade-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorPropriedade-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-consultaConsumidorPorPropriedade-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorPropriedade-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorPropriedade-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorPropriedade-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Consumidor-consultaConsumidorPorPropriedade-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Fornecedor-consultaFornecedorPorPropriedade-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorPropriedade-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorPropriedade-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-consultaFornecedorPorPropriedade-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorPropriedade-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorPropriedade-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-consultaFornecedorPorPropriedade-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorPropriedade-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorPropriedade-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorPropriedade-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-consultaFornecedorPorPropriedade-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Consumidor-consultaConsumidorPorPropriedade-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:3000/consumidor/by/{prop}/{propValue}"</code></pre>
+                          <div class="tab-pane active" id="examples-Fornecedor-consultaFornecedorPorPropriedade-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "http://localhost:3001/fornecedor/by/{prop}/{propValue}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorPropriedade-0-java">
+                          <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorPropriedade-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import io.swagger.client.api.ConsumidorApi;
+import io.swagger.client.api.FornecedorApi;
 
 import java.io.File;
 import java.util.*;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
         
-        ConsumidorApi apiInstance = new ConsumidorApi();
+        FornecedorApi apiInstance = new FornecedorApi();
         String prop = prop_example; // String | 
         String propValue = propValue_example; // String | 
         try {
-            Consumidor result = apiInstance.consultaConsumidorPorPropriedade(prop, propValue);
+            Fornecedor result = apiInstance.consultaFornecedorPorPropriedade(prop, propValue);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#consultaConsumidorPorPropriedade");
+            System.err.println("Exception when calling FornecedorApi#consultaFornecedorPorPropriedade");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorPropriedade-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.ConsumidorApi;
+                          <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorPropriedade-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.FornecedorApi;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
-        ConsumidorApi apiInstance = new ConsumidorApi();
+        FornecedorApi apiInstance = new FornecedorApi();
         String prop = prop_example; // String | 
         String propValue = propValue_example; // String | 
         try {
-            Consumidor result = apiInstance.consultaConsumidorPorPropriedade(prop, propValue);
+            Fornecedor result = apiInstance.consultaFornecedorPorPropriedade(prop, propValue);
             System.out.println(result);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#consultaConsumidorPorPropriedade");
+            System.err.println("Exception when calling FornecedorApi#consultaFornecedorPorPropriedade");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorPropriedade-0-groovy">
+  <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorPropriedade-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorPropriedade-0-objc">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorPropriedade-0-objc">
                               <pre class="prettyprint"><code class="language-cpp">String *prop = prop_example; // 
 String *propValue = propValue_example; // 
 
-ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
+FornecedorApi *apiInstance = [[FornecedorApi alloc] init];
 
-// Busca um consumidor por uma propriedade específica.
-[apiInstance consultaConsumidorPorPropriedadeWith:prop
+// Busca um fornecedor por uma propriedade específica.
+[apiInstance consultaFornecedorPorPropriedadeWith:prop
     propValue:propValue
-              completionHandler: ^(Consumidor output, NSError* error) {
+              completionHandler: ^(Fornecedor output, NSError* error) {
                             if (output) {
                                 NSLog(@"%@", output);
                             }
@@ -2067,10 +2067,10 @@ ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorPropriedade-0-javascript">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorPropriedade-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var SwaggerUglyButYummy = require('swagger_ugly_but_yummy');
 
-var api = new SwaggerUglyButYummy.ConsumidorApi()
+var api = new SwaggerUglyButYummy.FornecedorApi()
 
 var prop = prop_example; // {String} 
 
@@ -2084,14 +2084,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.consultaConsumidorPorPropriedade(prop, propValue, callback);
+api.consultaFornecedorPorPropriedade(prop, propValue, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorPropriedade-0-angular">
+                            <!--<div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorPropriedade-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorPropriedade-0-csharp">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorPropriedade-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -2100,24 +2100,24 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class consultaConsumidorPorPropriedadeExample
+    public class consultaFornecedorPorPropriedadeExample
     {
         public void main()
         {
             
-            var apiInstance = new ConsumidorApi();
+            var apiInstance = new FornecedorApi();
             var prop = prop_example;  // String | 
             var propValue = propValue_example;  // String | 
 
             try
             {
-                // Busca um consumidor por uma propriedade específica.
-                Consumidor result = apiInstance.consultaConsumidorPorPropriedade(prop, propValue);
+                // Busca um fornecedor por uma propriedade específica.
+                Fornecedor result = apiInstance.consultaFornecedorPorPropriedade(prop, propValue);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ConsumidorApi.consultaConsumidorPorPropriedade: " + e.Message );
+                Debug.Print("Exception when calling FornecedorApi.consultaFornecedorPorPropriedade: " + e.Message );
             }
         }
     }
@@ -2125,42 +2125,42 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorPropriedade-0-php">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorPropriedade-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ConsumidorApi();
+$api_instance = new Swagger\Client\Api\FornecedorApi();
 $prop = prop_example; // String | 
 $propValue = propValue_example; // String | 
 
 try {
-    $result = $api_instance->consultaConsumidorPorPropriedade($prop, $propValue);
+    $result = $api_instance->consultaFornecedorPorPropriedade($prop, $propValue);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ConsumidorApi->consultaConsumidorPorPropriedade: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FornecedorApi->consultaFornecedorPorPropriedade: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorPropriedade-0-perl">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorPropriedade-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::ConsumidorApi;
+use WWW::SwaggerClient::FornecedorApi;
 
-my $api_instance = WWW::SwaggerClient::ConsumidorApi->new();
+my $api_instance = WWW::SwaggerClient::FornecedorApi->new();
 my $prop = prop_example; # String | 
 my $propValue = propValue_example; # String | 
 
 eval { 
-    my $result = $api_instance->consultaConsumidorPorPropriedade(prop => $prop, propValue => $propValue);
+    my $result = $api_instance->consultaFornecedorPorPropriedade(prop => $prop, propValue => $propValue);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling ConsumidorApi->consultaConsumidorPorPropriedade: $@\n";
+    warn "Exception when calling FornecedorApi->consultaFornecedorPorPropriedade: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-consultaConsumidorPorPropriedade-0-python">
+                            <div class="tab-pane" id="examples-Fornecedor-consultaFornecedorPorPropriedade-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -2168,16 +2168,16 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ConsumidorApi()
+api_instance = swagger_client.FornecedorApi()
 prop = prop_example # String | 
 propValue = propValue_example # String | 
 
 try: 
-    # Busca um consumidor por uma propriedade específica.
-    api_response = api_instance.consulta_consumidor_por_propriedade(prop, propValue)
+    # Busca um fornecedor por uma propriedade específica.
+    api_response = api_instance.consulta_fornecedor_por_propriedade(prop, propValue)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling ConsumidorApi->consultaConsumidorPorPropriedade: %s\n" % e)</code></pre>
+    print("Exception when calling FornecedorApi->consultaFornecedorPorPropriedade: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -2193,7 +2193,7 @@ except ApiException as e:
 <td>
 
 
-    <div id="d2e199_consultaConsumidorPorPropriedade_prop">
+    <div id="d2e199_consultaFornecedorPorPropriedade_prop">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -2213,7 +2213,7 @@ except ApiException as e:
 <td>
 
 
-    <div id="d2e199_consultaConsumidorPorPropriedade_propValue">
+    <div id="d2e199_consultaFornecedorPorPropriedade_propValue">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">
@@ -2240,20 +2240,20 @@ except ApiException as e:
 
                             <ul class="nav nav-tabs nav-tabs-examples" >
                                 <li class="active">
-                                  <a data-toggle="tab" href="#responses-consultaConsumidorPorPropriedade-200-schema">Schema</a>
+                                  <a data-toggle="tab" href="#responses-consultaFornecedorPorPropriedade-200-schema">Schema</a>
                                 </li>
 
                             </ul>
 
                             <div class="tab-content" style='margin-bottom: 10px;'>
-                                <div class="tab-pane active" id="responses-consultaConsumidorPorPropriedade-200-schema">
-                                  <div id='responses-consultaConsumidorPorPropriedade-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                <div class="tab-pane active" id="responses-consultaFornecedorPorPropriedade-200-schema">
+                                  <div id='responses-consultaFornecedorPorPropriedade-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
                                     <script>
                                       $(document).ready(function() {
                                         var schemaWrapper = {
   "description" : "OK",
   "schema" : {
-    "$ref" : "#/definitions/Consumidor"
+    "$ref" : "#/definitions/Fornecedor"
   }
 };
                                         var schema = schemaWrapper.schema;
@@ -2268,107 +2268,107 @@ except ApiException as e:
 
                                         //console.log(JSON.stringify(schema));
                                         var view = new JSONSchemaView(schema, 3);
-                                        $('#responses-consultaConsumidorPorPropriedade-200-schema-data').val(stringify(schema));
-                                        var result = $('#responses-consultaConsumidorPorPropriedade-200-schema-200');
+                                        $('#responses-consultaFornecedorPorPropriedade-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-consultaFornecedorPorPropriedade-200-schema-200');
                                         result.empty();
                                         result.append(view.render());
                                       });
                                     </script>
                                   </div>
-                                  <input id='responses-consultaConsumidorPorPropriedade-200-schema-data' type='hidden' value=''></input>
+                                  <input id='responses-consultaFornecedorPorPropriedade-200-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
                         </article>
                       </div>
                       <hr>
-                    <div id="api-Consumidor-deletaConsumidor">
-                      <article id="api-Consumidor-deletaConsumidor-0" data-group="User" data-name="deletaConsumidor" data-version="0">
+                    <div id="api-Fornecedor-deletaFornecedor">
+                      <article id="api-Fornecedor-deletaFornecedor-0" data-group="User" data-name="deletaFornecedor" data-version="0">
                         <div class="pull-left">
-                          <h1>deletaConsumidor</h1>
-                          <p>Deleta consumidor específico por Id.</p>
+                          <h1>deletaFornecedor</h1>
+                          <p>Deleta fornecedor específico por Id.</p>
                         </div>
                         <div class="pull-right"></div>
                         <div class="clearfix"></div>
                         <p></p>
-                        <p class="marked">Deleta o cadastro do consumidor através do ID passado.</p>
+                        <p class="marked">Deleta o cadastro do fornecedor através do ID passado.</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/consumidor/{consumidorId}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/fornecedor/{fornecedorId}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
                         <ul class="nav nav-tabs nav-tabs-examples">
-                          <li class="active"><a href="#examples-Consumidor-deletaConsumidor-0-curl">Curl</a></li>
-                          <li class=""><a href="#examples-Consumidor-deletaConsumidor-0-java">Java</a></li>
-                          <li class=""><a href="#examples-Consumidor-deletaConsumidor-0-android">Android</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-deletaConsumidor-0-groovy">Groovy</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-deletaConsumidor-0-objc">Obj-C</a></li>
-                          <li class=""><a href="#examples-Consumidor-deletaConsumidor-0-javascript">JavaScript</a></li>
-                          <!--<li class=""><a href="#examples-Consumidor-deletaConsumidor-0-angular">Angular</a></li>-->
-                          <li class=""><a href="#examples-Consumidor-deletaConsumidor-0-csharp">C#</a></li>
-                          <li class=""><a href="#examples-Consumidor-deletaConsumidor-0-php">PHP</a></li>
-                          <li class=""><a href="#examples-Consumidor-deletaConsumidor-0-perl">Perl</a></li>
-                          <li class=""><a href="#examples-Consumidor-deletaConsumidor-0-python">Python</a></li>
+                          <li class="active"><a href="#examples-Fornecedor-deletaFornecedor-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-deletaFornecedor-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Fornecedor-deletaFornecedor-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-deletaFornecedor-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-deletaFornecedor-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Fornecedor-deletaFornecedor-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Fornecedor-deletaFornecedor-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Fornecedor-deletaFornecedor-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Fornecedor-deletaFornecedor-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Fornecedor-deletaFornecedor-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Fornecedor-deletaFornecedor-0-python">Python</a></li>
                         </ul>
 
                         <div class="tab-content">
-                          <div class="tab-pane active" id="examples-Consumidor-deletaConsumidor-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X DELETE "http://localhost:3000/consumidor/{consumidorId}"</code></pre>
+                          <div class="tab-pane active" id="examples-Fornecedor-deletaFornecedor-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X DELETE "http://localhost:3001/fornecedor/{fornecedorId}"</code></pre>
                           </div>
-                          <div class="tab-pane" id="examples-Consumidor-deletaConsumidor-0-java">
+                          <div class="tab-pane" id="examples-Fornecedor-deletaFornecedor-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
 import io.swagger.client.auth.*;
 import io.swagger.client.model.*;
-import io.swagger.client.api.ConsumidorApi;
+import io.swagger.client.api.FornecedorApi;
 
 import java.io.File;
 import java.util.*;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
         
-        ConsumidorApi apiInstance = new ConsumidorApi();
-        String consumidorId = consumidorId_example; // String | 
+        FornecedorApi apiInstance = new FornecedorApi();
+        String fornecedorId = fornecedorId_example; // String | 
         try {
-            apiInstance.deletaConsumidor(consumidorId);
+            apiInstance.deletaFornecedor(fornecedorId);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#deletaConsumidor");
+            System.err.println("Exception when calling FornecedorApi#deletaFornecedor");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
 
-                          <div class="tab-pane" id="examples-Consumidor-deletaConsumidor-0-android">
-                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.ConsumidorApi;
+                          <div class="tab-pane" id="examples-Fornecedor-deletaFornecedor-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.FornecedorApi;
 
-public class ConsumidorApiExample {
+public class FornecedorApiExample {
 
     public static void main(String[] args) {
-        ConsumidorApi apiInstance = new ConsumidorApi();
-        String consumidorId = consumidorId_example; // String | 
+        FornecedorApi apiInstance = new FornecedorApi();
+        String fornecedorId = fornecedorId_example; // String | 
         try {
-            apiInstance.deletaConsumidor(consumidorId);
+            apiInstance.deletaFornecedor(fornecedorId);
         } catch (ApiException e) {
-            System.err.println("Exception when calling ConsumidorApi#deletaConsumidor");
+            System.err.println("Exception when calling FornecedorApi#deletaFornecedor");
             e.printStackTrace();
         }
     }
 }</code></pre>
                           </div>
   <!--
-  <div class="tab-pane" id="examples-Consumidor-deletaConsumidor-0-groovy">
+  <div class="tab-pane" id="examples-Fornecedor-deletaFornecedor-0-groovy">
   <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
   </div> -->
-                            <div class="tab-pane" id="examples-Consumidor-deletaConsumidor-0-objc">
-                              <pre class="prettyprint"><code class="language-cpp">String *consumidorId = consumidorId_example; // 
+                            <div class="tab-pane" id="examples-Fornecedor-deletaFornecedor-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">String *fornecedorId = fornecedorId_example; // 
 
-ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
+FornecedorApi *apiInstance = [[FornecedorApi alloc] init];
 
-// Deleta consumidor específico por Id.
-[apiInstance deletaConsumidorWith:consumidorId
+// Deleta fornecedor específico por Id.
+[apiInstance deletaFornecedorWith:fornecedorId
               completionHandler: ^(NSError* error) {
                             if (error) {
                                 NSLog(@"Error: %@", error);
@@ -2377,12 +2377,12 @@ ConsumidorApi *apiInstance = [[ConsumidorApi alloc] init];
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-deletaConsumidor-0-javascript">
+                            <div class="tab-pane" id="examples-Fornecedor-deletaFornecedor-0-javascript">
                               <pre class="prettyprint"><code class="language-js">var SwaggerUglyButYummy = require('swagger_ugly_but_yummy');
 
-var api = new SwaggerUglyButYummy.ConsumidorApi()
+var api = new SwaggerUglyButYummy.FornecedorApi()
 
-var consumidorId = consumidorId_example; // {String} 
+var fornecedorId = fornecedorId_example; // {String} 
 
 
 var callback = function(error, data, response) {
@@ -2392,14 +2392,14 @@ var callback = function(error, data, response) {
     console.log('API called successfully.');
   }
 };
-api.deletaConsumidor(consumidorId, callback);
+api.deletaFornecedor(fornecedorId, callback);
 </code></pre>
                             </div>
 
-                            <!--<div class="tab-pane" id="examples-Consumidor-deletaConsumidor-0-angular">
+                            <!--<div class="tab-pane" id="examples-Fornecedor-deletaFornecedor-0-angular">
               <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
             </div>-->
-                            <div class="tab-pane" id="examples-Consumidor-deletaConsumidor-0-csharp">
+                            <div class="tab-pane" id="examples-Fornecedor-deletaFornecedor-0-csharp">
                               <pre class="prettyprint"><code class="language-cs">using System;
 using System.Diagnostics;
 using IO.Swagger.Api;
@@ -2408,22 +2408,22 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class deletaConsumidorExample
+    public class deletaFornecedorExample
     {
         public void main()
         {
             
-            var apiInstance = new ConsumidorApi();
-            var consumidorId = consumidorId_example;  // String | 
+            var apiInstance = new FornecedorApi();
+            var fornecedorId = fornecedorId_example;  // String | 
 
             try
             {
-                // Deleta consumidor específico por Id.
-                apiInstance.deletaConsumidor(consumidorId);
+                // Deleta fornecedor específico por Id.
+                apiInstance.deletaFornecedor(fornecedorId);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ConsumidorApi.deletaConsumidor: " + e.Message );
+                Debug.Print("Exception when calling FornecedorApi.deletaFornecedor: " + e.Message );
             }
         }
     }
@@ -2431,38 +2431,38 @@ namespace Example
 </code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-deletaConsumidor-0-php">
+                            <div class="tab-pane" id="examples-Fornecedor-deletaFornecedor-0-php">
                               <pre class="prettyprint"><code class="language-php"><&#63;php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\ConsumidorApi();
-$consumidorId = consumidorId_example; // String | 
+$api_instance = new Swagger\Client\Api\FornecedorApi();
+$fornecedorId = fornecedorId_example; // String | 
 
 try {
-    $api_instance->deletaConsumidor($consumidorId);
+    $api_instance->deletaFornecedor($fornecedorId);
 } catch (Exception $e) {
-    echo 'Exception when calling ConsumidorApi->deletaConsumidor: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling FornecedorApi->deletaFornecedor: ', $e->getMessage(), PHP_EOL;
 }
 ?></code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-deletaConsumidor-0-perl">
+                            <div class="tab-pane" id="examples-Fornecedor-deletaFornecedor-0-perl">
                               <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
 use WWW::SwaggerClient::Configuration;
-use WWW::SwaggerClient::ConsumidorApi;
+use WWW::SwaggerClient::FornecedorApi;
 
-my $api_instance = WWW::SwaggerClient::ConsumidorApi->new();
-my $consumidorId = consumidorId_example; # String | 
+my $api_instance = WWW::SwaggerClient::FornecedorApi->new();
+my $fornecedorId = fornecedorId_example; # String | 
 
 eval { 
-    $api_instance->deletaConsumidor(consumidorId => $consumidorId);
+    $api_instance->deletaFornecedor(fornecedorId => $fornecedorId);
 };
 if ($@) {
-    warn "Exception when calling ConsumidorApi->deletaConsumidor: $@\n";
+    warn "Exception when calling FornecedorApi->deletaFornecedor: $@\n";
 }</code></pre>
                             </div>
 
-                            <div class="tab-pane" id="examples-Consumidor-deletaConsumidor-0-python">
+                            <div class="tab-pane" id="examples-Fornecedor-deletaFornecedor-0-python">
                               <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
 import time
 import swagger_client
@@ -2470,14 +2470,14 @@ from swagger_client.rest import ApiException
 from pprint import pprint
 
 # create an instance of the API class
-api_instance = swagger_client.ConsumidorApi()
-consumidorId = consumidorId_example # String | 
+api_instance = swagger_client.FornecedorApi()
+fornecedorId = fornecedorId_example # String | 
 
 try: 
-    # Deleta consumidor específico por Id.
-    api_instance.deleta_consumidor(consumidorId)
+    # Deleta fornecedor específico por Id.
+    api_instance.deleta_fornecedor(fornecedorId)
 except ApiException as e:
-    print("Exception when calling ConsumidorApi->deletaConsumidor: %s\n" % e)</code></pre>
+    print("Exception when calling FornecedorApi->deletaFornecedor: %s\n" % e)</code></pre>
                             </div>
                           </div>
 
@@ -2489,11 +2489,11 @@ except ApiException as e:
                                   <th width="150px">Name</th>
                                   <th>Description</th>
                                 </tr>
-                                  <tr><td style="width:150px;">consumidorId*</td>
+                                  <tr><td style="width:150px;">fornecedorId*</td>
 <td>
 
 
-    <div id="d2e199_deletaConsumidor_consumidorId">
+    <div id="d2e199_deletaFornecedor_fornecedorId">
         <div class="json-schema-view">
             <div class="primitive">
                 <span class="type">

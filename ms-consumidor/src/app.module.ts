@@ -8,7 +8,7 @@ import { ConsumidorModule } from './consumidor/consumidor.module';
     ConsumidorModule,
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'swagger')
-    }),    
+    }),
   ],
   providers: [
     AppService,
