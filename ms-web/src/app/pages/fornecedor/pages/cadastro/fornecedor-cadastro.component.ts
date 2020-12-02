@@ -113,8 +113,11 @@ export class FornecedorCadastroComponent implements OnInit {
   }
 
   public submitData() {
+    console.log('caindo aqui')
     if (this.formFornecedor.invalid) {
       return;
+    } else {
+      this.fornecedorService.postFornecedor(this.formFornecedor.value);
     }
 
     const getRightRequest = (data: any): Observable<Fornecedor> => {

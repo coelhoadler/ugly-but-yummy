@@ -3,7 +3,8 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Fornecedor, FornecedorDocument } from './fornecedor.schema';
 import { FornecedorDto } from './fornecedor.dto';
-import { SlackService } from './../shared/services/slack.service'
+import { SlackService } from './../shared/services/slack.service';
+import { ObjectID } from "mongodb";
 
 @Injectable()
 export class FornecedorService {
@@ -13,6 +14,10 @@ export class FornecedorService {
     ) { }
 
     async create(fornecedorDto: FornecedorDto): Promise<Fornecedor> {
+        const _id = new ObjectID().toHexString();
+        fornecedorDto._id = _id;
+        fornecedorDto.uid = new Date().getTime() + '';
+
         this._slackService.postMessage(fornecedorDto);
         const schema = new this._fornecedorSchema(fornecedorDto);
         return schema.save();

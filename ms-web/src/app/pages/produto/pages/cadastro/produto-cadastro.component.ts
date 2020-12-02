@@ -64,6 +64,7 @@ export class ProdutoCadastroComponent implements OnInit {
     this.formProduto = this.formBuilder.group({
       nome: ['', Validators.required],
       descricao: ['', Validators.required],
+      sku: ['', Validators.required],
       preco: ['', Validators.required],
       createdAt: ''
     });
@@ -103,6 +104,8 @@ export class ProdutoCadastroComponent implements OnInit {
     console.log(this.formProduto.value);
     if (this.formProduto.invalid) {
       return;
+    } else {
+      this.produtoService.postProduto(this.formProduto.value);
     }
 
     if (this.action === 'create') {

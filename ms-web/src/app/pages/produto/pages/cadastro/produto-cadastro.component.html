@@ -21,10 +21,20 @@
       </mat-form-field>
     </div>
   </div>
-  <mat-form-field class="cadastro__form-field">
-    <mat-label>Descrição</mat-label>
-    <textarea matInput type="text" formControlName="descricao"></textarea>
-  </mat-form-field>
+  <div class="row">
+    <div class="col">
+      <mat-form-field class="cadastro__form-field">
+        <mat-label>SKU</mat-label>
+        <input matInput formControlName="sku" placeholder="SKU do produto" />
+      </mat-form-field>      
+    </div>    
+    <div class="col">
+      <mat-form-field class="cadastro__form-field">
+        <mat-label>Descrição</mat-label>
+        <textarea matInput type="text" formControlName="descricao"></textarea>
+      </mat-form-field>      
+    </div>
+  </div>  
   <div class="row">
     <div class="col-auto">
       <button mat-raised-button type="button" (click)="backToList()"><fa-icon [icon]="faArrowLeft"></fa-icon> Voltar para a listagem</button>

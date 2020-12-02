@@ -3,7 +3,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Consumidor, ConsumidorDocument } from './consumidor.schema';
 import { ConsumidorDto } from './consumidor.dto';
-import { ObjectId } from 'mongodb';
+import { ObjectID } from 'mongodb';
 import { SlackService } from '../shared/services/slack.service';
 
 @Injectable()
@@ -14,8 +14,13 @@ export class ConsumidorService {
     ) { }
 
     async create(consumidorDto: ConsumidorDto): Promise<Consumidor> {
+        const _id = new ObjectID().toHexString();
+        consumidorDto._id = _id;
+        consumidorDto.uid = new Date().getTime() + '';
+
         this._slackService.postMessage(consumidorDto);
         const schema = new this._consumidorSchema(consumidorDto);
+
         return schema.save();
     }
 
@@ -34,7 +39,8 @@ export class ConsumidorService {
     }
 
     async delete(consumidorId): Promise<any> {
-        return (await this._consumidorSchema.deleteOne({ "_id" : new ObjectId(consumidorId) })).deletedCount;
+        console.log('id: ', consumidorId);
+        return (await this._consumidorSchema.deleteOne({ "_id" : consumidorId })).deletedCount;
     }
 
     async update(id: string, consumidorDto: ConsumidorDto): Promise<Consumidor> {
