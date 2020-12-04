@@ -35,7 +35,7 @@ export class AppController {
       .setNome(fornecedor.nome)
       .setProdutos(fornecedor.produtos)
       .setTelefone(fornecedor.telefone);
-    return await this.fornecedorService.create(fornecedor);
+    return await this.fornecedorService.create(builder.build());
   }
 
   @Put('/fornecedor/:id')
@@ -58,7 +58,7 @@ export class AppController {
       .setNome(fornecedor.nome)
       .setProdutos(fornecedor.produtos)
       .setTelefone(fornecedor.telefone);
-    return await this.fornecedorService.update(id, fornecedor);
+    return await this.fornecedorService.update(id, builder.build());
   }
 
   @Delete('/fornecedor/:id')

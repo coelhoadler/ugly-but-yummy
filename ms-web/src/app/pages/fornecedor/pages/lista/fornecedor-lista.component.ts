@@ -18,7 +18,7 @@ export class FornecedorListaComponent implements OnInit {
 
   @Input() public tableData: TabelaDataModel = new TabelaDataModel({
     columns: [
-      {key: 'id', viewName: 'id', hidden: true},
+      {key: '_id', viewName: 'id', hidden: true},
       {key: 'uid', viewName: 'Uuid'},
       {key: 'nome', viewName: 'Nome'},
       {key: 'email', viewName: 'E-mail'},
@@ -55,8 +55,8 @@ export class FornecedorListaComponent implements OnInit {
     );
   }
 
-  public goToFornecedorData(fornecedorOnTable: {id: string}) {
-    this.router.navigate([RoutesEnum.FORNECEDOR, fornecedorOnTable.id]);
+  public goToFornecedorData(fornecedorOnTable: {_id: string}) {
+    this.router.navigate([RoutesEnum.FORNECEDOR, fornecedorOnTable._id]);
   }
 
   public goToNewFornecedor() {

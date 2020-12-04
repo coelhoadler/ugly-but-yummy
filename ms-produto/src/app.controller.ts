@@ -32,7 +32,7 @@ export class AppController {
       .setNome(produto.nome)
       .setPreco(produto.preco)
       .setSku(produto.sku);
-    return await this.produtoService.create(produto);
+    return await this.produtoService.create(builder.build());
   }
 
   @Put('/produto/:id')
@@ -46,7 +46,13 @@ export class AppController {
   }
 
   async update(id, produto: ProdutoDto) {
-    return await this.produtoService.update(id, produto);
+    const builder = new ProdutoBuilder(id);
+    builder
+      .setDescricao(produto.descricao)
+      .setNome(produto.nome)
+      .setPreco(produto.preco)
+      .setSku(produto.sku);
+    return await this.produtoService.update(id, builder.build());
   }
 
   @Delete('/produto/:id')
