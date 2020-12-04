@@ -1,8 +1,6 @@
 # Case Ugly But Yummy
 ---
-~~Suponha que você seja contratado para desenvolver algunas funcionalidades do e-commerce da
-Amazon, alguns desejos dos usuários são descritos abaixo e você deve desenhar e implementar uma
-solução baseada em Microserviços.~~
+Nesse projeto você irá encontrar uma de nossa ideias para o Startup One, foi realizado 3 micros serviços de CRUD da base inicial do nosso projeto. Procuramos seguir um desenvolvimento limpo e buscando as melhores práticas para a engenharia de software. Além de que estamos fazendo uso de tecnologias bem atuais no dia dia.
 
 ## Integrantes
 - Adler Coelho
@@ -33,10 +31,6 @@ solução baseada em Microserviços.~~
 - Angular
 - Angular Material
 - Swagger UI
-
-## Documentação da API
-- Ao subir a aplicação, uma documentação da API em Swagger pode ser encontrada em `localhost:8091`.
-- Há uma collection do Postman para testes na raíz do projeto: `api.postman_collection.json`
 
 ## Requisitos atendidos
 - [x] Microservices; (3)
