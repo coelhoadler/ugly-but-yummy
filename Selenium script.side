@@ -1640,6 +1640,18 @@
       "targets": [],
       "value": "699"
     }, {
+      "id": "12870401-0c92-4151-82c5-2c9e08a0902f",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='sku']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1607052643"
+    }, {
       "id": "93831546-5949-4135-b6e9-5a1416233029",
       "comment": "",
       "command": "type",
@@ -1752,6 +1764,18 @@
       "target": "xpath=//input[@formcontrolname='preco']",
       "targets": [],
       "value": "5899"
+    }, {
+      "id": "f17241a7-655d-4411-ae35-32b0643137e0",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='sku']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1607052678"
     }, {
       "id": "c64cadee-e8cf-49f0-8ebf-4d964fad0775",
       "comment": "",
@@ -2100,7 +2124,7 @@
       ],
       "value": "Produto teste 2"
     }, {
-      "id": "1745b8d9-ea04-4af5-a625-1efa2da43888",
+      "id": "147630fb-8360-4403-b767-baf2fd401a55",
       "comment": "",
       "command": "assertValue",
       "target": "xpath=//input[@formcontrolname='preco']",
@@ -2111,6 +2135,18 @@
         ["xpath=//div[2]/mat-form-field/div/div/div/input", "xpath:position"]
       ],
       "value": "5899"
+    }, {
+      "id": "1745b8d9-ea04-4af5-a625-1efa2da43888",
+      "comment": "",
+      "command": "assertValue",
+      "target": "xpath=//input[@formcontrolname='sku']",
+      "targets": [
+        ["id=mat-input-40", "id"],
+        ["css=#mat-input-40", "css:finder"],
+        ["xpath=//input[@id='mat-input-40']", "xpath:attributes"],
+        ["xpath=//div[2]/mat-form-field/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1607052678"
     }]
   }, {
     "id": "465eaf55-35a2-435e-b769-f03f0238065a",
