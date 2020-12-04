@@ -5,9 +5,10 @@ import { IProdutoBuilder } from "./produto.interface";
 export class ProdutoBuilder implements IProdutoBuilder{
     private _produto: ProdutoDto;
 
-    constructor() {
+    constructor(id: string = null) {
         this._produto = new ProdutoDto();
         this._produto._id = new ObjectID().toHexString();
+        if(id) this._produto._id = id;
         this._produto.createdAt = new Date();
         return this;
     }

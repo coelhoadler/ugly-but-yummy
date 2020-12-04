@@ -1,4 +1,5 @@
-import { Controller, Delete, Get, Post, Put, Body, Param } from '@nestjs/common';
+import { Controller, Delete, Get, Post, Put, Body, Param, Patch } from '@nestjs/common';
+import { ProdutoBuilder } from './produto/produto.builder';
 import { ProdutoDto } from './produto/produto.dto';
 import { ProdutoService } from './produto/produto.service'
 
@@ -19,17 +20,32 @@ export class AppController {
   }
 
   @Get("/produto/by/:prop/:propValue")
-  async indexBy(@Param('prop') prop: string, @Param('propValue') propValue: string) : Promise<ProdutoDto[]> {
+  async indexBy(@Param('prop') prop: string, @Param('propValue') propValue: string): Promise<ProdutoDto[]> {
     return await this.produtoService.findBy(prop, propValue);
   }
 
   @Post('/produto')
-  async create(@Body() produto: ProdutoDto) { 
+  async create(@Body() produto: ProdutoDto) {
+    const builder = new ProdutoBuilder();
+    builder
+      .setDescricao(produto.descricao)
+      .setNome(produto.nome)
+      .setPreco(produto.preco)
+      .setSku(produto.sku);
     return await this.produtoService.create(produto);
   }
 
   @Put('/produto/:id')
-  async update(@Param('id') id, @Body() produto: ProdutoDto) {
+  async put(@Param('id') id: any, @Body() produto: ProdutoDto) {
+    return await this.update(id, produto);
+  }
+
+  @Patch('/produto/:id')
+  async patch(@Param('id') id: any, @Body() produto: ProdutoDto) {
+    return await this.update(id, produto);
+  }
+
+  async update(id, produto: ProdutoDto) {
     return await this.produtoService.update(id, produto);
   }
 

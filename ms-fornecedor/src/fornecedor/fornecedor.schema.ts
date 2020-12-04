@@ -9,7 +9,7 @@ export class Fornecedor {
   @Prop({ type: ObjectID, required: true, })
   _id: String;
 
-  @Prop({ type: String, required: true })
+  @Prop({ type: String, required: false })
   uid: String;
 
   @Prop({ type: String, required: true })

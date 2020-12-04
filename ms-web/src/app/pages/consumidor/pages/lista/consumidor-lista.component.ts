@@ -18,7 +18,7 @@ export class ConsumidorListaComponent implements OnInit {
 
   @Input() public tableData: TabelaDataModel = new TabelaDataModel({
     columns: [
-      { key: 'id', viewName: 'id', hidden: true },
+      { key: '_id', viewName: 'id', hidden: true },
       { key: 'uid', viewName: 'Uuid' },
       { key: 'nome', viewName: 'Nome' },
       { key: 'email', viewName: 'E-mail' },
@@ -55,8 +55,8 @@ export class ConsumidorListaComponent implements OnInit {
     );
   }
 
-  public goToConsumerData(consumerOnTable: { id: string }) {
-    this.router.navigate([RoutesEnum.CONSUMIDOR, consumerOnTable.id]);
+  public goToConsumerData(consumerOnTable: { _id: string }) {
+    this.router.navigate([RoutesEnum.CONSUMIDOR, consumerOnTable._id]);
   }
 
   public goToNewConsumer() {

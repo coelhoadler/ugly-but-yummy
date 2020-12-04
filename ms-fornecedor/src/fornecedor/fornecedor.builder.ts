@@ -6,9 +6,11 @@ import { DadosBancariosDto } from "../dadosBancarios/dadosBancarios.dto";
 export class FornecedorBuilder {
     private _fornecedor: FornecedorDto;
 
-    constructor() {
+    constructor(id: string = null) {
         this._fornecedor = new FornecedorDto();
         this._fornecedor._id = new ObjectID().toHexString();
+        if(id) this._fornecedor._id = id;
+        this._fornecedor.uid = this._fornecedor._id;
         this._fornecedor.createdAt = new Date();
         return this;
     }

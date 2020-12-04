@@ -6,19 +6,19 @@ import { IProduto } from './produto.interface';
 @Schema({ collection: 'produto' })
 export class Produto implements IProduto {
   @Prop({ type: ObjectID, required: true, })
-  _id: String;
+  _id: string;
 
   @Prop({ type: String, required: true })
-  sku: String;
+  sku: string;
 
   @Prop({ type: String, required: true })
-  nome: String;
+  nome: string;
 
   @Prop({ type: String, required: true })
-  descricao: String;
+  descricao: string;
 
   @Prop({ type: Number, required: true })
-  preco: Number;
+  preco: number;
 
   @Prop({ type: Date, required: true })
   createdAt: Date;

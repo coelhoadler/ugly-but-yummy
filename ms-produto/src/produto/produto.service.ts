@@ -14,10 +14,6 @@ export class ProdutoService {
     ) { }
 
     async create(produtoDto: ProdutoDto): Promise<Produto> {
-        const _id = new ObjectID().toHexString();
-        produtoDto._id = _id;
-        produtoDto.sku = produtoDto.sku.padStart(24, '0');
-
         this._slackService.postMessage(produtoDto);
         const schema = new this._produtoSchema(produtoDto);
         return schema.save();
