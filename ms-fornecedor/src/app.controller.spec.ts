@@ -18,7 +18,7 @@ const prepareBefore = async () => {
       ConnectionService.Tests.forFeature(),
     ],
     controllers: [AppController],
-    providers: [FornecedorService, SlackService],
+    providers: [FornecedorService, UniqueGenerator, SlackService],
   }).compile();
 
   return await app.get<AppController>(AppController);

@@ -20,7 +20,7 @@ export class ProdutoListaComponent implements OnInit {
 
   @Input() public tableData: TabelaDataModel = new TabelaDataModel({
     columns: [
-      { key: 'id', viewName: 'id', hidden: true },
+      { key: '_id', viewName: 'id', hidden: true },
       { key: 'sku', viewName: 'SKU' },
       { key: 'nome', viewName: 'Nome' },
       { key: 'preco', viewName: 'Preço' },
@@ -63,8 +63,8 @@ export class ProdutoListaComponent implements OnInit {
     });
   }
 
-  public goToProdutoData(produtoOnTable: { id: string }) {
-    this.router.navigate([RoutesEnum.PRODUTO, produtoOnTable.id]);
+  public goToProdutoData(produtoOnTable: { _id: string }) {
+    this.router.navigate([RoutesEnum.PRODUTO, produtoOnTable._id]);
   }
 
   public goToNewProduto() {

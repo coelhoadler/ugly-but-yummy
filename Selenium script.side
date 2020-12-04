@@ -2,7 +2,7 @@
   "id": "22f2d5f3-3484-4538-b143-0ac693133b21",
   "version": "2.0",
   "name": "CRM André",
-  "url": "http://localhost:4200",
+  "url": "http://localhost:3003",
   "tests": [{
     "id": "02eed372-3afb-41d8-b3d0-80615beea91c",
     "name": "Cadastrar consumidor 1",
@@ -10,7 +10,7 @@
       "id": "bfe8c678-03eb-4aff-b085-b95d13f9b086",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -245,7 +245,7 @@
       "id": "db67e8da-1c71-4d80-9123-c8caf77c8290",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -480,7 +480,7 @@
       "id": "59925a14-2c4e-464f-8332-eb8d7cbf0cc3",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -569,7 +569,7 @@
       "id": "ef837191-43bd-4d1c-8851-fc2ece65cca4",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -694,7 +694,7 @@
       "id": "7c780a01-1852-409f-9775-c8223e31625b",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -765,7 +765,7 @@
       "id": "021256b3-398e-48d5-99ae-fc5a3d8eee97",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -854,7 +854,7 @@
       "id": "3cd37766-04f2-403f-962c-448f316c2ac0",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -1089,7 +1089,7 @@
       "id": "fc1bd684-ebe2-49d9-955b-a132e2d3f4b9",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -1324,7 +1324,7 @@
       "id": "30f3ff92-1038-4702-965d-4fb015d6d840",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -1395,7 +1395,7 @@
       "id": "b8c97ed4-afea-40e8-a243-39e66bf53f27",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -1484,7 +1484,7 @@
       "id": "89a74001-21e8-4b87-bd41-463d4cecc150",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -1573,7 +1573,7 @@
       "id": "ce2da686-453b-4a0c-8926-6f75b895a6c7",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -1640,6 +1640,18 @@
       "targets": [],
       "value": "699"
     }, {
+      "id": "12870401-0c92-4151-82c5-2c9e08a0902f",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='sku']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1607052643"
+    }, {
       "id": "93831546-5949-4135-b6e9-5a1416233029",
       "comment": "",
       "command": "type",
@@ -1690,7 +1702,7 @@
       "id": "3e8e3347-a7a4-41e8-941c-bc3caeddff86",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -1753,6 +1765,18 @@
       "targets": [],
       "value": "5899"
     }, {
+      "id": "f17241a7-655d-4411-ae35-32b0643137e0",
+      "comment": "",
+      "command": "type",
+      "target": "xpath=//input[@formcontrolname='sku']",
+      "targets": [
+        ["id=mat-input-0", "id"],
+        ["css=#mat-input-0", "css:finder"],
+        ["xpath=//input[@id='mat-input-0']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "1607052678"
+    }, {
       "id": "c64cadee-e8cf-49f0-8ebf-4d964fad0775",
       "comment": "",
       "command": "type",
@@ -1803,7 +1827,7 @@
       "id": "a872f04f-d598-4be4-8e53-3ad2b7af87fa",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -1928,7 +1952,7 @@
       "id": "81f21685-13e1-43e1-8782-e46457ef74f4",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -2048,7 +2072,7 @@
       "id": "11fd63e2-cbcd-4f42-8945-e288f79c7fa8",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -2100,7 +2124,7 @@
       ],
       "value": "Produto teste 2"
     }, {
-      "id": "1745b8d9-ea04-4af5-a625-1efa2da43888",
+      "id": "147630fb-8360-4403-b767-baf2fd401a55",
       "comment": "",
       "command": "assertValue",
       "target": "xpath=//input[@formcontrolname='preco']",
@@ -2111,6 +2135,18 @@
         ["xpath=//div[2]/mat-form-field/div/div/div/input", "xpath:position"]
       ],
       "value": "5899"
+    }, {
+      "id": "1745b8d9-ea04-4af5-a625-1efa2da43888",
+      "comment": "",
+      "command": "assertValue",
+      "target": "xpath=//input[@formcontrolname='sku']",
+      "targets": [
+        ["id=mat-input-40", "id"],
+        ["css=#mat-input-40", "css:finder"],
+        ["xpath=//input[@id='mat-input-40']", "xpath:attributes"],
+        ["xpath=//div[2]/mat-form-field/div/div/div/input", "xpath:position"]
+      ],
+      "value": "1607052678"
     }]
   }, {
     "id": "465eaf55-35a2-435e-b769-f03f0238065a",
@@ -2119,7 +2155,7 @@
       "id": "973d9092-98c4-4f85-8dab-f72ce00a5af5",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -2208,7 +2244,7 @@
       "id": "a2fb7c4a-93d9-4498-aad3-6d47393cefcc",
       "comment": "",
       "command": "open",
-      "target": "http://localhost:4200",
+      "target": "http://localhost:3003",
       "targets": [],
       "value": ""
     }, {
@@ -2313,6 +2349,6 @@
     "timeout": 300,
     "tests": ["3833851c-70e8-431d-bdc2-5dcd293f402c", "05506d6a-b139-4bc7-ad4e-ad71227d268b", "01d66226-a1ef-42f0-ad85-e5d96575b6be", "0574edf5-67ec-4161-b0fd-88e4b40ae6b6", "465eaf55-35a2-435e-b769-f03f0238065a", "2ba5b5ce-7a98-4194-b9c6-d9add25fe6c7"]
   }],
-  "urls": ["localhost:3003", "http://localhost:4200/"],
+  "urls": ["localhost:3003", "http://localhost:3003/"],
   "plugins": []
 }

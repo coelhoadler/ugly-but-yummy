@@ -14,6 +14,7 @@ interface DadosBancarios {
 }
 
 export interface Consumidor{
+  _id: string;
   uid: string;
   nome: string;
   doc: string;
