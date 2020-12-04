@@ -14,6 +14,7 @@ interface DadosBancarios {
 }
 
 export interface Fornecedor{
+  _id: string
   uid: string;
   nome: string;
   doc: string;

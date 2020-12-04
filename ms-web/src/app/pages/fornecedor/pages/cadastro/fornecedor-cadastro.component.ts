@@ -139,9 +139,9 @@ export class FornecedorCadastroComponent implements OnInit {
     if (this.action === 'create') {
       return 'Novo cadastro';
     } else if (this.action === 'read') {
-      return `Ficha cadastral ${this.dataFornecedor.uid}`;
+      return `Ficha cadastral ${this.dataFornecedor?.uid}`;
     } else {
-      return `Edição do cadastro ${this.dataFornecedor.uid}`;
+      return `Edição do cadastro ${this.dataFornecedor?.uid}`;
     }
   }
 

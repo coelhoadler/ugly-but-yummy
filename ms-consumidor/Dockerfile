@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE ${NODE_PORT}
 
-CMD [ "npm", "run", "start:dev" ]
+CMD [ "npm", "run", "start" ]

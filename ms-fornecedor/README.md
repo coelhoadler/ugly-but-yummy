@@ -1,5 +1,5 @@
-# ms-consumidor
-Micro serviço responsável pelo dominio de consumidor
+# ms-fornecedor
+Micro serviço responsável pelo dominio de fornecedor
 
 [x] MongoDB
 [x] Testes com cucumber
@@ -10,13 +10,13 @@ Micro serviço responsável pelo dominio de consumidor
 ## CRUD Routes
 | http   | route                       |
 |--------|-----------------------------|
-| POST   | /consumidor                 |
+| POST   | /fornecedor                 |
 | GET    | /                           |
-| GET    | /consumidor                 |
-| GET    | /consumidor/:id             |
-| GET    | /consumidor/by/:prop/:value |
-| PUT    | /consumidor /:id            |
-| DELETE | /consumidor/:id             |
+| GET    | /fornecedor                 |
+| GET    | /fornecedor/:id             |
+| GET    | /fornecedor/by/:prop/:value |
+| PUT    | /fornecedor /:id            |
+| DELETE | /fornecedor/:id             |
 
 ## Test
 

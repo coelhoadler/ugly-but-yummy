@@ -138,9 +138,9 @@ export class ConsumidorCadastroComponent implements OnInit {
     if (this.action === 'create') {
       return 'Novo cadastro';
     } else if (this.action === 'read') {
-      return `Ficha cadastral ${this.dataConsumidor.uid}`;
+      return `Ficha cadastral ${this.dataConsumidor?.uid}`;
     } else {
-      return `Edição do cadastro ${this.dataConsumidor.uid}`;
+      return `Edição do cadastro ${this.dataConsumidor?.uid}`;
     }
   }
 

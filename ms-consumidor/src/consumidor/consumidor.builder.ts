@@ -6,9 +6,11 @@ import { DadosBancariosDto } from "../dadosBancarios/dadosBancarios.dto";
 export class ConsumidorBuilder {
     private _consumidor: ConsumidorDto;
 
-    constructor() {
-        this._consumidor = new ConsumidorDto();
+    constructor(id: string = null) {
+        this._consumidor = new ConsumidorDto();        
         this._consumidor._id = new ObjectID().toHexString();
+        if(id) this._consumidor._id = id;
+        this._consumidor.uid = this._consumidor._id;
         this._consumidor.createdAt = new Date();
         return this;
     }

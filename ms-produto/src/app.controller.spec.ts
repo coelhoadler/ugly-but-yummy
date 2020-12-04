@@ -7,6 +7,7 @@ import { ProdutoBuilder } from './produto/produto.builder';
 import { ConnectionService } from './config/conection.service';
 import UniqueGenerator from './utils/unique.generator';
 import { SlackService } from './shared/services/slack.service';
+import { ProdutoSeed } from '../src/seed/produto.seed';
 
 const feature = loadFeature('./features/produto.feature');
 const prepareBefore = async () => {
@@ -16,7 +17,7 @@ const prepareBefore = async () => {
       ConnectionService.Tests.forFeature(),
     ],
     controllers: [AppController],
-    providers: [ProdutoService, SlackService],
+    providers: [ProdutoService, UniqueGenerator, ProdutoSeed, SlackService],
   }).compile();
 
   return await app.get<AppController>(AppController);

@@ -14,10 +14,6 @@ export class ConsumidorService {
     ) { }
 
     async create(consumidorDto: ConsumidorDto): Promise<Consumidor> {
-        const _id = new ObjectID().toHexString();
-        consumidorDto._id = _id;
-        consumidorDto.uid = new Date().getTime() + '';
-
         this._slackService.postMessage(consumidorDto);
         const schema = new this._consumidorSchema(consumidorDto);
 

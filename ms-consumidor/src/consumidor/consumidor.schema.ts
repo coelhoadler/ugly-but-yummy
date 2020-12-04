@@ -7,13 +7,13 @@ import { Endereco } from '../endereco/endereco.schema';
 @Schema({ collection: 'consumidor' })
 export class Consumidor {
   @Prop({ type: ObjectID, required: true, })
-  _id: String;
+  _id: string;
+  @Prop({ type: String, required: false })
+  uid: string;
   @Prop({ type: String, required: true })
-  uid: String;
+  nome: string;
   @Prop({ type: String, required: true })
-  nome: String;
-  @Prop({ type: String, required: true })
-  doc: String;
+  doc: string;
 
   @Prop({ type: Endereco, required: true })
   endereco: Endereco
@@ -22,9 +22,9 @@ export class Consumidor {
   dadosBancarios: DadosBancarios
 
   @Prop({ type: String, required: true })
-  telefone: String;
+  telefone: string;
   @Prop({ type: String, required: true })
-  email: String;
+  email: string;
   @Prop({ type: Date, default: Date.now })
   createdAt: Date;
 }

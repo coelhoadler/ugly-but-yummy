@@ -2,13 +2,13 @@ import { DadosBancariosDto } from "../dadosBancarios/dadosBancarios.dto";
 import { EnderecoDto } from "../endereco/endereco.dto";
 
 export class ConsumidorDto {
-    _id: String;
-    uid: String;
-    nome: String;
-    doc: String;
+    _id: string;
+    uid: string;
+    nome: string;
+    doc: string;
     endereco: EnderecoDto
     dadosBancarios: DadosBancariosDto
-    telefone: String;
-    email: String;
+    telefone: string;
+    email: string;
     createdAt: Date;
 }
