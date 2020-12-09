@@ -1,5 +1,5 @@
 # Case Ugly But Yummy
----
+
 Nesse projeto você irá encontrar uma de nossa ideias para o Startup One, foi realizado 3 micros serviços de CRUD da base inicial do nosso projeto. Procuramos seguir um desenvolvimento limpo e buscando as melhores práticas para a engenharia de software. Além de que estamos fazendo uso de tecnologias bem atuais no dia dia.
 
 ## Integrantes
@@ -14,6 +14,8 @@ Nesse projeto você irá encontrar uma de nossa ideias para o Startup One, foi r
    - na raíz do projeto, execute: `docker-compose up`.
    
 ### Identificação dos Microservices
+---
+
   | Nome do Microservice    | Porta        | Descrição        |
   |-------------------------|--------------|------------------|
   | zookeeper               | 2181         | Service Discovery.                          |
